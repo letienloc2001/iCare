@@ -1,0 +1,335 @@
+* {
+    font-size: 16px;
+}
+
+.icare li,
+footer li {
+    list-style-type: none !important;
+}
+
+
+
+.content-container {
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+.icare-sort-bar {
+    display: flex;
+    background-color: #f4f4f4;
+    margin-bottom: 60px;
+    position: relative;
+    border-radius: 2px;
+    text-align: center;
+    width: 100%;
+
+}
+
+div.icare-sort-bar_note {
+    margin: 30px auto;
+    flex-grow: 1;
+    color: #7a7a7a;
+    font-size: 25px !important;
+    font-weight: 400;
+}
+
+p.icare-sort-bar_note {
+    margin-bottom: 0;
+    font-size: 25px !important;
+}
+
+.icare-item-col {
+    justify-content: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.icare-card {
+    background-color: transparent;
+    perspective: 1000px;
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 1400px) {
+    .icare-card {
+        width: 240px;
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
+    .icare-card {
+        width: 210px;
+        height: 310px;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+    .icare-card {
+        min-width: 210px;
+        max-width: 270px;
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+    .icare-card {
+        min-width: 270px;
+        max-width: 330px;
+        height: 420px;
+    }
+
+    .icare-item-buttons {
+        margin-top: 50px !important;
+        margin-bottom: 60px !important;
+
+    }
+
+    .icare-item-back_text {
+        margin-top: 70px !important;
+        font-size: 1.2em;
+    }
+
+    .icare-item-front_text {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 576px) {
+    .icare-card {
+        min-width: 240px;
+        max-width: 270px;
+        height: 360px;
+    }
+
+    .icare-item-back_text {
+        margin-top: 50px !important;
+    }
+
+    .icare-item-buttons {
+        margin-top: 40px !important;
+        margin-bottom: 50px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .icare-sort-bar_select {
+        min-width: 250px;
+    }
+
+    .icare-footer-further p {
+        text-align: center;
+    }
+
+    .icare-footer-col_bottom {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 576px) and (min-width: 425px) {
+    .icare-card {
+        max-width: 450px;
+        height: 560px;
+    }
+
+    .icare-item-buttons {
+        margin-top: 70px !important;
+        margin-bottom: 80px !important;
+    }
+
+    .icare-item-back_text {
+        margin-top: 100px !important;
+        font-size: 1.4em;
+    }
+
+    .icare-item-front_text {
+        font-size: 1.4em;
+    }
+
+    .icare-sort-bar_select {
+        min-width: 250px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .icare-card {
+        max-width: 450px;
+        height: 500px;
+    }
+
+    .icare-item-buttons {
+        margin-top: 70px !important;
+        margin-bottom: 80px !important;
+    }
+
+    .icare-item-back_text {
+        margin-top: 100px !important;
+        font-size: 1.4em;
+    }
+
+    .icare-item-front_text {
+        font-size: 1.4em;
+    }
+}
+
+.icare-card:hover .icare-item {
+    transform: rotateY(180deg);
+}
+
+.icare-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 4px;
+}
+
+.icare-item-front,
+.icare-item-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.icare-item-front {
+    margin-bottom: 30px;
+    margin-right: 0;
+    padding: 0 19px;
+    background-color: #f4f4f4;
+
+    margin-left: 0;
+}
+
+.icare-item-front_img {
+    margin: 12px 0;
+}
+
+.icare-item-front_text {
+    margin: 16px 10px 32px 10px;
+}
+
+.icare-item-front_name {
+    font-weight: bold;
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icare-item-front_price {
+    color: #ff7e00;
+}
+
+.icare-item-back_overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(255, 126, 0, 0.8);
+    border-radius: inherit;
+    float: left;
+    position: absolute;
+}
+
+.icare-item-back {
+    transform: rotateY(180deg);
+    margin-bottom: 30px;
+    margin-right: 0;
+    padding: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-color: white;
+    margin: 0 3.8% 2.992em 0;
+    margin-left: 0;
+}
+
+.icare-item-back_text {
+    margin: 60px 10px 20px 10px;
+}
+
+.icare-item-back_name {
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icare-item-back_name:hover {
+    color: white;
+}
+
+.icare-item-back_price {
+    color: white;
+}
+
+.icare-item-buttons {
+    margin: auto;
+}
+
+.icare-item-button button {
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    background: transparent;
+    z-index: 1;
+    overflow: hidden;
+    color: #fff;
+    text-transform: capitalize;
+    line-height: 45px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: all 300ms linear 0ms;
+    font-family: inherit;
+    margin: 0 5px;
+}
+
+.icare-item-button i {
+    font-size: 1.5em;
+    vertical-align: baseline;
+}
+
+.icare-item-button button:hover {
+    background-color: white;
+    color: #feba4b;
+}
+
+.icare-item-add_to_cart {
+    margin-top: 40px;
+}
+
+.icare-item-add_to_cart button {
+    line-height: 38px;
+    text-transform: capitalize;
+    background-color: transparent !important;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    padding: 5px 30px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icare-item-add_to_cart button:hover {
+    color: #feba4b;
+    background-color: white !important;
+}
+
+
+/*filter in base.css*/
+/*pagination in base.css*/

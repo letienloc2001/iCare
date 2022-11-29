@@ -1,0 +1,43 @@
+.scroll-bar.on {
+    bottom: 100px;
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.scroll-bar {
+    opacity: 0;
+    bottom: 24px;
+    visibility: hidden;
+    position: fixed;
+    right: 15px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    outline: none;
+    text-decoration: none;
+    line-height: 50px;
+    text-align: center;
+    background: linear-gradient(to right, #ff7e00 0%, #ffb63a 100%);
+    -webkit-border-radius: 50px;
+    -khtml-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 22px;
+    z-index: 99;
+    transition: all 300ms linear 0ms;
+
+}
+
+.scroll-bar i {
+    transition: all 100ms linear 0ms;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
