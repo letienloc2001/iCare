@@ -82,9 +82,9 @@ CREATE TABLE user
   email VARCHAR(50) NOT NULL,
   password VARCHAR(50) NOT NULL,
   user_type CHAR(1) NOT NULL,
-  doc_id INT NOT NULL,
-  patient_id INT NOT NULL,
-  admin_id INT NOT NULL,
+  doc_id INT,
+  patient_id INT,
+  admin_id INT,
   FOREIGN KEY (doc_id) REFERENCES doctor(doc_id),
   FOREIGN KEY (patient_id) REFERENCES patient(patient_id),
   FOREIGN KEY (admin_id) REFERENCES admin(admin_id)
