@@ -26,6 +26,19 @@ DELIMITER ;
 -- test
 call getSpecializations(1);
 
+-- procudure to show doctor's details, given doctor_id
+DROP PROCEDURE IF EXISTS getDoctorDetails;
+DELIMITER $$
+create procedure getDoctorDetails(IN DOCTOR_ID int)
+begin
+    select doc_id, doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews
+    from doctor where doc_id = DOCTOR_ID;
+end $$
+DELIMITER ;
+
+-- test
+call getDoctorDetails(1);
+
 -- show recent reviews of a doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getRecentReviews;
 DELIMITER $$
@@ -40,3 +53,19 @@ end $$
 DELIMITER ;
 
 call getRecentReviews(1);
+
+-- show all waiting appointments of a doctor, given doctor_id
+DROP PROCEDURE IF EXISTS getWaitingAppointments;
+DELIMITER $$
+create procedure getWaitingAppointments(IN DOCTOR_ID int)
+begin
+    select *
+    from patient2doctor as p2d, patient as p
+    where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id and p2d.request_status= 'w';
+end $$
+DELIMITER ;
+
+call getWaitingAppointments(1);
+
+
+
