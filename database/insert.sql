@@ -155,3 +155,15 @@ INSERT INTO `specification` (`spec_id`, `spec_name`) VALUES
 (54, 'Urology'),
 (55, 'Vascular surgery'),
 (56, 'Venereology');
+
+-- insert doc_specification
+INSERT INTO `doctor_specification` (`YOE`, `doc_id`, `spec_id`) VALUES
+(9, 1, 35),
+(15, 4, 5),
+(10, 5, 4),
+(14, 7, 11),
+(9, 9, 3),
+(12, 13, 12),
+(11, 14, 21),
+(10, 16, 16),
+(5, 17, 14);
