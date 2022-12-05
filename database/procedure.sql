@@ -26,7 +26,7 @@ DELIMITER ;
 -- test
 call getSpecializations(1);
 
--- procudure to show doctor's details, given doctor_id
+-- procedure to show doctor's details, given doctor_id
 DROP PROCEDURE IF EXISTS getDoctorDetails;
 DELIMITER $$
 create procedure getDoctorDetails(IN DOCTOR_ID int)
@@ -66,6 +66,19 @@ end $$
 DELIMITER ;
 
 call getWaitingAppointments(1);
+
+-- show all confirmed appointments of a doctor, given patient_id
+DROP PROCEDURE IF EXISTS getConfirmedAppointments_Patient;
+DELIMITER $$
+create procedure getConfirmedAppointments_Patient(IN PATIENT_ID int)
+begin
+    select *
+    from patient2doctor as p2d, doctor as d
+    where p2d.patient_id = PATIENT_ID and p2d.request_status= 'c';
+end $$
+DELIMITER ;
+
+call getConfirmedAppointments_Patient(1);
 
 
 
