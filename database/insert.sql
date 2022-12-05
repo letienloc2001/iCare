@@ -11,6 +11,7 @@ INSERT INTO `doctor` (`doc_name`, `clinic_number`, `doc_id`, `street`, `ward`, `
 ('Brooke Lane', '1', 9, 'Long Mimms', '2', 'Stalen Island', 'New York', NULL, 'Enthusiastic', 5),
 ('Kyra Chen', '1919', 10, 'Flowers Cir', 'Thomasville', 'Georgia(GA)', 'New York', NULL, 'Enthusiastic', 5),
 ('Rinah Underwood', '418', 11, 'Bogus Rd', 'Stockholm,', 'Evelyn Crest', 'Wisconsin(WI)', NULL, 'Enthusiastic', 3),
+('Rinah Rosevelt', '10', 12, 'Bogus Rd', 'Stockholm,', 'Evelyn Crest', 'Wisconsin(WI)', NULL, 'Enthusiastic', 4),
 ('Boris Stafford', '231', 13, 'Dunkirk Road South', 'Stockholm,', 'Evelyn Crest', 'Wisconsin(WI)', NULL, 'Enthusiastic', 4),
 ('Ria Chan', '700', 14, 'Morreene Rd', 'Durham,', '', 'North Carolina(NC)', NULL, 'Enthusiastic', 4),
 ('Tasha Beard', '11948', 15, 'State 29 Rte', 'New Knoxville,', '', 'Ohio(OH)', NULL, 'Enthusiastic', 5),
@@ -38,64 +39,64 @@ INSERT INTO `patient` (`patient_name`, `patient_id`, `ID`, `age`, `house_number`
 -- Insert admin
 INSERT INTO `user` (`email`, `password`, `user_type`, `doc_id`, `patient_id`, `admin_id`) 
 VALUES 
-('cuong@gmail.com', 'cuong', 'a', NULL, NULL, '1'), 
-('loc@gmail.com', 'loc', 'a', NULL, NULL, '2');
+('cuong@gmail.com', 'cuong', 'a', NULL, NULL, 1), 
+('loc@gmail.com', 'loc', 'a', NULL, NULL, 2);
 
 -- Insert User
 INSERT INTO `user`(`email`, `password`, `user_type`, `doc_id`, `patient_id`, `admin_id`) 
 VALUES 
-('doc1@gmail.com','cuong123','d','1','',''),
-('doc2@gmail.com','cuong123','d','2','',''),
-('doc3@gmail.com','cuong123','d','3','',''),
-('doc4@gmail.com','cuong123','d','4','',''),
-('doc5@gmail.com','cuong123','d','5','',''),
-('doc6@gmail.com','cuong123','d','6','',''),
-('doc7@gmail.com','cuong123','d','7','',''),
-('doc8@gmail.com','cuong123','d','8','',''),
-('doc9@gmail.com','cuong123','d','9','',''),
-('doc10@gmail.com','cuong123','d','10','',''),
-('doc11@gmail.com','cuong123','d','11','',''),
-('doc12@gmail.com','cuong123','d','12','',''),
-('doc13@gmail.com','cuong123','d','13','',''),
-('doc14@gmail.com','cuong123','d','14','',''),
-('doc15@gmail.com','cuong123','d','15','',''),
-('doc16@gmail.com','cuong123','d','16','',''),
-('doc17@gmail.com','cuong123','d','17','',''),
-('pat1@gmail.com','cuong123','p','','1',''),
-('pat2@gmail.com','cuong123','p','','2',''),
-('pat3@gmail.com','cuong123','p','','3',''),
-('pat4@gmail.com','cuong123','p','','4',''),
-('pat5@gmail.com','cuong123','p','','5',''),
-('pat6@gmail.com','cuong123','p','','6',''),
-('pat7@gmail.com','cuong123','p','','7',''),
-('pat8@gmail.com','cuong123','p','','8',''),
-('pat9@gmail.com','cuong123','p','','9',''),
-('pat10@gmail.com','cuong123','p','','10',''),
-('pat11@gmail.com','cuong123','','','11',''),
-('pat12@gmail.com','cuong123','','','12',''),
-('pat13@gmail.com','cuong123','','','13',''),
-('pat14@gmail.com','cuong123','','','14',''),
-('pat15@gmail.com','cuong123','','','15','')
+('doc1@gmail.com','cuong123','d',1,NULL,NULL),
+('doc2@gmail.com','cuong123','d',2,NULL,NULL),
+('doc3@gmail.com','cuong123','d',3,NULL,NULL),
+('doc4@gmail.com','cuong123','d',4,NULL,NULL),
+('doc5@gmail.com','cuong123','d',5,NULL,NULL),
+('doc6@gmail.com','cuong123','d',6,NULL,NULL),
+('doc7@gmail.com','cuong123','d',7,NULL,NULL),
+('doc8@gmail.com','cuong123','d',8,NULL,NULL),
+('doc9@gmail.com','cuong123','d',9,NULL,NULL),
+('doc1NULL@gmail.com','cuong123','d',10,NULL,NULL),
+('doc11@gmail.com','cuong123','d',11,NULL,NULL),
+('doc12@gmail.com','cuong123','d',12,NULL,NULL),
+('doc13@gmail.com','cuong123','d',13,NULL,NULL),
+('doc14@gmail.com','cuong123','d',14,NULL,NULL),
+('doc15@gmail.com','cuong123','d',15,NULL,NULL),
+('doc16@gmail.com','cuong123','d',16,NULL,NULL),
+('doc17@gmail.com','cuong123','d',17,NULL,NULL),
+('pat1@gmail.com','cuong123','p',NULL,1,NULL),
+('pat2@gmail.com','cuong123','p',NULL,2,NULL),
+('pat3@gmail.com','cuong123','p',NULL,3,NULL),
+('pat4@gmail.com','cuong123','p',NULL,4,NULL),
+('pat5@gmail.com','cuong123','p',NULL,5,NULL),
+('pat6@gmail.com','cuong123','p',NULL,6,NULL),
+('pat7@gmail.com','cuong123','p',NULL,7,NULL),
+('pat8@gmail.com','cuong123','p',NULL,8,NULL),
+('pat9@gmail.com','cuong123','p',NULL,9,NULL),
+('pat1NULL@gmail.com','cuong123','p',NULL,10,NULL),
+('pat11@gmail.com','cuong123','p',NULL,11,NULL),
+('pat12@gmail.com','cuong123','p',NULL,12,NULL),
+('pat13@gmail.com','cuong123','p',NULL,13,NULL),
+('pat14@gmail.com','cuong123','p',NULL,14,NULL),
+('pat15@gmail.com','cuong123','p',NULL,15,NULL)
 
 -- Insert doctor's degree
 INSERT INTO `doctor_degree`(`degree_type`, `degree_name`, `year`, `doc_id`) VALUES 
 ('Bachelor','Bachelor of Medicine','2010-04-09','1'),
-('Bachelor','Bachelor of Surgery','2011-12-28','2'),
-('Bachelor','Bachelor of Dental Surgery','2010-11-24','3'),
+('Bachelor','Bachelor of Surgery','201102-28','2'),
+('Bachelor','Bachelor of Dental Surgery','201001-24','3'),
 ('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','2009-03-04','4'),
 ('Bachelor','Bachelor of Unani Medicine and Surgery','2001-01-05','5'),
-('Bachelor','Bachelor of Homeopathy Medicine and Surgery','2015-04-13','6'),
+('Bachelor','Bachelor of Homeopathy Medicine and Surgery','2015-0403','6'),
 ('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2001-04-09','7'),
 ('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','1999-05-05','8'),
 ('Bachelor','Bachelor of Homeopathy Medicine and Surgery','2001-02-09','9'),
 ('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2008-09-02','10'),
 ('Bachelor','Bachelor of Unani Medicine and Surgery','2008-01-01','11'),
 ('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','2008-06-06','12'),
-('Bachelor','Bachelor of Homeopathy Medicine and Surgery','2008-12-02','13'),
-('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2008-12-04','14'),
-('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','2003-04-12','15'),
-('Bachelor','Bachelor of Unani Medicine and Surgery','2001-10-03','16'),
-('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2009-03-16','17')
+('Bachelor','Bachelor of Homeopathy Medicine and Surgery','200802-02','13'),
+('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','200802-04','14'),
+('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','2003-0402','15'),
+('Bachelor','Bachelor of Unani Medicine and Surgery','200100-03','16'),
+('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2009-0306','17')
 
 -- Insert into specification
 INSERT INTO `specification` (`spec_id`, `spec_name`) VALUES
@@ -167,3 +168,17 @@ INSERT INTO `doctor_specification` (`YOE`, `doc_id`, `spec_id`) VALUES
 (11, 14, 21),
 (10, 16, 16),
 (5, 17, 14);
+
+-- Insert patient2doctor
+INSERT INTO `patient2doctor`(`patient_review`, `doctor_answer`, `date_registered`, `patient_star`, `request_status`, `initial_condition`, `doc_id`, `patient_id`) VALUES 
+('nice','do more exercise','2019-04-09',4,'a','stomachache, headache',1,2),
+('nice','do more exercise','2015-05-05',5,'a','fever, chills',2,5),
+('nice','do more exercise','2017-06-010',3,'a','cough, headache',3,10),
+('nice','do more exercise','201702-01',4,'a','Shortness of breath or difficulty breathing',4,1),
+('nice','do more exercise','202000-03',5,'a','Muscle or body aches',5,3),
+('nice','do more exercise','2022-02-09',3,'a','Sore throat',6,15),
+('nice','do more exercise','2021-09-02',4,'a','Congestion or runny nose',7,12),
+('nice','do more exercise','2022-06-06',5,'a','Diarrhea',8,14),
+('nice','do more exercise','2022-0403',3,'a','stomachache, headache',9,7),
+('nice','do more exercise','2022-0403',3,'a','Congestion or runny nose',10,4),
+('nice','do more exercise','2022-0403',3,'a','Nausea or vomiting',9,13)
