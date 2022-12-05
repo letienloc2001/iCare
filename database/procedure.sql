@@ -61,24 +61,24 @@ create procedure getWaitingAppointments(IN DOCTOR_ID int)
 begin
     select *
     from patient2doctor as p2d, patient as p
-    where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id and p2d.request_status= 'w';
+    where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id and p2d.request_status= 'a';
 end $$
 DELIMITER ;
 
 call getWaitingAppointments(1);
 
--- show all confirmed appointments of a doctor, given patient_id
+-- show all approved appointments of a doctor, given patient_id
 DROP PROCEDURE IF EXISTS getConfirmedAppointments_Patient;
 DELIMITER $$
 create procedure getConfirmedAppointments_Patient(IN PATIENT_ID int)
 begin
-    select *
-    from patient2doctor as p2d, doctor as d
-    where p2d.patient_id = PATIENT_ID and p2d.request_status= 'c';
+    select doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews, meeting_date
+    from doctor as d, patient2doctor as p2d
+    where p2d.patient_id = PATIENT_ID and p2d.request_status= 'a' and p2d.doc_id = d.doc_id;
 end $$
 DELIMITER ;
 
-call getConfirmedAppointments_Patient(1);
+call getConfirmedAppointments_Patient(2);
 
 
 

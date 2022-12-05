@@ -82,22 +82,22 @@ VALUES
 -- Insert doctor's degree
 INSERT INTO `doctor_degree`(`degree_type`, `degree_name`, `year`, `doc_id`) VALUES 
 ('Bachelor','Bachelor of Medicine','2010-04-09','1'),
-('Bachelor','Bachelor of Surgery','201102-28','2'),
-('Bachelor','Bachelor of Dental Surgery','201001-24','3'),
+('Bachelor','Bachelor of Surgery','2011-02-28','2'),
+('Bachelor','Bachelor of Dental Surgery','2010-01-24','3'),
 ('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','2009-03-04','4'),
 ('Bachelor','Bachelor of Unani Medicine and Surgery','2001-01-05','5'),
-('Bachelor','Bachelor of Homeopathy Medicine and Surgery','2015-0403','6'),
+('Bachelor','Bachelor of Homeopathy Medicine and Surgery','2015-04-03','6'),
 ('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2001-04-09','7'),
 ('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','1999-05-05','8'),
 ('Bachelor','Bachelor of Homeopathy Medicine and Surgery','2001-02-09','9'),
 ('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2008-09-02','10'),
 ('Bachelor','Bachelor of Unani Medicine and Surgery','2008-01-01','11'),
 ('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','2008-06-06','12'),
-('Bachelor','Bachelor of Homeopathy Medicine and Surgery','200802-02','13'),
-('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','200802-04','14'),
-('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','2003-0402','15'),
-('Bachelor','Bachelor of Unani Medicine and Surgery','200100-03','16'),
-('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2009-0306','17')
+('Bachelor','Bachelor of Homeopathy Medicine and Surgery','2008-02-02','13'),
+('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2008-02-04','14'),
+('Bachelor','Bachelor of Ayurvedic Medicine and Surgery','2003-04-02','15'),
+('Bachelor','Bachelor of Unani Medicine and Surgery','2001-01-03','16'),
+('Bachelor','Bachelor of Veterinary Sciences and Animal Husbandry','2009-03-06','17')
 
 -- Insert into specification
 INSERT INTO `specification` (`spec_id`, `spec_name`) VALUES
