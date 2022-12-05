@@ -37,10 +37,9 @@ INSERT INTO `patient` (`patient_name`, `patient_id`, `ID`, `age`, `house_number`
 ('Jakeem Butler', 15, '00015', 45, '2501', 'June Apple Dr', '', 'Moneta', 'Georgia(GA)', NULL);
 
 -- Insert admin
-INSERT INTO `user` (`email`, `password`, `user_type`, `doc_id`, `patient_id`, `admin_id`) 
-VALUES 
-('cuong@gmail.com', 'cuong', 'a', NULL, NULL, 1), 
-('loc@gmail.com', 'loc', 'a', NULL, NULL, 2);
+INSERT INTO `admin`(`admin_name`, `admin_id`) VALUES 
+('cuong',1),
+('loc',2);
 
 -- Insert User
 INSERT INTO `user`(`email`, `password`, `user_type`, `doc_id`, `patient_id`, `admin_id`) 
@@ -76,7 +75,9 @@ VALUES
 ('pat12@gmail.com','cuong123','p',NULL,12,NULL),
 ('pat13@gmail.com','cuong123','p',NULL,13,NULL),
 ('pat14@gmail.com','cuong123','p',NULL,14,NULL),
-('pat15@gmail.com','cuong123','p',NULL,15,NULL)
+('pat15@gmail.com','cuong123','p',NULL,15,NULL),
+('cuong@gmail.com', 'cuong', 'a', NULL, NULL, 1), 
+('loc@gmail.com', 'loc', 'a', NULL, NULL, 2);
 
 -- Insert doctor's degree
 INSERT INTO `doctor_degree`(`degree_type`, `degree_name`, `year`, `doc_id`) VALUES 
@@ -170,15 +171,15 @@ INSERT INTO `doctor_specification` (`YOE`, `doc_id`, `spec_id`) VALUES
 (5, 17, 14);
 
 -- Insert patient2doctor
-INSERT INTO `patient2doctor`(`patient_review`, `doctor_answer`, `date_registered`, `patient_star`, `request_status`, `initial_condition`, `doc_id`, `patient_id`) VALUES 
-('nice','do more exercise','2019-04-09',4,'a','stomachache, headache',1,2),
-('nice','do more exercise','2015-05-05',5,'a','fever, chills',2,5),
-('nice','do more exercise','2017-06-010',3,'a','cough, headache',3,10),
-('nice','do more exercise','201702-01',4,'a','Shortness of breath or difficulty breathing',4,1),
-('nice','do more exercise','202000-03',5,'a','Muscle or body aches',5,3),
-('nice','do more exercise','2022-02-09',3,'a','Sore throat',6,15),
-('nice','do more exercise','2021-09-02',4,'a','Congestion or runny nose',7,12),
-('nice','do more exercise','2022-06-06',5,'a','Diarrhea',8,14),
-('nice','do more exercise','2022-0403',3,'a','stomachache, headache',9,7),
-('nice','do more exercise','2022-0403',3,'a','Congestion or runny nose',10,4),
-('nice','do more exercise','2022-0403',3,'a','Nausea or vomiting',9,13)
+INSERT INTO `patient2doctor`(`patient_review`, `doctor_answer`, `date_registered`, `patient_star`, `request_status`, `initial_condition`, `meeting_date`, `meeting_id`,`doc_id`, `patient_id`) VALUES 
+('nice','do more exercise','2019-04-09',4,'a','stomachache, headache', '2019-04-12', 1, 1, 2),
+('nice','do more exercise','2015-05-05',5,'a','fever, chills', '2019-05-10', 2,2,5),
+('nice','do more exercise','2017-06-010',3,'a','cough, headache', '2017-06-12', 3,3,10),
+('nice','do more exercise','2017-02-01',4,'a','Shortness of breath or difficulty breathing', '2017-02-12', 4,4,1),
+('nice','do more exercise','2020-04-03',5,'a','Muscle or body aches', '2020-04-12', 5,5,3),
+('nice','do more exercise','2022-02-09',3,'a','Sore throat', '2022-02-12', 6,6,15),
+('nice','do more exercise','2021-09-02',4,'a','Congestion or runny nose', '2021-09-12', 7,7,12),
+('nice','do more exercise','2022-06-06',5,'a','Diarrhea', '2022-06-12', 8,8,14),
+('nice','do more exercise','2022-04-03',3,'a','stomachache, headache', '2022-04-12', 9,9,7),
+('nice','do more exercise','2022-04-03',3,'a','Congestion or runny nose', '2022-04-12', 10,10,4),
+('nice','do more exercise','2022-04-03',3,'a','Nausea or vomiting', '2022-04-12', 11,9,13);
