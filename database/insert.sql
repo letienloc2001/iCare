@@ -168,7 +168,17 @@ INSERT INTO `doctor_specification` (`YOE`, `doc_id`, `spec_id`) VALUES
 (12, 13, 12),
 (11, 14, 21),
 (10, 16, 16),
-(5, 17, 14);
+(5, 17, 14),
+(6, 17, 18),
+(7, 17, 10),
+(4, 17, 9),
+(3, 17, 5),
+(5, 17, 14),
+(9, 1, 15),
+(10, 1, 8),
+(5, 1, 14),
+(6, 1, 25),
+(6, 1, 22),
 
 -- Insert patient2doctor
 INSERT INTO `patient2doctor`(`patient_review`, `doctor_answer`, `date_registered`, `patient_star`, `request_status`, `initial_condition`, `meeting_date`, `meeting_id`,`doc_id`, `patient_id`) VALUES 
