@@ -1,0 +1,42 @@
+.today-table {
+    width: 100%;
+}
+
+.tody-appointment {
+    margin: 1.5em 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.today-img {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background-color: none;
+    margin-right: 1em;
+}
+
+.today-name {
+    font-size: 14px;
+    margin-top: 0.5em;
+    box-sizing: border-box;
+}
+
+.today-time {
+    font-size: 13px;
+    color:rgba(0, 0, 0, 0.5);
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+@media (max-width: 870px) {
+    .noti-appointment {
+        margin: 1em 8%;
+    }
+}
+
+@media (max-width: 500px) {
+    .noti-appointment {
+        margin: 1em 2px;
+    }
+}
