@@ -9,9 +9,6 @@ begin
 end $$
 DELIMITER ;
 
--- test
-call getDegrees(1);
-
 -- return all specializations of a doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getSpecializations;
 DELIMITER $$
@@ -23,9 +20,6 @@ begin
 end $$
 DELIMITER ;
 
--- test
-call getSpecializations(1);
-
 -- show a doctor's details, given doctor_id
 DROP PROCEDURE IF EXISTS getDoctorDetails;
 DELIMITER $$
@@ -35,9 +29,6 @@ begin
     from doctor where doc_id = DOCTOR_ID;
 end $$
 DELIMITER ;
-
--- test
-call getDoctorDetails(1);
 
 -- return recent reviews of a doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getRecentReviews;
@@ -51,8 +42,6 @@ begin
 end $$
 DELIMITER ;
 
-call getRecentReviews(1);
-
 -- return all appointments of a doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getWaitingAppointments;
 DELIMITER $$
@@ -64,8 +53,6 @@ begin
 end $$
 DELIMITER ;
 
-call getWaitingAppointments(1);
-
 -- return all approved appointments of a patient, given patient_id
 DROP PROCEDURE IF EXISTS getConfirmedAppointments_Patient;
 DELIMITER $$
@@ -76,8 +63,6 @@ begin
     where p2d.patient_id = PATIENT_ID and p2d.request_status= 'a' and p2d.doc_id = d.doc_id;
 end $$
 DELIMITER ;
-
-call getConfirmedAppointments_Patient(2);
 
 
 
