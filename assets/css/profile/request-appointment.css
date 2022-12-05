@@ -1,0 +1,111 @@
+.title-table {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+.profile-table {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-height: 50rem;
+    width: 100%;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+.request-appointment {
+    margin: 1.5em 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+}
+
+.request-img {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background-color: none;
+    margin-right: 1em;
+}
+
+.request-name {
+    font-size: 14px;
+}
+
+.request-time {
+    font-size: 13px;
+    color:rgba(0, 0, 0, 0.5);
+}
+
+.decline-button, .accept-button {
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.accept-button {
+    border: 1px solid #07a01e;
+}
+
+.decline-button {
+    border: 1px solid #FB3737;
+}
+
+.decline-img {
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    margin: 1px;
+}
+
+.accept-img {
+    width: 18px;
+    height: 20px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1150px) {
+    .profile-table {
+        width: 90%;
+    }
+    
+    .decline-button, .accept-button {
+        margin-top: 1em;
+        margin-left: 0.4em;
+    }
+}
+
+@media (max-width: 870px) {
+    .request {
+        margin: 1em 8%;
+    }
+
+   .request-table {
+        width: 100%;
+    }
+
+    .profile-table {
+        margin: 1em 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .request {
+        margin: 1em 2px;
+    }
+
+    .decline-button, .accept-button {
+        margin-top: 1em;
+        margin-left: 2px;
+    }
+
+} 
