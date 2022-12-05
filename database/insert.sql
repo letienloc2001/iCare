@@ -182,4 +182,10 @@ INSERT INTO `patient2doctor`(`patient_review`, `doctor_answer`, `date_registered
 ('nice','do more exercise','2022-06-06',5,'a','Diarrhea', '2022-06-12', 8,8,14),
 ('nice','do more exercise','2022-04-03',3,'a','stomachache, headache', '2022-04-12', 9,9,7),
 ('nice','do more exercise','2022-04-03',3,'a','Congestion or runny nose', '2022-04-12', 10,10,4),
-('nice','do more exercise','2022-04-03',3,'a','Nausea or vomiting', '2022-04-12', 11,9,13);
+('nice','do more exercise','2022-04-03',3,'a','Nausea or vomiting', '2022-04-12', 11,9,13),
+('nice','do more exercise','2019-10-09',4,'a','headache', '2019-10-12', 12, 1, 3),
+('nice','do more exercise','2019-5-09',4,'a','stomachache', '2019-5-12', 13, 1, 4),
+('nice','do more exercise','2022-10-09',4,'a','Diarrhea', '2022-04-12', 14, 1, 5),
+('nice','do more exercise','2022-10-09',4,'a','Sore throat', '2022-10-12', 15, 3, 5),
+('nice','do more exercise','2022-04-09',4,'a','Diarrhea', '2022-04-12', 16, 3, 2),
+('nice','do more exercise','2022-11-09',4,'a','Sore throat', '2022-11-15', 17, 5, 5),
