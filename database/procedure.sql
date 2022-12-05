@@ -1,4 +1,4 @@
--- procedure to return all degrees of an doctor, given doctor_id
+-- return all degrees of an doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getDegrees;
 DELIMITER $$
 create procedure getDegrees(IN DOCTOR_ID int)
@@ -12,7 +12,7 @@ DELIMITER ;
 -- test
 call getDegrees(1);
 
--- procedure to return all specializations of a doctor, given doctor_id
+-- return all specializations of a doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getSpecializations;
 DELIMITER $$
 create procedure getSpecializations(IN DOCTOR_ID int)
@@ -26,7 +26,7 @@ DELIMITER ;
 -- test
 call getSpecializations(1);
 
--- procedure to show doctor's details, given doctor_id
+-- show a doctor's details, given doctor_id
 DROP PROCEDURE IF EXISTS getDoctorDetails;
 DELIMITER $$
 create procedure getDoctorDetails(IN DOCTOR_ID int)
@@ -39,12 +39,12 @@ DELIMITER ;
 -- test
 call getDoctorDetails(1);
 
--- show recent reviews of a doctor, given doctor_id
+-- return recent reviews of a doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getRecentReviews;
 DELIMITER $$
 create procedure getRecentReviews(IN DOCTOR_ID int)
 begin
-    select p.patient_id, patient_name patient_star, patient_review, meeting_date
+    select p.patient_id, patient_name, patient_star, patient_review, meeting_date
     from patient2doctor p2d, patient p
     where doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id
     order by meeting_date desc;
@@ -53,20 +53,20 @@ DELIMITER ;
 
 call getRecentReviews(1);
 
--- show all waiting appointments of a doctor, given doctor_id
+-- return all appointments of a doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getWaitingAppointments;
 DELIMITER $$
 create procedure getWaitingAppointments(IN DOCTOR_ID int)
 begin
     select patient_name,p.patient_id, age, initial_condition, date_registered, meeting_date
     from patient2doctor as p2d, patient as p
-    where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id and p2d.request_status= 'a';
+    where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id;
 end $$
 DELIMITER ;
 
 call getWaitingAppointments(1);
 
--- show all approved appointments of a doctor, given patient_id
+-- return all approved appointments of a patient, given patient_id
 DROP PROCEDURE IF EXISTS getConfirmedAppointments_Patient;
 DELIMITER $$
 create procedure getConfirmedAppointments_Patient(IN PATIENT_ID int)
