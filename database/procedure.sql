@@ -44,11 +44,10 @@ DROP PROCEDURE IF EXISTS getRecentReviews;
 DELIMITER $$
 create procedure getRecentReviews(IN DOCTOR_ID int)
 begin
-    select patient_id, patient_star, patient_review, meeting_date
-    from patient2doctor
-    where doc_id = DOCTOR_ID
-    order by meeting_date desc
-    limit 5;
+    select p.patient_id, patient_name patient_star, patient_review, meeting_date
+    from patient2doctor p2d, patient p
+    where doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id
+    order by meeting_date desc;
 end $$
 DELIMITER ;
 
@@ -59,7 +58,7 @@ DROP PROCEDURE IF EXISTS getWaitingAppointments;
 DELIMITER $$
 create procedure getWaitingAppointments(IN DOCTOR_ID int)
 begin
-    select *
+    select patient_name,p.patient_id, age, initial_condition, date_registered, meeting_date
     from patient2doctor as p2d, patient as p
     where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id and p2d.request_status= 'a';
 end $$

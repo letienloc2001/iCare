@@ -1,0 +1,72 @@
+#section-bar {
+    background-color: none;
+    margin-top: 3em;
+    margin-left: 3em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+div.section a {
+    color: black;
+}
+
+.section {
+    display: inline-block;
+    font-size: 18px;
+    padding: 10px 30px;
+}
+
+.section:nth-of-type(1) {
+    margin-left: 2%;
+}
+
+.active {
+    border-bottom: 4px solid rgba(40, 180, 70, 1);
+}
+
+.today-date-time {
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 45%;
+}
+
+.today-date-time > div {
+    padding-top: 0.2em;
+    display: inline-block;
+}
+
+.date-title {
+    margin: 0;
+}
+
+.today-date {
+    font-size: 16px;
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 700;
+}
+
+.calendar-icon {
+    margin-bottom: 20%;
+    margin-left: 5px;
+}
+
+@media (max-width: 1350px) {
+    .today-date-time {
+        margin-left: 35%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .today-date-time {
+        margin-left: 25%;
+    }
+}
+
+@media (max-width: 500px) {
+    .today-date-time {
+        display: none;
+    }
+
+}
+

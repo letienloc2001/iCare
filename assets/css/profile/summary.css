@@ -1,0 +1,77 @@
+.summary {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 3em;
+}
+
+.total-appointment, .accepted-appointment, .declined-appointment {
+    margin: 2em;
+    font-size: 14px;
+    padding: 1em 2em 1em 2em;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
+.total-detail {
+    display: inline-block;
+}
+
+.total-appointment {
+    background-color: rgb(255, 197, 152);
+}
+
+.accepted-appointment {
+    background-color: aquamarine;
+}
+
+.declined-appointment {
+    background-color: #FF8787;
+}
+
+.total-icon {
+    display: inline-block;
+    opacity: 0.6;
+    margin-right: 0.5em;
+}
+
+.total-icon > svg {
+    width: 25px;
+    height: 25px;
+}
+
+.portion {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media (max-width: 1310px) {
+    .total-appointment, .accepted-appointment, .declined-appointment {
+        padding: 1em 1em 1em 1em;
+    }
+}
+
+@media (max-width: 1260px) {
+    /* .total-appointment, .accepted-appointment, .declined-appointment {
+        padding: 10px 10px 5px 10px;
+        font-size: 10px;
+    } */
+    .portion {
+        font-size: 14px;
+    }
+    .total-icon > svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .summary {
+        display: block;
+    }
+
+    .total-appointment, .accepted-appointment, .declined-appointment {
+        text-align: center;
+        padding: 2px 2px;
+    }
+
+}
