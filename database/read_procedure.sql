@@ -43,11 +43,11 @@ end $$
 DELIMITER ;
 
 -- return all appointments of a doctor, given doctor_id
-DROP PROCEDURE IF EXISTS getWaitingAppointments;
+DROP PROCEDURE IF EXISTS getAllAppointments;
 DELIMITER $$
-create procedure getWaitingAppointments(IN DOCTOR_ID int)
+create procedure getAllAppointments(IN DOCTOR_ID int)
 begin
-    select patient_name,p.patient_id, age, initial_condition, date_registered, meeting_date
+    select meeting_id, patient_name,p.patient_id, age, initial_condition, date_registered, meeting_date
     from patient2doctor as p2d, patient as p
     where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id;
 end $$
@@ -58,7 +58,7 @@ DROP PROCEDURE IF EXISTS getConfirmedAppointments_Patient;
 DELIMITER $$
 create procedure getConfirmedAppointments_Patient(IN PATIENT_ID int)
 begin
-    select doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews, meeting_date
+    select meeting_id, doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews, meeting_date
     from doctor as d, patient2doctor as p2d
     where p2d.patient_id = PATIENT_ID and p2d.request_status= 'a' and p2d.doc_id = d.doc_id;
 end $$
