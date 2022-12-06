@@ -1,3 +1,8 @@
+-- drop schema if exists icare;
+-- create database icare;
+-- use icare;
+-- show tables;
+
 CREATE TABLE doctor
 (
     doc_name VARCHAR(50) NOT NULL,
@@ -9,23 +14,25 @@ CREATE TABLE doctor
     city VARCHAR(50),
     image_url VARCHAR(200),
     description VARCHAR(500),
-    star_reviews INT NOT NULL,
+    star_reviews FLOAT NOT NULL,
+    phone_number VARCHAR(50),
     PRIMARY KEY (doc_id)
 );
 
 CREATE TABLE patient
 (
     patient_name VARCHAR(50) NOT NULL,
-    patient_id INT NOT NULL,
-    ID VARCHAR(20) NOT NULL,
-    age INT NOT NULL,
+    patient_id INT NOT NULL auto_increment,
+    nic_number VARCHAR(20) NOT NULL,
+    age INT,
     house_number VARCHAR(50),
     street VARCHAR(50),
     ward VARCHAR(50),
     district VARCHAR(50),
     city VARCHAR(50),
     image_url VARCHAR(200),
-    PRIMARY KEY (patient_id)
+    PRIMARY KEY (patient_id),
+    UNIQUE (nic_number)
 );
 
 CREATE TABLE patient2doctor
@@ -37,7 +44,7 @@ CREATE TABLE patient2doctor
     request_status CHAR(1) NOT NULL,
     initial_condition VARCHAR(250),
     meeting_date DATE NOT NULL,
-    meeting_id INT NOT NULL,
+    meeting_id INT NOT NULL auto_increment,
     doc_id INT NOT NULL,
     patient_id INT NOT NULL,
     PRIMARY KEY (meeting_id),
@@ -92,3 +99,5 @@ CREATE TABLE user
     FOREIGN KEY (patient_id) REFERENCES patient(patient_id),
     FOREIGN KEY (admin_id) REFERENCES admin(admin_id)
 );
+
+

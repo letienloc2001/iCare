@@ -42,21 +42,21 @@ begin
 end $$
 DELIMITER ;
 
--- return all appointments of a doctor, given doctor_id
-DROP PROCEDURE IF EXISTS getAllAppointments;
+-- return all waiting appointments of a doctor, given doctor_id
+DROP PROCEDURE IF EXISTS getWaitingAppointments;
 DELIMITER $$
-create procedure getAllAppointments(IN DOCTOR_ID int)
+create procedure getWaitingAppointments(IN DOCTOR_ID int)
 begin
     select meeting_id, patient_name,p.patient_id, age, initial_condition, date_registered, meeting_date
     from patient2doctor as p2d, patient as p
-    where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id;
+    where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id and p2d.request_status = 'w';
 end $$
 DELIMITER ;
 
 -- return all approved appointments of a patient, given patient_id
-DROP PROCEDURE IF EXISTS getConfirmedAppointments_Patient;
+DROP PROCEDURE IF EXISTS getApprovedAppointments_Patient;
 DELIMITER $$
-create procedure getConfirmedAppointments_Patient(IN PATIENT_ID int)
+create procedure getApprovedAppointments_Patient(IN PATIENT_ID int)
 begin
     select meeting_id, doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews, meeting_date
     from doctor as d, patient2doctor as p2d
@@ -64,5 +64,25 @@ begin
 end $$
 DELIMITER ;
 
+-- get all waiting appointments of a patient, given patient_id
+DROP PROCEDURE IF EXISTS getWaitingAppointments_Patient;
+DELIMITER $$
+create procedure getWaitingAppointments_Patient(IN PATIENT_ID int)
+begin
+    select meeting_id, doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews, meeting_date
+    from doctor as d, patient2doctor as p2d
+    where p2d.patient_id = PATIENT_ID and p2d.request_status= 'w' and p2d.doc_id = d.doc_id;
+end $$
+DELIMITER ;
 
+-- Return top 3 doctors given star_reviews
+DROP PROCEDURE IF EXISTS getTop3Doctors;
+DELIMITER $$
+create procedure getTop3Doctors()
+begin
+    select doc_id, doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews
+    from doctor
+    order by star_reviews desc
+    limit 3;
+end $$
 
