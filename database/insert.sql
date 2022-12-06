@@ -110,7 +110,7 @@ INSERT INTO `doctor_degree`(`degree_type`, `degree_name`, `year`, `doc_id`) VALU
 ('Master','Master of Veterinary Sciences and Animal Husbandry','2008-02-04',3),
 ('Master','Master of Dental Surgery','2001-01-05',3),
 ('Master','Master of Medicine','2010-04-09',3),
-('Master','Master of Surgery','2011-02-28',3),
+('Master','Master of Surgery','2011-02-28',3);
 
 -- Insert into specification
 INSERT INTO `specification` (`spec_id`, `spec_name`) VALUES
@@ -186,12 +186,11 @@ INSERT INTO `doctor_specification` (`YOE`, `doc_id`, `spec_id`) VALUES
 (7, 17, 10),
 (4, 17, 9),
 (3, 17, 5),
-(5, 17, 14),
 (9, 1, 15),
 (10, 1, 8),
 (5, 1, 14),
 (6, 1, 25),
-(6, 1, 22),
+(6, 1, 22);
 
 -- Insert patient2doctor
 INSERT INTO `patient2doctor`(`patient_review`, `doctor_answer`, `date_registered`, `patient_star`, `request_status`, `initial_condition`, `meeting_date`, `meeting_id`,`doc_id`, `patient_id`) VALUES 
@@ -235,6 +234,6 @@ INSERT INTO `patient2doctor`(`patient_review`, `doctor_answer`, `date_registered
 ('nice','do more exercise','2022-04-03',3,'a','Nausea or vomiting', '2022-04-12', 37,8,2),
 ('very good','do more exercise','2017-06-010',3,'a','cough, headache', '2017-06-12', 38,7,2),
 ('very good','do more exercise','2021-09-02',4,'a','Congestion or runny nose', '2021-09-12', 39,3,2),
-('nice','do more exercise','2017-02-01',4,'a','Shortness of breath or difficulty breathing', '2017-02-12', 40,6,2),
+('nice','do more exercise','2017-02-01',4,'a','Shortness of breath or difficulty breathing', '2017-02-12', 40,6,2);
 
 
