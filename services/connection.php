@@ -3,7 +3,7 @@
 session_start();
 $host = "localhost";
 $user = "root";
-$password = "";
+$password = "root";
 $database = "icare";
 $conn = mysqli_connect($host, $user, $password, $database);
 //if (!$conn) {

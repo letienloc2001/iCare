@@ -43,7 +43,7 @@
                 <?php require_once("./profile-components/request-appointment.php") ?>
                 <?php require_once("./profile-components/today-appointment.php") ?>
             </div>
-            <?php require_once("./profile-components/review.php ") ?>
+            <?php require_once("./profile-components/review.php") ?>
         </div>
 
     </main>
