@@ -1,4 +1,4 @@
-#section-bar {
+.section-bar {
     background-color: none;
     margin-top: 3em;
     margin-left: 3em;
@@ -63,10 +63,20 @@ div.section a {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 640px) {
     .today-date-time {
         display: none;
     }
-
+    
+    #section-bar {
+        margin-top: 3em;
+        margin-left: 1px;
+    }
+    .section {
+        font-size: 14px;
+    }
 }
+
+
+
 

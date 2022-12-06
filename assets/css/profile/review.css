@@ -1,11 +1,59 @@
 .review {
     margin-top: 3em;
+    margin-left: 2em;
     font-size: 14px;
     width: 90%;
-    background-color: antiquewhite;
 }
 
 .review > h4 {
     font-size: 16px;
     margin-left: 1em;
+    display: inline-block;
+}
+
+.review-rating {
+    margin-left: 2px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.review-star {
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.review-part {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    max-height: 50rem;
+}
+
+.reviewer {
+    margin-right: 3em;
+    margin-left: 3em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-top: 10px;
+}
+
+.reviewer > div {
+    display: inline-block;
+}
+
+.checked {
+    color: orange;
+}
+
+.reviewer-img {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background-color: none;
+    margin-right: 1em;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.reviewer-name {
+    display: inline-block;
 }

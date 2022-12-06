@@ -7,9 +7,11 @@
 .total-appointment, .accepted-appointment, .declined-appointment {
     margin: 2em;
     font-size: 14px;
-    padding: 1em 2em 1em 2em;
+    padding: 1em 1em 1em 1em;
     margin-bottom: 1em;
     border-radius: 10px;
+    width: 30%;
+    text-align: center;
 }
 
 .total-detail {
@@ -64,14 +66,40 @@
     }
 }
 
+@media (max-width: 1000px) {
+    .summary {
+        margin-right: 0;
+    }
+}
+
 @media (max-width: 500px) {
     .summary {
-        display: block;
+        text-align: center;
     }
 
     .total-appointment, .accepted-appointment, .declined-appointment {
         text-align: center;
-        padding: 2px 2px;
+        padding: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .summary {
+        margin: 1em 2em;
+    }
+    
+    .total-appointment, .accepted-appointment, .declined-appointment {
+        font-size: 12px;
+
+    }
+
+    .portion {
+        font-size: 14px;
+    }
+
+    .total-icon > svg {
+        width: 13px;
+        height: 13px;
     }
 
 }
