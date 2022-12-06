@@ -37,8 +37,8 @@
     <main>
         <?php require_once("./profile-components/user-info-card.php") ?>
         <div>
-            <?php require_once("./profile-components/section-bar-1.php") ?>
-            <?php require_once("./profile-components/summary.php") ?>
+            <?php require_once("./profile-components/section-bar-doc-1.php") ?>
+            <?php require_once("./profile-components/summary-doc.php") ?>
             <div class="detail">
                 <?php require_once("./profile-components/request-appointment.php") ?>
                 <?php require_once("./profile-components/today-appointment.php") ?>
