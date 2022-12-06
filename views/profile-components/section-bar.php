@@ -1,4 +1,4 @@
-<div id="section-bar">
+<div class="section-bar">
     <div class="active section">
         <a href="#">Overview</a>
     </div>

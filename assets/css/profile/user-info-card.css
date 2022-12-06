@@ -59,7 +59,13 @@ a.edit-profile {
 @media (max-width: 1150px) {
     .user-card {
         margin-left: 0;
-        margin-top: 0;
+        margin-top: 2em;
+    }
+}
+
+@media (max-width: 1000px) {
+    .user-card {
+        margin-top: 2em;
     }
 }
 
@@ -68,11 +74,6 @@ a.edit-profile {
         width: 100px;
         height: 100px;
     }
-
-    .user-card {
-        margin-top: 2em;
-    }
-
     .user-info {
         margin: 1em 5em;
     }

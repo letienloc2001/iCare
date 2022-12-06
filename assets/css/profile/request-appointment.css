@@ -1,3 +1,4 @@
+
 .title-table {
     font-size: 16px;
     font-weight: 600;
@@ -8,7 +9,7 @@
 .profile-table {
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 5px;
     max-height: 50rem;
     width: 100%;
     overflow: scroll;
@@ -84,7 +85,7 @@
     }
 }
 
-@media (max-width: 870px) {
+@media (max-width: 1000px) {
     .request {
         margin: 1em 8%;
     }
