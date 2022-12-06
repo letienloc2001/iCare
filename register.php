@@ -111,36 +111,34 @@
 <!--#######MAIN##########-->
 <div class="main">
     <div class="grid wide-m">
-        <div class="row container-fluid ">
+        <div class="row modal__container">
             <div class="col-sm-12 col-md-12 col-lg-6 login_form ">
                 <div class="container-fluid">
                     <div class="row">
-                        <h2 class="login_form__name">Sign in</h2>
+                        <h2 class="login_form__name">Sign Up</h2>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="row">
-                            <input type="email" name="Email" id="username" class="form__input" placeholder="Email" value="">
-                        </div>
-                        <div class="row">
-                            <input type="password" name="password" id="password" class="form__input" placeholder="Password" value="">
-                        </div>
-                        <div class="row">
-                            <!-- display msg when failed!! -->
+                            <input type="email" name="email" id="email" class="form__input" placeholder="Email" required>
                             <span class="msg"></span>
                         </div>
-                        <div class="row remember-group">
-                            <input type="checkbox" name="remember_me" id="remember_me" class="">
-                            <label for="remember_me">Remember Me</label>
+                        <div class="row">
+                            <input type="tel" name="phone" id="phone" class="form__input" placeholder="Phone number" required>
+                            <span class="msg"></span>
                         </div>
                         <div class="row">
-                            <button class="btn btn-primary login-btn" onclick="checkLogin();">
-                                Sign in
+                            <input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
+                            <span class="msg"></span>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-success login-btn" onclick="checkSignUp();">
+                                Sign Up
                             </button>
                         </div>
-                    </div>
-                    <div class="row">
-                        <p class="query">Don't have an account? <a href="./register.php">Register Here</a></p>
+                        <div class="row">
+                            <p class="query">Already have an account? <a class="col-md-3" href="./login.php">Log in</a></p>
+                        </div>
+
                     </div>
                 </div>
             </div>
