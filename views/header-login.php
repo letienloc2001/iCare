@@ -17,16 +17,16 @@
                             </button>
                             <div class="collapse navbar-collapse row gx-5" id="navbarResponsive">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item col-3">
+                                    <li class="nav-item col-2">
                                         <a class="nav-link" href="./index.php?page=home">Home</a>
                                     </li>
-                                    <li class="nav-item col-3">
+                                    <li class="nav-item col-2">
                                         <a class="nav-link" href="./index.php?page=about">About</a>
                                     </li>
-                                    <li class="nav-item col-3">
+                                    <li class="nav-item col-2">
                                         <a class="nav-link" href="./index.php?page=doctors">Doctors</a>
                                     </li>
-                                    <li class="nav-item col-3">
+                                    <li class="nav-item col-2">
                                         <a class="nav-link" href="./index.php?page=contact">Contacts</a>
                                     </li>
                                 </ul>

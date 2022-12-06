@@ -17,48 +17,51 @@
                             </button>
                             <div class="collapse navbar-collapse row gx-5" id="navbarResponsive">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item col-3">
+                                    <li class="nav-item col-2">
                                         <a class="nav-link" href="./index.php?page=home">Home</a>
                                     </li>
-                                    <li class="nav-item col-3">
+                                    <li class="nav-item col-2">
                                         <a class="nav-link" href="./index.php?page=about">About</a>
                                     </li>
-                                    <li class="nav-item col-3">
+                                    <li class="nav-item col-2">
                                         <a class="nav-link" href="./index.php?page=doctors">Doctors</a>
                                     </li>
-                                    <li class="nav-item col-3">
+                                    <li class="nav-item col-2">
                                         <a class="nav-link" href="./index.php?page=contact">Contacts</a>
                                     </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                    <div class="rightnav">
-                        <?php
-                        require_once("./controllers/profile.php");
-                        $profileController = new ProfileController();
-                        if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
-                            $pic = $profileController->getPictureOneUser($_SESSION['email']);
-                            if ($pic == "") {
-                                echo '<div class="rightnav-cart">
+                                    <li class="nav-item col-4" style="margin:0.5rem;">
+                                        <a href="./index.php?page=login" class="nav-link" style="display:inline;"> Login </a>
+                                        <span style="font-size: 1.7rem"> / </span>
+                                        <a href="./index.php?page=register" class="nav-link" style="display:inline;"> Register </a>
+                                    </li>
+<!--                                    <li class="rightnav nav-item col-1">-->
+<!--                                        -->
+<!--                                    </li>-->
+                                    <?php
+                                    require_once("./controllers/profile.php");
+                                    $profileController = new ProfileController();
+                                    if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
+                                        $pic = $profileController->getPictureOneUser($_SESSION['email']);
+                                        if ($pic == "") {
+                                            echo '<div class="rightnav-cart">
                                             <i class="fas fa-user rightnav-cart__icon"></i>
                                           </div>';
-                            } else {
-                                echo '<div id="rightnav__user" class="rightnav__user">
+                                        } else {
+                                            echo '<div id="rightnav__user" class="rightnav__user">
                                                 <img class="rightnav__user-ava" src="' . $pic . '" alt="">
                                                 <ul id="rightnav__user-menu" class="rightnav__user-menu">
                                                     <li class="rightnav__user-item"><a href="../index.php?page=profile">Profile</a></li>
                                                     <li class="rightnav__user-item rightnav__user-item--separate"><a href="logout.php">Logout</a></li>
                                                 </ul>
                                             </div>';
-                            }
-                        } else {
-                            echo '<div class="rightnav__item-login-logout">
-                                                <a href="./index.php?page=login" class="rightnav-list__link"> Login </a>
-                                     </div> ';
-                        }
-                        ?>
-                    </div>
+                                        };
+                                    }
+                                    ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
