@@ -1,10 +1,10 @@
 <div class="section-bar">
-    <div class="active section">
-        <a href="#">Overview</a>
-    </div>
-    <div class=" section">
-        <a href="#">Appointment</a>
-    </div>
+    <button class="active section">
+        <a href="">Overview</a>
+    </button>
+    <button class="section">
+        <a href="">Appointment</a>
+    </button>
     <div class="today-date-time">
         <div>
             <p class="date-title">Today's Date</p>

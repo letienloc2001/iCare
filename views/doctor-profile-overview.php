@@ -27,18 +27,17 @@
     <link rel="stylesheet" href="../assets/css/profile/review.css">
 
 
-    <script src="section.js"></script>
 </head>
 
 <body>
-    <header>
-        <?php require_once("header.php") ?>
-    </header>
+    <!-- <header>
+        ?php require_once("header.php") ?>
+    </header> -->
 
     <main>
         <?php require_once("./profile-components/user-info-card.php") ?>
         <div>
-            <?php require_once("./profile-components/section-bar.php") ?>
+            <?php require_once("./profile-components/section-bar-1.php") ?>
             <?php require_once("./profile-components/summary.php") ?>
             <div class="detail">
                 <?php require_once("./profile-components/request-appointment.php") ?>

@@ -1,0 +1,33 @@
+.patient-app-table {
+    margin-top: 50px;
+    margin-left: 3em;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 2px 3px;
+}
+
+.cancel-button {
+    background-color: #AED2FC;
+    border: none;
+    border-radius: 7px;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.cancel-link {
+    text-decoration: none;
+    color: black;
+
+}
+
+@media (max-width: 1250px) {
+    .patient-app-table {
+        margin-left: 0;
+    }
+
+}
