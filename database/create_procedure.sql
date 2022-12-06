@@ -40,8 +40,3 @@ begin
     values(given_patient_id, given_doctor_id, now(), 'w', given_date, given_condition);
 end $$
 delimiter ;
-
--- test
-call register_appointment(7, 1, '2020-12-12', 'fever');
-call register_appointment(7, 1, '2020-12-24', 'more fever');
-call register_appointment(8, 1, '2020-12-25', 'even more fever');
