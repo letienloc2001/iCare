@@ -26,7 +26,7 @@
                 </span>
                 50%
             </div>
-            Accepted appointments
+            Doctors
         </div>
     </div>
     <div class="declined-appointment">
@@ -41,7 +41,7 @@
                 </span>
                 50%
             </div>
-            Declined appointments
+            Patients
         </div>
     </div>
 </div>

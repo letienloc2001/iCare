@@ -30,31 +30,42 @@ session_start();
     <?php
     $page = isset($_GET['page']) ? $_GET['page'] : "home";
     switch ($page) {
-        case "home":{
-            include ("home.php");
-            break;
-        }
+        case "home": {
+                include("home.php");
+                break;
+            }
         case "about": {
-            include("about.php");
-            break;
-        }
-        case "doctors":{
-            include('doctors.php');
-            break;
-        }
-        case "contact":{
-            include('contact.php');
-            break;
-        }
-        case "login":{
-            include('login.php');
-            break;
-        }
-        case "register":{
-            include('register.php');
-            break;
-        }
+                include("about.php");
+                break;
+            }
+        case "doctors": {
+                include('doctors.php');
+                break;
+            }
+        case "contact": {
+                include('contact.php');
+                break;
+            }
+        case "login": {
+                include('login.php');
+                break;
+            }
+        case "register": {
+                include('register.php');
+                break;
+            }
+        case "profile": {
+                if ($_SESSION["user_type"] == "d") {
+                    include('view/doctor-profile-overview.php');
+                } else if ($_SESSION["user_type"] == "p") {
+                    include('view/patient-profile.php');
+                } else {
+                    include('view/admin-profile-overview');
+                }
+                break;
+            }
     }
     ?>
 </body>
+
 </html>

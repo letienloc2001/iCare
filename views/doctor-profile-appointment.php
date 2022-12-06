@@ -39,8 +39,8 @@
     <main>
         <?php require_once("./profile-components/user-info-card.php") ?>
         <div>
-            <?php require_once("./profile-components/section-bar-patient.php") ?>
-            <?php require_once("./profile-components/doctor-appointment.php") ?>
+            <?php require_once("./profile-components/section-bar-doc-2.php") ?>
+            <?php require_once("./profile-components/patient-appointment.php") ?>
         </div>
 
     </main>

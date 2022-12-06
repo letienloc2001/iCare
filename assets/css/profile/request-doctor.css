@@ -1,0 +1,31 @@
+.accept-doctor-button, .decline-doctor-button {
+    width: 25px;
+    height: 20px;
+    text-align: center;
+    background-color: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 4px;
+
+}
+
+.accept-doctor-button {
+    border: 1px solid #07a01e;
+}
+
+.decline-doctor-button {
+    border: 1px solid #FB3737;
+}
+
+.decline-doctor-img {
+    width: 12px;
+    height: 12px;
+    margin-bottom: 10px;
+}
+
+.accept-doctor-img {
+    width: 18px;
+    height: 20px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+} 

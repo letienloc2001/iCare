@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/profile/user-info-card.css">
     <link rel="stylesheet" href="../assets/css/profile/section.css">
     <link rel="stylesheet" href="../assets/css/profile/profile-page.css">
@@ -26,7 +25,6 @@
     <link rel="stylesheet" href="../assets/css/profile/today-appointment.css">
     <link rel="stylesheet" href="../assets/css/profile/summary.css">
     <link rel="stylesheet" href="../assets/css/profile/review.css">
-    <link rel="stylesheet" href="../assets/css/profile/patient-appointment.css">
 
 
 </head>
@@ -39,8 +37,13 @@
     <main>
         <?php require_once("./profile-components/user-info-card.php") ?>
         <div>
-            <?php require_once("./profile-components/section-bar-patient.php") ?>
-            <?php require_once("./profile-components/doctor-appointment.php") ?>
+            <?php require_once("./profile-components/section-bar-doc-1.php") ?>
+            <?php require_once("./profile-components/summary-doc.php") ?>
+            <div class="detail">
+                <?php require_once("./profile-components/request-appointment.php") ?>
+                <?php require_once("./profile-components/today-appointment.php") ?>
+            </div>
+            <?php require_once("./profile-components/review.php") ?>
         </div>
 
     </main>
