@@ -531,7 +531,7 @@ a {
 
 .page-title__dir-list {
     list-style: none;
-    padding: 12px 5px !important;
+    padding: 12px 0px !important;
     display: flex;
     align-items: center;
 }
@@ -1368,13 +1368,13 @@ a {
 /*filter sidebar*/
 
 .icare-filter-panel {
-    padding-left: 20px;
+    padding: 0px;
 }
 
 .icare-filter-search {
-    background-color: #f4f4f4;
-    margin-bottom: 70px;
-    padding: 30px 40px 40px 40px;
+    /*background-color: #f4f4f4;*/
+    margin: 0;
+    padding: 0;
 }
 
 .icare-filter-search_heading {
@@ -1394,6 +1394,7 @@ a {
 
 .icare-filter-search_form {
     position: relative;
+    border-radius: 30px;
 }
 
 .icare-filter-search_input {
@@ -1402,7 +1403,7 @@ a {
     background-color: #fff;
     padding-left: 30px;
     height: 60px;
-    border-radius: 2px;
+    border-radius: 30px;
     border: 1px solid #fff;
     color: inherit;
     line-height: normal;
@@ -1421,8 +1422,8 @@ input[type="text"]:focus {
 .icare-filter-search_btn {
     border: none;
     color: white;
-    background-color: linear-gradient(to right, hsl(30, 100%, 50%), #ffb63a, #ff7e00);
-    background-image: linear-gradient(to right, rgb(255, 126, 0), rgb(255, 182, 58), rgb(255, 126, 0));
+    background-color: linear-gradient(to right, hsl(103, 71%, 49%), #58ce29, #26d030);
+    background-image: linear-gradient(to right, hsl(103, 71%, 49%), #58ce29, #26d030);
     background-position-x: left;
     background-position-y: center;
     background-size: 200%;
@@ -1451,6 +1452,7 @@ input[type="text"]:focus {
     align-items: center;
     cursor: pointer;
     font-family: inherit;
+    border-radius: 30px;
 }
 
 .icare-filter-search_btn i {
@@ -1461,8 +1463,8 @@ input[type="text"]:focus {
 
 .icare-filter-group {
     background-color: #f4f4f4;
-    margin-bottom: 70px;
-    padding: 40px 40px 40px 40px;
+    margin-bottom: 0;
+    padding: 0;
 }
 
 .icare-filter-group_heading {
@@ -2231,5 +2233,4 @@ a::after {
 
 .review_img {
     border-radius: 10%;
-
 }

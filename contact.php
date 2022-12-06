@@ -51,7 +51,7 @@
 <!-- #############MAIN######### -->
 <div class="main">
     <!--page-title-->
-    <div class="page-title" style="background-image: url('./assets/img/home/home-background.jpg'); padding: 60px 0;">
+    <div class="page-title" style="background-image: url('./assets/img/home/home-background.jpg'); padding: 30px 0;">
         <div class="grid wide-m">
             <div class="container-fluid">
                 <div class="page-title-inner">

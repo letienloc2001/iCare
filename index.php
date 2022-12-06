@@ -40,6 +40,8 @@ session_start();
             }
         case "doctors": {
                 include('doctors.php');
+//                $search = isset($_GET['search']) ? $_GET['search'] : "doctors";
+
                 break;
             }
         case "contact": {

@@ -1,42 +1,41 @@
 <?php
-//session_start();
-//if (!isset($_SESSION['current_page_shop']))
-//    $_SESSION['current_page_shop'] = 1;
-//require_once('controllers/doctors.php');
-//$productController = new ProductController(); // Nếu không thì hiển thị toàn bộ danh sách
-//$maxPageNumber = $productController->countProductNumber() / 9 + 1;
-//
-//function generatePageNumber()
-//{
-//    echo '<li><a class="current" href="shop.php?page='. $_SESSION['current_page_shop'] .'">'. $_SESSION['current_page_shop'] .'</a></li>';
-//}
-//
-//function decreasePageNumber()
-//{
-//    if ($_SESSION['current_page_shop'] > 1)
-//        $_SESSION['current_page_shop']--;
-//}
-//
-//function increasePageNumber()
-//{
-//    if ($_SESSION['current_page_shop'] < $GLOBALS['maxPageNumber'] - 1)
-//        $_SESSION['current_page_shop']++;
-//}
-//
-//if (isset($_GET['act']))
-//{
-//    if ($_GET['act'] == 'left')
-//    {
-//        decreasePageNumber();
-//        header("Location: shop.php?page=". $_SESSION['current_page_shop']);
-//    }
-//    else if ($_GET['act'] == 'right')
-//    {
-//        increasePageNumber();
-//        header("Location: shop.php?page=". $_SESSION['current_page_shop']);
-//    }
-//}
-//?>
+if (!isset($_SESSION['current_page_shop']))
+    $_SESSION['current_page_shop'] = 1;
+require_once('controllers/doctors.php');
+$doctorController = new DoctorController();
+$maxPageNumber = $doctorController->countDoctorNumber() / 12 + 1;
+
+function generatePageNumber()
+{
+    echo '<li><a class="current" href="doctors.php?page='. $_SESSION['current_page_shop'] .'">'. $_SESSION['current_page_shop'] .'</a></li>';
+}
+
+function decreasePageNumber()
+{
+    if ($_SESSION['current_page_shop'] > 1)
+        $_SESSION['current_page_shop']--;
+}
+
+function increasePageNumber()
+{
+    if ($_SESSION['current_page_shop'] < $GLOBALS['maxPageNumber'] - 1)
+        $_SESSION['current_page_shop']++;
+}
+
+if (isset($_GET['act']))
+{
+    if ($_GET['act'] == 'left')
+    {
+        decreasePageNumber();
+        header("Location: doctors.php?page=". $_SESSION['current_page_shop']);
+    }
+    else if ($_GET['act'] == 'right')
+    {
+        increasePageNumber();
+        header("Location: doctors.php?page=". $_SESSION['current_page_shop']);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,22 +64,44 @@
 <body>
 <?php require_once("./views/header.php") ?>
 <div class="main">
-    <div class="page-title" style="background-image: url('./assets/img/home/home-background.jpg'); padding: 60px 0;">
+    <div class="page-title" style="background-image: url('./assets/img/home/home-background.jpg'); padding: 30px 0;">
         <div class="grid wide-m">
             <div class="container-fluid">
-                <div class="page-title-inner">
-                    <h1 class="page-title__name">Doctors</h1>
-                    <div class="page-title__dir">
-                        <ul class="page-title__dir-list">
-                            <li class="page-title__dir-item">
-                                <a href="./index.php?page=home" class="page-title__dir-link">Home</a>
-                            </li>
-                            <span> > </span>
-                            <li class="page-title__dir-item">
-                                <a href="./index.php?page=doctors" class="page-title__dir-link">Doctors</a>
-                            </li>
-                        </ul>
+                <div class="row content-row icare">
+                    <div class="page-title-inner col-xl-8 col-lg-8 col-sm-12 col-12">
+                        <h1 class="page-title__name">Doctors</h1>
+                        <div class="page-title__dir">
+                            <ul class="page-title__dir-list">
+                                <li class="page-title__dir-item">
+                                    <a href="./index.php?page=home" class="page-title__dir-link">Home</a>
+                                </li>
+                                <span> > </span>
+                                <li class="page-title__dir-item">
+                                    <a href="./index.php?page=doctors" class="page-title__dir-link">Doctors</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    <div class="icare-filter-search col-xl-4 col-lg-4 col-sm-12 col-12">
+                        <form class="icare-filter-search_form d-flex" method="get">
+                            <input class="icare-filter-search_input" type="text" placeholder="Search Here" name="search"/>
+                            <button class="icare-filter-search_btn" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row content-row icare">
+                    <div class="icare-filter-panel col-xl-8 col-lg-8 col-sm-12 col-12">
+
+                    </div>
+                    <div class="icare-filter-panel col-xl-4 col-lg-4 col-sm-12 col-12">
+                        <div class="icare-filter-group">
+                            <div class="icare-filter-group_wrapper">
+                                todo: field-group selection button
+                            </div>
+                        </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -88,41 +109,57 @@
 
     <div class="container content-container">
         <div class="row content-row icare">
-            <div class="icare-primary col-xl-8 col-lg-8 col-sm-12 col-12">
+            <div class="icare-primary col-xl-12 col-lg-12 col-sm-12 col-12">
                 <div class="icare-sort-bar d-flex">
                     <div class="icare-sort-bar_note">
                         <p class="icare-sort-bar_note">
-<!--                            todo: connect to db and show the number of searched items-->
-                            Showing the number of searched items
+<!--                            --><?php
+//                            echo "Showing ";
+//                            if (!isset($_GET['search']) && !isset($_GET['tag'])){
+//                                echo 9*$_SESSION['current_page_shop']-8;
+//                                echo " - ";
+//                                if ($_SESSION['current_page_shop']*9 <= $productController->countProductNumber())
+//                                    echo 9*$_SESSION['current_page_shop'];
+//                                else echo $productController->countProductNumber();
+//                                echo " of ";
+//                            }
+//                            ?>
+<!--                            --><?php
+//                            if (!isset($_GET['search']) && !isset($_GET['tag'])){
+//                                echo $productController->countProductNumber();
+//                            }
+//                            else echo $productController->getAllProduct_userpage($_SESSION['current_page_shop'], 0);
+//                            ?>
+<!--                            results</p>-->
                         </p>
                     </div>
 
                 </div>
                 <div class="icare-items row">
-<!--                    todo: showing doctors in db-->
+                    <?php
+                    $doctorController->getAllDoctor_pagination($_SESSION['current_page_shop'], 1);
+                    ?>
                 </div>
                 <nav class="icare-pagination">
                     <ul class="icare-page-numbers justify-content-center">
-<!--                            todo: -->
+                        <li>
+                            <?php
+                            if (!isset($_GET['search']) && !isset($_GET['tag']))
+                                echo '<a href="doctors.php?act=left"><i class="fas fa-angle-double-left"></i></a>';
+                            ?>
+                        </li>
+                        <?php
+                        if (!isset($_GET['search']) && !isset($_GET['tag']))
+                            generatePageNumber();
+                        ?>
+                        <li>
+                            <?php
+                            if (!isset($_GET['search']) && !isset($_GET['tag']))
+                                echo '<a href="doctors.php?act=right"><i class="fas fa-angle-double-right"></i></a>';
+                            ?>
+                        </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="icare-filter-panel col-xl-4 col-lg-4 col-sm-12 col-12">
-                <div class="icare-filter-search">
-                    <h2 class="icare-filter-search_heading text-left">Search Here</h2>
-                    <form class="icare-filter-search_form d-flex" method="get">
-                        <input class="icare-filter-search_input" type="text" placeholder="Search Here" name="search"/>
-                        <button class="icare-filter-search_btn" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-                <div class="icare-filter-group">
-                    <h2 class="icare-filter-group_heading text-left">Tags</h2>
-                    <div class="icare-filter-group_wrapper">
-<!--                        todo: field-group selection button-->
-                    </div>
-                </div>
             </div>
         </div>
     </div>

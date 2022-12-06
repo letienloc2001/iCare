@@ -17,7 +17,6 @@ footer li {
 .icare-sort-bar {
     display: flex;
     background-color: #f4f4f4;
-    margin-bottom: 60px;
     position: relative;
     border-radius: 2px;
     text-align: center;
@@ -26,7 +25,7 @@ footer li {
 }
 
 div.icare-sort-bar_note {
-    margin: 30px auto;
+    margin: 0;
     flex-grow: 1;
     color: #7a7a7a;
     font-size: 25px !important;
@@ -333,3 +332,5 @@ p.icare-sort-bar_note {
 
 /*filter in base.css*/
 /*pagination in base.css*/
+
+
