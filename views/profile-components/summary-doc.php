@@ -41,7 +41,7 @@
                 </span>
                 50%
             </div>
-            Declined appointments
+            Waiting appointments
         </div>
     </div>
 </div>
