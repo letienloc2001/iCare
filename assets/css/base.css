@@ -343,7 +343,7 @@ a {
 
 .icare-footer-content {
     background-image: url("../img/bgr-client-h1.jpg");
-    padding: 5rem 4rem 1rem 4rem;
+    padding: 5rem 4rem 2rem 4rem;
     background-size: cover;
 }
 
@@ -366,7 +366,7 @@ a {
 
 .icare-footer-heading_text {
     padding-top: 5px;
-    font-size: 35px;
+    font-size: 2rem;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
     color: #fff;
@@ -542,7 +542,7 @@ a {
     font-weight: 500 !important;
 }
 
-.page-title__dir-item:first-child .page-title__dir-link {
+.page-title__dir-item .page-title__dir-link {
     color: var(--black-text-color) !important;
     text-decoration: none;
     font-weight: 500 !important;
@@ -550,7 +550,7 @@ a {
 
 }
 
-.page-title__dir-item:first-child .page-title__dir-link:hover {
+.page-title__dir-item .page-title__dir-link:hover {
     color: var(--primary-text-color) !important;
     text-decoration: none;
     font-weight: 500 !important;
@@ -704,11 +704,11 @@ a {
 
 .p-cpn-item-1st {
     position: relative;
-    height: 40rem;
+    height: 29.5rem;
     width: 38rem;
-    padding: 45px 40px 55px 40px;
+    padding: 2rem;
     background-color: var(--white-color);
-    border-radius: 15px;
+    border-radius: 10%;
     z-index: 2;
 }
 
@@ -737,13 +737,13 @@ a {
 }
 
 .p-cpn-item-1st__icon {
-    width: 125px;
-    height: 125px;
+    width: 100%;
+    /*height: 125px;*/
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--background-color);
-    border-radius: 50%;
+    border-radius: 10%;
     z-index: 2;
 }
 
@@ -1010,7 +1010,8 @@ a {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    background-color: rgba(255, 126, 0, 0.8);
+    /*background-color: rgb(50, 239, 6);*/
+    background: linear-gradient(to right, #9bdbf4 0%, #a0dbfb 100%);
     border-radius: inherit;
     position: absolute;
     top: 0;
@@ -1205,7 +1206,7 @@ a {
 /*----------Page break----------*/
 .page-break {
     background-color: var(--background-color);
-    padding: 100px 0px;
+    padding: 100px 30px;
 }
 
 .page-break-list {
@@ -2217,4 +2218,18 @@ a::after {
 
 .-toast.fail {
     background-color: #d0361a;
+}
+
+.social-icon {
+    margin: 0 5px;
+}
+
+.contact_info {
+    display: inline-block;
+    padding-left: 1rem;
+}
+
+.review_img {
+    border-radius: 10%;
+
 }

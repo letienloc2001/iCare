@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <p class="query">Don't have an account? <a href='./index.php?page=register'>Register Here</a></p>
+                        <p class="query">Don't have an account? <span id='register-btn'>Register Here</span></p>
                     </div>
                 </div>
             </div>
@@ -171,11 +171,6 @@
                                 <h2 class="login_form__name">Sign Up</h2>
                             </div>
                             <div class="row">
-
-                                <div class="row">
-                                    <input type="text" name="username" id="username" class="form__input" placeholder="Username" required>
-                                    <span class="msg"></span>
-                                </div>
                                 <div class="row">
                                     <input type="email" name="email" id="email" class="form__input" placeholder="Email" required>
                                     <span class="msg"></span>
@@ -204,7 +199,7 @@
             </div>
         </div>
     </div>
-</div>\
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
 <script>

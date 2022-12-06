@@ -2,7 +2,7 @@
 //session_start();
 //if (!isset($_SESSION['current_page_shop']))
 //    $_SESSION['current_page_shop'] = 1;
-//require_once('controllers/product-controller.php');
+//require_once('controllers/doctors.php');
 //$productController = new ProductController(); // Nếu không thì hiển thị toàn bộ danh sách
 //$maxPageNumber = $productController->countProductNumber() / 9 + 1;
 //
@@ -73,11 +73,11 @@
                     <div class="page-title__dir">
                         <ul class="page-title__dir-list">
                             <li class="page-title__dir-item">
-                                <a href="./" class="page-title__dir-link">Home</a>
+                                <a href="./index.php?page=home" class="page-title__dir-link">Home</a>
                             </li>
                             <span> > </span>
                             <li class="page-title__dir-item">
-                                <a href="./doctors.php" class="page-title__dir-link">Doctors</a>
+                                <a href="./index.php?page=doctors" class="page-title__dir-link">Doctors</a>
                             </li>
                         </ul>
                     </div>

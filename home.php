@@ -172,21 +172,11 @@
             </div>
         </div>
     </div>
-    <!--
-WHAT WE DO
--->
 
-    <!--BREAK-->
-
-
-    <!-- Expert Doctors-->
     <div id="5" class="container-fluid p-cpn" style="background-color: var(--background-color); padding: 10rem 0;">
         <div class="grid wide-m row gx-5 ">
             <div class="col ">
                 <div class="p-cpn-subheading ">
-<!--                    <div class="p-cpn-subheading__icon ">-->
-<!--                        <img src="./assets/img/wheat.png " alt=" ">-->
-<!--                    </div>-->
                     <div class="p-cpn-heading">
                         <h1 style="text-align: center; margin: 1rem 3rem">
                             Top Doctors
@@ -196,7 +186,7 @@ WHAT WE DO
             </div>
         </div>
 
-        <div class="container-fluid row gx-5 ">
+        <div class="container-fluid row gx-5 " style="padding: 0; margin: 0;">
             <div class="col">
                 <div class="p-cpn-image ">
                     <img src="./assets/img/img-ud-hd.png" alt=" ">
@@ -206,8 +196,11 @@ WHAT WE DO
         <!--Carousel ITEM-->
         <div id="carousel-p-cpn-3rd ">
             <div class="grid wide-m row carousel owl-carousel ">
-                <!--                        todo: connect to db and retrieve data of 5-star rated doctors for recommendation-->
-                <h1> doctor card, connect to DB in order to display 5-star rated doctors</h1>
+                <?php
+                require_once('./controllers/doctors.php');
+                $DoctorController = new DoctorController();
+                $DoctorController->getTop3Doctors();
+                ?>
             </div>
         </div>
     </div>
@@ -215,9 +208,6 @@ WHAT WE DO
         <div class="grid wide-m row gx-5">
             <div class="col">
                 <div class="p-cpn-subheading">
-<!--                    <div class="p-cpn-subheading__icon">-->
-<!--                        <img src="./assets/img/wheat.png" alt="">-->
-<!--                    </div>-->
                     <div class="p-cpn-heading">
                         <h1 style="text-align: center; margin: 1rem 3rem">
                             Reviews
@@ -227,78 +217,26 @@ WHAT WE DO
             </div>
         </div>
 
-        <!--        <div class="contair-->
         <div class="grid wide-m row carousel owl-carousel">
             <div class="col">
                 <div class="p-cpn-item-1st">
-                    <div class="p-cpn-item-1st__icon">
-                        <img src="./assets/img/wwd-1.png" alt="" />
-                    </div>
-                    <div class="p-cpn-item-1st__content">
-                        <h5 class="p-cpn-item-1st__title">
-                            <a href="#"> Service 1</a>
-                        </h5>
-                        <span class="p-cpn-item__break">
-                                <span></span>
-                            </span>
-                        <p class="p-cpn-item-1st__paragraph">
-                            some text some text some text some text some text some text
-                        </p>
-                    </div>
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
                 </div>
             </div>
             <div class="col">
                 <div class="p-cpn-item-1st">
-                    <div class="p-cpn-item-1st__icon">
-                        <img src="./assets/img/wwd-2.png" alt="" />
-                    </div>
-                    <div class="p-cpn-item-1st__content">
-                        <h5 class="p-cpn-item-1st__title">
-                            <a href="#"> Service 2</a>
-                        </h5>
-                        <span class="p-cpn-item__break">
-                                <span></span>
-                            </span>
-                        <p class="p-cpn-item-1st__paragraph">
-                            some text some text some text some text some text some text
-                        </p>
-                    </div>
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
                 </div>
             </div>
             <div class="col">
                 <div class="p-cpn-item-1st">
-                    <div class="p-cpn-item-1st__icon">
-                        <img src="./assets/img/wwd-3.png" alt="" />
-                    </div>
-                    <div class="p-cpn-item-1st__content">
-                        <h5 class="p-cpn-item-1st__title">
-                            <a href="#">Service 3</a>
-                        </h5>
-                        <span class="p-cpn-item__break">
-                                <span></span>
-                            </span>
-                        <p class="p-cpn-item-1st__paragraph">
-                            some text some text some text some text some text some text
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="p-cpn-item-1st">
-                    <div class="p-cpn-item-1st__icon">
-                        <img src="./assets/img/wwd-4.png" alt="" />
-                    </div>
-                    <div class="p-cpn-item-1st__content">
-                        <h5 class="p-cpn-item-1st__title">
-                            <a href="#">Service 4</a>
-                        </h5>
-                        <span class="p-cpn-item__break">
-                                <span></span>
-                            </span>
-                        <p class="p-cpn-item-1st__paragraph">
-                            some text some text some text some text some text some text
-                        </p>
-                    </div>
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
                 </div>
             </div>
         </div>

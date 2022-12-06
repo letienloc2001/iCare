@@ -318,7 +318,7 @@ WHAT WE DO
             <div class="grid wide-m row carousel owl-carousel ">
                 <h1> doctor card, connect to DB in order to display 5-star rated doctors</h1>
                 <!--                        --><?php
-                //                        require_once('controllers/product-controller.php');
+                //                        require_once('controllers/doctors.php');
                 //                        $productController = new ProductController();
                 //                        $productController->getAllProduct_homepage();
                 //                        ?>

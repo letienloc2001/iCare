@@ -56,8 +56,6 @@
                             else {
                                 echo '<div class="rightnav__item-login-logout">
                                                 <a href="./index.php?page=login" class="rightnav-list__link"> Login </a>
-                                                <a style="margin: 0 5px">/</a>
-                                                <a href="./index.php?page=register" class="rightnav-list__link"> Register </a>
                                      </div> ';
                             }
                         ?>
