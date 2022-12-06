@@ -42,13 +42,6 @@
                         <a href="">Doctor registration</a>
                     </li>
                 </ul>
-<!--                <ul class="icare-footer-list_product">-->
-<!--<!--                    -->--><?php
-//                    require_once("controllers/product-controller.php");
-//                    $productController = new ProductController;
-//                    $productController->showTagFooter();
-//                    ?>
-<!--                </ul>-->
             </div>
         </div>
         <div class="col-xl-2 col-md-6 col-12">
@@ -60,11 +53,6 @@
                         </span>
                 </div>
                 <ul class="icare-footer-list_contact">
-<!--                    --><?php
-//                    require_once("controllers/contact-controller.php");
-//                    $contactController = new ContactController;
-//                    $contactController->showTopContact_footer();
-//                    ?>
                     <li>
                         <p class="contact_info">Website:</p>
                         <a target="blank" href="http://www.icare.com/">www.icare.com</a>
@@ -82,15 +70,15 @@
     <div class="icare-footer-further row">
         <div class="col-xl-6 col-md-6 col-12">
             <div class="icare-footer-col_bottom">
-                <p>
+                <p style="padding: 0.5rem 1rem"">
                     <span>iCare</span> - Copyright 2021.
                 </p>
             </div>
         </div>
         <div class="col-xl-6 col-md-6 col-12">
             <div class="icare-footer-col_bottom">
-                <ul>
-                    <li>
+                <ul style="padding: 0.5rem 1rem"">
+                    <li style="padding:0">
                         <a href="#">Terms & Conditions</a>
                     </li>
                     <li>

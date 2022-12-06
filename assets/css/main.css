@@ -1,6 +1,7 @@
 .page-slogan {
     background-repeat: no-repeat;
-    background-size: 150%; /*todo: responsive*/
+    /*todo: responsive*/
+    background-size: 150%;
     z-index: -999;
     padding-top: 150px;
     padding-bottom: 150px;

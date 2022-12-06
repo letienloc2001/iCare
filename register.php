@@ -24,11 +24,11 @@
 <body>
 <script>
     function checkLogin(){
-        let un = document.getElementsByClassName("form__input")[0].value;
-        let pass = document.getElementsByClassName("form__input")[1].value;
+        var un = document.getElementsByClassName("form__input")[0].value;
+        var pass = document.getElementsByClassName("form__input")[1].value;
         $.ajax({
             type: "POST",
-            url: "services/login.php",
+            url: "services/login-service.php",
             data: {
                 act: "login",
                 username: un,
@@ -110,48 +110,6 @@
 <?php require_once("./views/header-login.php") ?>
 <!--#######MAIN##########-->
 <div class="main">
-    <div class="grid wide-m">
-        <div class="row container-fluid ">
-            <div class="col-md-0 col-lg-4 company__info">
-                <div class="company__logo"
-                     style="background-image:url('./assets/img/logo/iCare-logo-navbar.png');
-                            padding-bottom: 15px;">
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 login_form ">
-                <div class="container-fluid">
-                    <div class="row">
-                        <h2 class="login_form__name">Sign in</h2>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="row">
-                            <input type="email" name="Email" id="username" class="form__input" placeholder="Email" value="">
-                        </div>
-                        <div class="row">
-                            <input type="password" name="password" id="password" class="form__input" placeholder="Password" value="">
-                        </div>
-                        <div class="row">
-                            <!-- display msg when failed!! -->
-                            <span class="msg"></span>
-                        </div>
-                        <div class="row remember-group">
-                            <input type="checkbox" name="remember_me" id="remember_me" class="">
-                            <label for="remember_me">Remember Me</label>
-                        </div>
-                        <div class="row">
-                            <button class="btn btn-primary login-btn" onclick="checkLogin();">
-                                Sign in
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="query">Don't have an account? <a href='./index.php?page=register'>Register Here</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Sign up modal-->
     <div id="modal">
         <div class="modal__overlay"></div>
@@ -204,7 +162,7 @@
             </div>
         </div>
     </div>
-</div>\
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
 <script>
