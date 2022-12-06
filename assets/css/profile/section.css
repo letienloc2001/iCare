@@ -1,11 +1,11 @@
-#section-bar {
+.section-bar {
     background-color: none;
     margin-top: 3em;
     margin-left: 3em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-div.section a {
+button.section a {
     color: black;
 }
 
@@ -15,12 +15,21 @@ div.section a {
     padding: 10px 30px;
 }
 
-.section:nth-of-type(1) {
-    margin-left: 2%;
-}
 
 .active {
-    border-bottom: 4px solid rgba(40, 180, 70, 1);
+    border-bottom: 4px solid rgba(40, 180, 70, 1) !important;
+}
+
+button.section {
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.section:nth-of-type(1) {
+    margin-left: 2%;
 }
 
 .today-date-time {
@@ -63,10 +72,20 @@ div.section a {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 640px) {
     .today-date-time {
         display: none;
     }
-
+    
+    #section-bar {
+        margin-top: 3em;
+        margin-left: 1px;
+    }
+    .section {
+        font-size: 14px;
+    }
 }
+
+
+
 

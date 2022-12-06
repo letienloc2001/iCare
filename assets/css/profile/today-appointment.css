@@ -1,3 +1,4 @@
+
 .today-table {
     width: 100%;
 }
@@ -29,7 +30,7 @@
     text-align: center;
 }
 
-@media (max-width: 870px) {
+@media (max-width: 1000px) {
     .noti-appointment {
         margin: 1em 8%;
     }

@@ -35,29 +35,28 @@
                     </nav>
                     <div class="rightnav">
                         <?php
-                            require_once("./controllers/profile.php");
-                            $profileController = new ProfileController();
-                            if (isset($_SESSION['email']) && !empty($_SESSION['email'])){
-                                $pic = $profileController->getPictureOneUser($_SESSION['email']);
-                                if ($pic == "") {
-                                    echo '<div class="rightnav-cart">
+                        require_once("./controllers/profile.php");
+                        $profileController = new ProfileController();
+                        if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
+                            $pic = $profileController->getPictureOneUser($_SESSION['email']);
+                            if ($pic == "") {
+                                echo '<div class="rightnav-cart">
                                             <i class="fas fa-user rightnav-cart__icon"></i>
                                           </div>';
-                                } else {
-                                    echo '<div id="rightnav__user" class="rightnav__user">
+                            } else {
+                                echo '<div id="rightnav__user" class="rightnav__user">
                                                 <img class="rightnav__user-ava" src="' . $pic . '" alt="">
                                                 <ul id="rightnav__user-menu" class="rightnav__user-menu">
-                                                    <li class="rightnav__user-item"><a href="profile.php">Profile</a></li>
+                                                    <li class="rightnav__user-item"><a href="../index.php?page=profile">Profile</a></li>
                                                     <li class="rightnav__user-item rightnav__user-item--separate"><a href="logout.php">Logout</a></li>
                                                 </ul>
                                             </div>';
-                                }
                             }
-                            else {
-                                echo '<div class="rightnav__item-login-logout">
+                        } else {
+                            echo '<div class="rightnav__item-login-logout">
                                                 <a href="./index.php?page=login" class="rightnav-list__link"> Login </a>
                                      </div> ';
-                            }
+                        }
                         ?>
                     </div>
                 </div>
