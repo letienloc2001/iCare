@@ -22,3 +22,6 @@ call register_appointment(16, 5, '2020-12-24', 'more fever');
 call register_appointment(16, 8, '2020-12-25', 'even more fever');
 
 call getWaitingAppointments_Patient(16);
+call getApprovedAppointments_Patient(16);
+call getLoginInfo('cuong@gmail.com', 'cuong');
+call getLoginInfo('cuong654@gmail.com', 'cuong');

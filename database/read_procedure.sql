@@ -85,4 +85,30 @@ begin
     order by star_reviews desc
     limit 3;
 end $$
+DELIMITER ;
 
+-- check if email exist in db
+DROP PROCEDURE IF EXISTS checkEmailExists;
+DELIMITER $$
+create procedure checkEmailExists(IN GIVEN_EMAIL varchar(50))
+begin
+    select *
+    from user
+    where email = GIVEN_EMAIL;
+end $$
+DELIMITER ;
+
+-- After using this, check usertype and then use the corresponding ID to select into correspoint table
+-- EG: usertype = 'd' -> Use doc_id to select into doctor table. This happens in PHP
+DROP PROCEDURE IF EXISTS getLoginInfo;
+DELIMITER $$
+create procedure getLoginInfo(
+    IN GIVEN_EMAIL varchar(50),
+    IN GIVEN_PASSWORD varchar(50)
+)
+begin
+    select email, user_type, doc_id, patient_id, admin_id
+    from user
+    where email = GIVEN_EMAIL and password = GIVEN_PASSWORD;
+end $$
+DELIMITER ;
