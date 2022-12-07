@@ -61,7 +61,7 @@ if (isset($_SESSION['email']) && !empty($_SESSION['email'])){
                         <h2 class="login_form__name">Sign in</h2>
                     </div>
                     <br>
-                        <form  method="post">
+                        <form action="./index.php?page=home" method="post">
                             <div class="row">
                                 <label for="email"></label><input type="email" name="email" id="email" class="form__input" placeholder="Email" value="">
                             </div>

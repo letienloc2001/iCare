@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 $page = $_GET['page'] ?? "home";
 switch ($page) {
     case "home": {
@@ -22,6 +22,10 @@ switch ($page) {
             include('login.php');
             break;
         }
+    case "logout": {
+        include('logout.php');
+        break;
+    }
     case "register": {
             include('register.php');
             break;

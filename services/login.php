@@ -12,7 +12,4 @@ if ($_POST['act'] == "login") {
     $res = $loginController->checkSignUp($_POST['email'], $_POST['password'], $_POST['phone']);
     echo $res;
 }
-//else if ($_POST['act'] == "forget") {
-//    echo $loginController->checkForget($_POST['username']);
-//}
 ?>

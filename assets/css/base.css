@@ -216,6 +216,7 @@ a {
     border: 1px solid var(--primary-text-color);
 }
 
+
 .rightnav__user-name {
     font-size: 1.4rem;
     font-weight: 400;
@@ -2243,4 +2244,20 @@ a.tag-cloud {
 a.tag-cloud:hover {
     border-radius: 10px;
     margin: 5px;
+}
+
+span.name-user-header {
+    color: var(--black-text-color) !important;
+    font-size: 1.7rem;
+    text-align: center;
+    font-weight: 500;
+    transition: all linear 0.1s;
+    display: inline;
+    margin: 2rem 2rem 0 2rem;
+    align-content: center;
+    padding-top: 5px;
+}
+
+#rightnav__user:hover .rightnav__user-menu {
+    display: block;
 }

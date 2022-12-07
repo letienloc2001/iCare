@@ -28,11 +28,28 @@ class UserModel {
     public function getOneUser($email){
         $con = $this->InitConnect();
 
-        $res = $con->query("SELECT * FROM user_table WHERE Email='$email'");
+        $res = $con->query("SELECT * FROM user WHERE Email='".$email."'");
         $user = mysqli_fetch_assoc($res);
 
         $con->close();
         return $user;
+    }
+
+    public function getOneUserName($id){
+        $con = $this->InitConnect();
+        if ($_SESSION['user_type'] == 'a') {
+            $res = $con->query("SELECT admin_name FROM admin WHERE admin_id=".$id);
+            return $res->fetch_assoc()['admin_name'];
+        }
+        else if ($_SESSION['user_type'] == 'p') {
+            $res = $con->query("SELECT patient_name FROM patient WHERE patient_id=".$id);
+            return $res->fetch_assoc()['patient_name'];
+        }
+        else {
+            $res = $con->query("SELECT doc_name FROM doctor WHERE doc_id=".$id);
+            return $res->fetch_assoc()['doc_name'];
+
+        }
     }
 
     public function changeUserData($email, $password, $phone, $avatar){
@@ -114,42 +131,16 @@ class UserModel {
         }
     }
 
-    public function checkForget($username){
+    public function getPictureOneUser($id){
         $con = $this->InitConnect();
-
-        $res = $con->query("SELECT * FROM user_table WHERE Username = '" . $username . "'");
-        if (mysqli_num_rows($res) == 0){
-            return 0;
+        if ($_SESSION['user_type'] == 'a') {
+            return "";
+        } else if ($_SESSION['user_type'] == 'p') {
+            $res = $con->query("SELECT image_url FROM patient WHERE patient_id =" . $id);
         } else {
-            return mysqli_fetch_assoc($res)['Password'];
+            $res = $con->query("SELECT image_url FROM doctor WHERE doc_id =" . $id);
         }
-    }
-
-    public function checkCommentPermission($username){
-        $con = $this->InitConnect();
-        $res = $con->query("SELECT PermissionComment FROM user_table WHERE Username = '" . $username . "'");
-        if ($res->fetch_assoc()['PermissionComment'] == 1){
-            return true;
-        }
-        else return false;
-    }
-
-    public function getSomeUser($arr){
-        $con = $this->InitConnect();
-        $users = array();
-        foreach ($arr as $comment):
-            $res = $con->query("SELECT * FROM user_table WHERE Username = '" . $comment['Username'] . "'");
-            $user = mysqli_fetch_assoc($res);
-            $users[$user['Username']] = array("Image" => $user['Avatar']);
-        endforeach;
-        return $users;
-    }
-
-    public function getPictureOneUser($username){
-        $con = $this->InitConnect();
-        $res = $con->query("SELECT Avatar FROM user_table WHERE Username = '" . $username . "'");
-        $pic = $res->fetch_assoc()['Avatar'];
-        return $pic;
+        return $res->fetch_assoc()['image_url'];
     }
 }
 
