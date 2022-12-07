@@ -1,3 +1,8 @@
+<?php
+    include "../services/connection.php";
+    $_SESSION['doc_id'] = 1;
+    $id = $_SESSION['doc_id'];
+?>
 <div class="noti-appointment">
     <div class=" title-table">
         Today Appointment
