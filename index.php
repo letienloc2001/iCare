@@ -31,13 +31,7 @@ switch ($page) {
             break;
         }
     case "profile": {
-            if ($_SESSION["user_type"] == "d") {
-                include('./doctor-profile-overview.php');
-            } else if ($_SESSION["user_type"] == "p") {
-                include('./patient-profile.php');
-            } else {
-                include('./admin-profile-overview.php');
-            }
+            include('userProfile.php');
             break;
         }
     case "detail": {
