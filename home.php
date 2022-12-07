@@ -27,9 +27,15 @@ include "utils/html_head.php"
                     </p>
                     <br><br><br>
                     <div class="page-slogan__btn">
-                        <!--                                todo: if already sign in then redirect doctor.php else redirect login.php -->
-                        <a class="page-slogan__btn-link" href="./login.php">Make appointment
-                            <i class="fas fa-angle-double-right page-slogan__btn-link-icon"></i></a>
+                        <?php
+                            if (isset($_SESSION['email'])) {
+                                $make_appointment_link = "doctors";
+                            } else {
+                                $make_appointment_link = "login";
+                            }
+                        echo '<a class="page-slogan__btn-link" href="./index.php?page='.$make_appointment_link.'">Make appointment
+                            <i class="fas fa-angle-double-right page-slogan__btn-link-icon"></i></a>';
+                        ?>
                     </div>
                 </div>
                 <div class="col-ssm-6 col-sm-6 col-md-8 col-lg-8 col-xl-6 page-slogan__img">
