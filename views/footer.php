@@ -1,7 +1,7 @@
 <div id="#toast" class="container-fluid -toast"></div>
 <footer class="container-fluid">
     <div class="icare-footer-content row">
-        <div class="col-xl-4 col-md-6 col-12">
+        <div class="col-xl-6 col-md-6 col-12">
             <div class="icare-footer-col">
                 <div class="icare-footer-logo">
                     <a href="#"><img src="./assets/img/logo/iCare-logo-footer.png" width="40%"/></a>
@@ -33,7 +33,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 col-12">
+        <div class="col-xl-3 col-md-3 col-6">
             <div class="icare-footer-col">
                 <div class="icare-footer-heading">
                     <h3 class="icare-footer-heading_text">Quick Links</h3>
@@ -51,7 +51,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-xl-3 col-md-6 col-12">
+        <div class="col-xl-3 col-md-3 col-6">
             <div class="icare-footer-col">
                 <div class="icare-footer-heading">
                     <h3 class="icare-footer-heading_text">Join with us</h3>

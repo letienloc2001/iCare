@@ -1404,7 +1404,6 @@ a {
     padding-left: 30px;
     height: 60px;
     border-radius: 30px;
-    border: 1px solid #fff;
     color: inherit;
     line-height: normal;
     font-size: 15px;
@@ -1413,6 +1412,7 @@ a {
     width: 100%;
     outline: none;
     font-family: inherit;
+    margin: 20px;
 }
 
 input[type="text"]:focus {
@@ -1453,6 +1453,7 @@ input[type="text"]:focus {
     cursor: pointer;
     font-family: inherit;
     border-radius: 30px;
+    margin: 20px;
 }
 
 .icare-filter-search_btn i {
@@ -1464,12 +1465,11 @@ input[type="text"]:focus {
 .icare-filter-group {
     background-color: #f4f4f4;
     margin-bottom: 0;
-    padding: 0;
+    padding: 25px;
 }
 
 .icare-filter-group_heading {
-    padding-bottom: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -2233,4 +2233,13 @@ a::after {
 
 .review_img {
     border-radius: 10%;
+}
+
+a.tag-cloud {
+    border-radius: 10px;
+    margin: 5px;
+}
+a.tag-cloud:hover {
+    border-radius: 10px;
+    margin: 5px;
 }
