@@ -7,31 +7,6 @@ include "utils/html_head.php"
 ?>
 
 <body>
-<script>
-    function showContact(){
-        $.ajax({
-            url: "services/contact-service.php",
-            success: function(data) {
-                var contactInfo;
-                if (data){
-                    contactInfo = JSON.parse(data);
-                    var phone = "<h1>Phone:</h1>";
-                    var address = "<h1>Address:</h1>";
-                    var email = "<h1>Email:</h1>";
-                    for (var key in contactInfo) {
-                        phone += '<p>' + contactInfo[key].phone + '</p>';
-                        address += '<p>' + contactInfo[key].address + '</p>';
-                        email += '<p>' + contactInfo[key].email + '</p>';
-                    }
-                    document.getElementsByClassName("contact-content")[0].innerHTML = phone;
-                    document.getElementsByClassName("contact-content")[1].innerHTML = address;
-                    document.getElementsByClassName("contact-content")[2].innerHTML = email;
-                }
-            }
-        });
-    }
-    showContact();
-</script>
 <!-- #############HEADER######### -->
 <?php require_once("./views/header.php") ?>
 <!-- #############MAIN######### -->
@@ -57,6 +32,138 @@ include "utils/html_head.php"
             </div>
         </div>
     </div>
+    <div id="5" class="container-fluid p-cpn" style="background-color: var(--background-color); padding: 10rem 0;">
+        <div class="grid wide-m row gx-5 ">
+            <div class="col ">
+                <div class="p-cpn-subheading ">
+                    <div class="p-cpn-heading">
+                        <h1 style="text-align: center; margin: 1rem 3rem">
+                            Contact Information
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid row gx-5 " style="padding: 0; margin: 0;">
+            <div class="col">
+                <div class="p-cpn-image ">
+                    <img src="./assets/img/img-ud-hd.png" alt=" ">
+                </div>
+            </div>
+        </div>
+        <!--Carousel ITEM-->
+        <div id="carousel-p-cpn-3rd ">
+            <div class="grid wide-m row carousel owl-carousel ">
+                <div class="col m-3 p-cpn-item-3rd ">
+                    <div class="p-cpn-item-3rd-front " style="padding-top: 30px;">
+                        <img class="p-cpn-item-3rd-front__img " src="https://1000logos.net/wp-content/uploads/2016/11/Facebook-2019.jpg" alt="doctor img"  style="border-radius: 10%;" />
+                        <span class="p-cpn-item__break ">
+                        <span></span>
+                    </span>
+                        <h1 class="p-cpn-item-3rd-front__name ">
+                            Facebook
+                        </h1>
+                        <h3 class="p-cpn-item-3rd-front__price ">
+                            <br>
+                        </h3>
+                    </div>
+                    <div class="p-cpn-item-3rd-back ">
+                        <div class="p-cpn-item-3rd-back__overlay">
+                            <h1 class="p-cpn-item-3rd-back__name ">
+                                Facebook
+                            </h1>
+                            <h3 class="p-cpn-item-3rd-back__price ">
+                                <br>
+                            </h3>
+                            <a class="add-to-cart-btn " href="https://www.facebook.com/">Send us a message</a>
+                        </div>
+                    </div>
+                </div>'
+
+                <div class="col m-3 p-cpn-item-3rd ">
+                    <div class="p-cpn-item-3rd-front " style="padding-top: 30px;">
+                        <img class="p-cpn-item-3rd-front__img " src="https://1000logos.net/wp-content/uploads/2017/06/Twitter-logo.jpg" alt="doctor img"  style="border-radius: 10%;" />
+                        <span class="p-cpn-item__break ">
+                        <span></span>
+                    </span>
+                        <h1 class="p-cpn-item-3rd-front__name ">
+                            Twitter
+                        </h1>
+                        <h3 class="p-cpn-item-3rd-front__price ">
+                            <br>
+                        </h3>
+                    </div>
+                    <div class="p-cpn-item-3rd-back ">
+                        <div class="p-cpn-item-3rd-back__overlay">
+                            <h1 class="p-cpn-item-3rd-back__name ">
+                                Twitter
+                            </h1>
+                            <h3 class="p-cpn-item-3rd-back__price ">
+                                <br>
+                            </h3>
+                            <a class="add-to-cart-btn " href="https://twitter.com">Tweet us</a>
+                        </div>
+                    </div>
+                </div>'
+
+                <div class="col m-3 p-cpn-item-3rd ">
+                    <div class="p-cpn-item-3rd-front " style="padding-top: 30px;">
+                        <img class="p-cpn-item-3rd-front__img " src="https://1000logos.net/wp-content/uploads/2018/05/Gmail-Logo-768x432.jpg" alt="doctor img"  style="border-radius: 10%;" />
+                        <span class="p-cpn-item__break ">
+                        <span></span>
+                    </span>
+                        <h1 class="p-cpn-item-3rd-front__name ">
+                            Gmail
+                        </h1>
+                        <h3 class="p-cpn-item-3rd-front__price ">
+                            <br>
+                        </h3>
+                    </div>
+                    <div class="p-cpn-item-3rd-back ">
+                        <div class="p-cpn-item-3rd-back__overlay">
+                            <h1 class="p-cpn-item-3rd-back__name ">
+                                Gmail
+                            </h1>
+                            <h3 class="p-cpn-item-3rd-back__price ">
+                                <br>
+                            </h3>
+                            <a class="add-to-cart-btn " href="https://mail.google.com">Give us an email</a>
+                        </div>
+                    </div>
+                </div>'
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js "></script>
+    <script>
+
+        $(".carousel ").owlCarousel({
+            margin: 20,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: false
+                }
+            }
+        });
+
+    </script>
     <!--contact list-->
 <!--    <div class="page-contact pd-150-0" style="background-color: var(--white-color)">-->
 <!--        <div class="grid wide-m">-->
