@@ -2,7 +2,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = "root";
+$password = "";
 $database = "iCare";
 $conn = mysqli_connect($host, $user, $password, $database);
 //if (!$conn) {
