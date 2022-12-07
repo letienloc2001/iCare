@@ -4,39 +4,41 @@ class DoctorView{
   public function showAllDoctor($doctors){
     $item = 1;
     foreach ($doctors as $doctor):
-    echo '<div class=" col-xl-4 col-sm-6 col-12 icare-item-col">
-                    <div class="icare-card">
-                        <div class="icare-item">
-                            <div class="icare-item-front">
-                                <img class="icare-item-front_img" src="'. $doctor['image_url'] .'" alt="Doctor image_url" style="width: 100%; border-radius: 30px;" />
-                                <div class="icare-item-front_text">
-                                    <p class="icare-item-front_name">'. $doctor['doc_name'] .'</p>
-                                </div>
-                            </div>
-                            <div class="icare-item-back">
-                                <div class="icare-item-back_overlay">
-                                    <div class="icare-item-back_text">
-                                        <a class="icare-item-back_name" href="#">'. $doctor['doc_name'] .'</a>
-                                        <p class="icare-item-back_price">'. $doctor['doc_id'] .'</p>
+        $path = "./assets/img/user/".$doctor['image_url'];
+        echo '<div class=" col-xl-4 col-sm-6 col-12 icare-item-col">
+                        <div class="icare-card">
+                            <div class="icare-item">
+                                <div class="icare-item-front">
+                                    <img class="icare-item-front_img" src="'. $path .'" alt="Doctor image_url" style="width: 100%; border-radius: 30px;" />
+                                    <div class="icare-item-front_text">
+                                        <p class="icare-item-front_name">'. $doctor['doc_name'] .'</p>
                                     </div>
-                                <div class="icare-item-buttons d-flex justify-content-center " >
-                                    <div class="icare-item-button">
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#QuickView'. $doctor['doc_id'] .'">
-                                            <i class="far fa-eye"></i>
-                                        </button>
+                                </div>
+                                <div class="icare-item-back">
+                                    <div class="icare-item-back_overlay">
+                                        <div class="icare-item-back_text">
+                                            <a class="icare-item-back_name" href="#">'. $doctor['doc_name'] .'</a>
+                                            <p class="icare-item-back_price">'. $doctor['doc_id'] .'</p>
+                                        </div>
+                                    <div class="icare-item-buttons d-flex justify-content-center " >
+                                        <div class="icare-item-button">
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#QuickView'. $doctor['doc_id'] .'">
+                                                <a href="./index.php?page=detail&id='. $doctor['doc_id'] .'"><i class="far fa-eye"></i></a>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-               </div>
-        </div>';
+                </div>
+            </div>';
         $item++;
     endforeach;
   }
 
     public function show3TopDoctors($doctors){
       $item = 1;
+      $path = "";
       foreach ($doctors as $doctor):
         $path = "./assets/img/user/".$doctor['image_url'];
         echo '<div class="col m-3 p-cpn-item-3rd ">

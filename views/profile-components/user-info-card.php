@@ -10,14 +10,6 @@ include "./services/connection.php";
         $id = $_SESSION['id'];
     if(isset($_SESSION['user_type'])) 
         $user_type = $_SESSION['user_type'];
-    // if (isset($_SESSION['username'])) {
-    //     $username = $_SESSION['username'];
-    // }
-    // $sql = "SELECT * FROM user WHERE email='$username'";
-    // $result = mysqli_query($conn, $sql);
-    // while ($row = mysqli_fetch_assoc($result)) {
-    //     $id = (int)$row['id'];
-    // }
     if($user_type === 'd'){
         $sql1 = "CALL getDoctorDetails($id);";
         $record = mysqli_query($conn, $sql1);

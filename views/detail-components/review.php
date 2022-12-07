@@ -1,6 +1,6 @@
 <?php
 include "./services/connection.php";
-$id = $_SESSION['doc_id'];
+$id = $_GET['id'];
 ?>
 <div class="review">
     <h4>Review <span class="review-rating">(3/5)</span></h4>

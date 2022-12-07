@@ -40,4 +40,8 @@ switch ($page) {
             }
             break;
         }
+    case "detail": {
+        include('doctorDetail.php');
+        break;
+    }
 }
