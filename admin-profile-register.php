@@ -40,7 +40,7 @@
         <?php require_once("./views/profile-components/user-info-card.php") ?>
         <div>
             <?php require_once("./views/profile-components/section-bar-ad-3.php") ?>
-            <?php require_once("./views/profile-components/doctors-register-info.php") ?>
+            <?php require_once("./views/profile-components/patient-info.php") ?>
         </div>
 
     </main>
