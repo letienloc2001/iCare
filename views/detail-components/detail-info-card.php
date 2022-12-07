@@ -16,6 +16,7 @@ include "./services/connection.php";
         $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
         $name = $user_info['doc_name'];
         $image_url = $user_info['image_url'];
+        $contact = $user_info['phone_number'];
     }
 ?>
 <div class="user-card">
@@ -29,6 +30,6 @@ include "./services/connection.php";
                 </svg></a></button>
         <div class='user-info'>Major: <span class='info'></div>
         <div class="user-info">Address: <span class="info"><?php echo $address ?></span></div>
-        <div class="user-info">Contact: <span class="info"><?php echo $username ?></span></div>
+        <div class="user-info">Contact: <span class="info"><?php echo $contact ?></span></div>
     </div>
 </div>

@@ -35,7 +35,7 @@ DROP PROCEDURE IF EXISTS getDoctorDetails;
 DELIMITER $$
 create procedure getDoctorDetails(IN DOCTOR_ID int)
 begin
-    select doc_id, doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews
+    select doc_id, doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews, phone_number
     from doctor where doc_id = DOCTOR_ID;
 end $$
 DELIMITER ;
