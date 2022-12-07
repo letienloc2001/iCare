@@ -1,10 +1,4 @@
-.edit {
-   text-align: center;
+label {
+    font-size: 20px;
 }
 
-.edit-form {
-    background-color: white;
-    border-radius: 5px;
-    width: 95%;
-
-}

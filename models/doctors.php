@@ -1,21 +1,23 @@
 <?php
 
-class DoctorModel {
-    public function InitConnect(){
+class DoctorModel
+{
+    public function InitConnect()
+    {
         $con = mysqli_connect('localhost', 'root', 'root', 'iCare');
-        if (mysqli_connect_errno()){
-            die('Connection failed: '. mysqli_connect_error());
-        }
-        else return $con;
+        if (mysqli_connect_errno()) {
+            die('Connection failed: ' . mysqli_connect_error());
+        } else return $con;
     }
 
-    public function getAllDoctor(){
+    public function getAllDoctor()
+    {
         $con = $this->InitConnect();
 
         $res = $con->query('SELECT * FROM doctor');
         $doctors = array();
-        if ($res->num_rows > 0){
-            while ($doctor = mysqli_fetch_assoc($res)){
+        if ($res->num_rows > 0) {
+            while ($doctor = mysqli_fetch_assoc($res)) {
                 $doctors[] = $doctor;
             }
         }
@@ -23,14 +25,15 @@ class DoctorModel {
         return $doctors;
     }
 
-    public function getAllDoctor_pagination($numPage){
+    public function getAllDoctor_pagination($numPage)
+    {
         $con = $this->InitConnect();
         $start = 12 * ($numPage - 1);
         $row = 12;
         $res = $con->query("SELECT * FROM doctor LIMIT $start, $row");
         $doctors = array();
-        if ($res->num_rows > 0){
-            while ($doctor = mysqli_fetch_assoc($res)){
+        if ($res->num_rows > 0) {
+            while ($doctor = mysqli_fetch_assoc($res)) {
                 $doctors[] = $doctor;
             }
         }
@@ -38,86 +41,87 @@ class DoctorModel {
         return $doctors;
     }
 
-    public function getOneDoctor($id){
+    public function getOneDoctor($id)
+    {
         $con = $this->InitConnect();
 
         $res = $con->query("SELECT * FROM product_table WHERE ID='$id'");
         return mysqli_fetch_assoc($res);
     }
 
-//    public function Edit($action, $doctor){
-//        if ($action == "addnew")
-//        {
-//            $conn = $this->InitConnect();
-//
-//            $sql = "INSERT INTO doctor (Image, Name, Price, Description, Tag) VALUES('".$doctor['Image']."', '".$doctor['Name']."', '".$doctor['Price']."', '".$doctor['Description']."', '".$doctor['Tag']."')";
-//            if ($conn->query($sql) === TRUE) {
-//                $conn->close();
-//                return true;
-//            }
-//            else {
-//                $conn->close();
-//                return false;
-//            }
-//        }
-//
-//        if ($action == "edit")
-//        {
-//            $conn = $this->InitConnect();
-//
-//            $existID = mysqli_query($conn, "SELECT * FROM doctor WHERE ID = '".$doctor['ID']."'");
-//            if (mysqli_num_rows($existID) == 0)
-//                return false;
-//            else
-//            {
-//                $sql = "UPDATE product_table SET Image = '".$doctor['Image']."', Name = '".$['Name']."', Price = '".$doctor['Price']."', Description = '".$doctor['Description']."', Tag = '".$doctor['Tag']."' WHERE ID = ".$doctor['ID']."";
-//                if ($conn->query($sql) === TRUE) {
-//                    $conn->close();
-//                    return true;
-//                }
-//                else {
-//                    $conn->close();
-//                    return false;
-//                }
-//            }
-//        }
-//
-//        if ($action == "delete")
-//        {
-//            $conn = $this->InitConnect();
-//
-//            $existID = mysqli_query($conn, "SELECT * FROM product_table WHERE ID = '".$doctor['ID']."'");
-//            if (mysqli_num_rows($existID) == 0)
-//                return false;
-//            else
-//            {
-//                $sql = "DELETE FROM product_table WHERE ID = " . $doctor['ID'];
-//                if ($conn->query($sql) === TRUE) {
-//                    $conn->close();
-//                    return true;
-//                }
-//                else {
-//                    $conn->close();
-//                    return false;
-//                }
-//            }
-//        }
-//    }
+    //    public function Edit($action, $doctor){
+    //        if ($action == "addnew")
+    //        {
+    //            $conn = $this->InitConnect();
+    //
+    //            $sql = "INSERT INTO doctor (Image, Name, Price, Description, Tag) VALUES('".$doctor['Image']."', '".$doctor['Name']."', '".$doctor['Price']."', '".$doctor['Description']."', '".$doctor['Tag']."')";
+    //            if ($conn->query($sql) === TRUE) {
+    //                $conn->close();
+    //                return true;
+    //            }
+    //            else {
+    //                $conn->close();
+    //                return false;
+    //            }
+    //        }
+    //
+    //        if ($action == "edit")
+    //        {
+    //            $conn = $this->InitConnect();
+    //
+    //            $existID = mysqli_query($conn, "SELECT * FROM doctor WHERE ID = '".$doctor['ID']."'");
+    //            if (mysqli_num_rows($existID) == 0)
+    //                return false;
+    //            else
+    //            {
+    //                $sql = "UPDATE product_table SET Image = '".$doctor['Image']."', Name = '".$['Name']."', Price = '".$doctor['Price']."', Description = '".$doctor['Description']."', Tag = '".$doctor['Tag']."' WHERE ID = ".$doctor['ID']."";
+    //                if ($conn->query($sql) === TRUE) {
+    //                    $conn->close();
+    //                    return true;
+    //                }
+    //                else {
+    //                    $conn->close();
+    //                    return false;
+    //                }
+    //            }
+    //        }
+    //
+    //        if ($action == "delete")
+    //        {
+    //            $conn = $this->InitConnect();
+    //
+    //            $existID = mysqli_query($conn, "SELECT * FROM product_table WHERE ID = '".$doctor['ID']."'");
+    //            if (mysqli_num_rows($existID) == 0)
+    //                return false;
+    //            else
+    //            {
+    //                $sql = "DELETE FROM product_table WHERE ID = " . $doctor['ID'];
+    //                if ($conn->query($sql) === TRUE) {
+    //                    $conn->close();
+    //                    return true;
+    //                }
+    //                else {
+    //                    $conn->close();
+    //                    return false;
+    //                }
+    //            }
+    //        }
+    //    }
 
-    public function getTop3Doctors() {
+    public function getTop3Doctors()
+    {
         $con = $this->InitConnect();
 
         $res = $con->query("call getTop3Doctors();");
         $doctors = array();
         $cnt = 0;
-        if (mysqli_num_rows($res) < 3){
-            while ($doctor = mysqli_fetch_assoc($res)){
+        if (mysqli_num_rows($res) < 3) {
+            while ($doctor = mysqli_fetch_assoc($res)) {
                 $doctors[] = $doctor;
                 $cnt++;
             }
-        }
-        else {
-            while ($doctor = mysqli_fetch_assoc($res)){
+        } else {
+            while ($doctor = mysqli_fetch_assoc($res)) {
                 if ($cnt == 3)
                     break;
                 $doctors[] = $doctor;
@@ -134,66 +138,66 @@ class DoctorModel {
         return mysqli_num_rows($numRows);
     }
 
-    public function search($name){
+    public function search($name)
+    {
         $con = $this->InitConnect();
         $res = $con->query('SELECT * FROM doctor WHERE doc_name LIKE \'' . $name . '%\'');
         $doctors = array();
         $_SESSION['maxPageNumber'] = 0;
-        if (mysqli_num_rows($res) > 0){
-            $_SESSION['maxPageNumber'] = mysqli_num_rows($res)/ 12 + 1;
-            while ($doctor = mysqli_fetch_assoc($res)){
+        if (mysqli_num_rows($res) > 0) {
+            $_SESSION['maxPageNumber'] = mysqli_num_rows($res) / 12 + 1;
+            while ($doctor = mysqli_fetch_assoc($res)) {
                 $doctors[] = $doctor;
             }
         }
         return $doctors;
     }
 
-//    public function specification($id){
-//        $con = $this->InitConnect();
-//        $res = $con->query('call getSpecializations('.$id.')');
-//        $specifications = array();
-//        if (mysqli_num_rows($res) > 0){
-//            while ($specification = mysqli_fetch_assoc($res)){
-//                $tagDB = $product['Tag'];
-//                if (strpos($tagDB, $key) !== false){
-//                    $products[] = $product;
-//                }
-//            }
-//        }
-//        return $products;
-//    }
+    //    public function specification($id){
+    //        $con = $this->InitConnect();
+    //        $res = $con->query('call getSpecializations('.$id.')');
+    //        $specifications = array();
+    //        if (mysqli_num_rows($res) > 0){
+    //            while ($specification = mysqli_fetch_assoc($res)){
+    //                $tagDB = $product['Tag'];
+    //                if (strpos($tagDB, $key) !== false){
+    //                    $products[] = $product;
+    //                }
+    //            }
+    //        }
+    //        return $products;
+    //    }
     public function tag($key): array
     {
         $con = $this->InitConnect();
-        $res = $con->query('call getDoctorsBySpec('.$key.')');
+        $res = $con->query('call getDoctorsBySpec(' . $key . ')');
         $doctors = array();
         $_SESSION['maxPageNumber'] = 0;
-        if (mysqli_num_rows($res) > 0){
-            $_SESSION['maxPageNumber'] = mysqli_num_rows($res)/ 12 + 1;
-            while ($doctor = mysqli_fetch_assoc($res)){
+        if (mysqli_num_rows($res) > 0) {
+            $_SESSION['maxPageNumber'] = mysqli_num_rows($res) / 12 + 1;
+            while ($doctor = mysqli_fetch_assoc($res)) {
                 $doctors[] = $doctor;
             }
         }
         return $doctors;
     }
-//
-    public function getAllTag(): array {
+    //
+    public function getAllTag(): array
+    {
         $con = $this->InitConnect();
         $res = $con->query('SELECT * FROM specification');
         $tags = array();
-        if (mysqli_num_rows($res) > 0){
-            while ($tag = mysqli_fetch_assoc($res)){
-//                $tagtmp = $tag['spec_name'];
-//                $tagtmp = explode(",", $tagtmp);
-//                foreach ($tagtmp as $tag):
-                    $tags[] = $tag;
-//                endforeach;
+        if (mysqli_num_rows($res) > 0) {
+            while ($tag = mysqli_fetch_assoc($res)) {
+                //                $tagtmp = $tag['spec_name'];
+                //                $tagtmp = explode(",", $tagtmp);
+                //                foreach ($tagtmp as $tag):
+                $tags[] = $tag;
+                //                endforeach;
             }
         }
-//        $tags = array_unique($tags);
-//        unset($tags[sizeof($tags)]);
+        //        $tags = array_unique($tags);
+        //        unset($tags[sizeof($tags)]);
         return $tags;
     }
 }
-
-?>
