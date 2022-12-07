@@ -1,7 +1,7 @@
 <?php
-    include "../services/connection.php";
-    $_SESSION['doc_id'] = 1;
-    $id = $_SESSION['doc_id'];
+include "./services/connection.php";
+$_SESSION['doc_id'] = 1;
+$id = $_SESSION['doc_id'];
 ?>
 <div class="request">
     <div class="title-table">
@@ -9,9 +9,9 @@
     </div>
     <div class="profile-table request-table">
         <?php
-            $sql = "call getWaitingAppointments($id)";
-            $result = mysqli_query($conn, $sql);
-            while($row = mysqli_fetch_assoc($result)){
+        $sql = "call getWaitingAppointments($id)";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
         ?>
             <div class="request-appointment">
                 <div>
@@ -22,8 +22,8 @@
                     <div class="request-time"><?php echo $row['date_registered'] ?></div>
                 </div>
                 <div>
-                    <button class="accept-button"><img class="accept-img" src="../assets/img/accept.png" alt=""></button>
-                    <button class="decline-button"><img class="decline-img" src="../assets/img/decline.png" alt=""></button>
+                    <button class="accept-button" onclick=""><a href=""><img class="accept-img" src="./assets/img/accept.png" alt=""></a></button>
+                    <button class="decline-button"><img class="decline-img" src="./assets/img/decline.png" alt=""></button>
                 </div>
             </div>
         <?php } ?>

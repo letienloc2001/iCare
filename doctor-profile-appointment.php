@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,28 +19,28 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../assets/css/profile/user-info-card.css">
-    <link rel="stylesheet" href="../assets/css/profile/section.css">
-    <link rel="stylesheet" href="../assets/css/profile/profile-page.css">
-    <link rel="stylesheet" href="../assets/css/profile/request-appointment.css">
-    <link rel="stylesheet" href="../assets/css/profile/today-appointment.css">
-    <link rel="stylesheet" href="../assets/css/profile/summary.css">
-    <link rel="stylesheet" href="../assets/css/profile/review.css">
-    <link rel="stylesheet" href="../assets/css/profile/patient-appointment.css">
+    <link rel="stylesheet" href="./assets/css/profile/user-info-card.css">
+    <link rel="stylesheet" href="./assets/css/profile/section.css">
+    <link rel="stylesheet" href="./assets/css/profile/profile-page.css">
+    <link rel="stylesheet" href="./assets/css/profile/request-appointment.css">
+    <link rel="stylesheet" href="./assets/css/profile/today-appointment.css">
+    <link rel="stylesheet" href="./assets/css/profile/summary.css">
+    <link rel="stylesheet" href="./assets/css/profile/review.css">
+    <link rel="stylesheet" href="./assets/css/profile/patient-appointment.css">
 
 
 </head>
 
 <body>
-    <!-- <header>
-        ?php require_once("header.php") ?>
-    </header> -->
+    <header>
+        <?php require_once("./views/header.php") ?>
+    </header>
 
     <main>
-        <?php require_once("./profile-components/user-info-card.php") ?>
+        <?php require_once("./views/profile-components/user-info-card.php") ?>
         <div>
-            <?php require_once("./profile-components/section-bar-patient.php") ?>
-            <?php require_once("./profile-components/doctor-appointment.php") ?>
+            <?php require_once("./views/profile-components/section-bar-doc-2.php") ?>
+            <?php require_once("./views/profile-components/patient-appointment.php") ?>
         </div>
 
     </main>

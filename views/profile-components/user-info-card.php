@@ -1,5 +1,5 @@
 <?php
-include "../services/connection.php";
+include "./services/connection.php";
 $_SESSION['username'] = 'doc1@gmail.com';
 ?>
 <?php

@@ -1,5 +1,5 @@
 <?php
-include "../services/connection.php";
+include "./services/connection.php";
 
 $_SESSION['doc_id'] = 1;
 $id = $_SESSION['doc_id'];
