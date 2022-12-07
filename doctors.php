@@ -3,11 +3,11 @@ if (!isset($_SESSION['current_page_shop']))
     $_SESSION['current_page_shop'] = 1;
 require_once('controllers/doctors.php');
 $doctorController = new DoctorController();
-$maxPageNumber = $doctorController->countDoctorNumber() / 12 + 1;
+$_SESSION['maxPageNumber'] = $doctorController->countDoctorNumber() / 12 + 1;
 
 function generatePageNumber()
 {
-    echo '<a class="current" href="./index.php?page=doctors&p='. $_SESSION['current_page_shop'] .'">'. $_SESSION['current_page_shop'] .'</a>';
+    echo '<li><a class="current" href="./index.php?page=doctors&p='. $_SESSION['current_page_shop'] .'">'. $_SESSION['current_page_shop'] .'</a></li>';
 }
 if (isset($_GET['p'])) {
     $_SESSION['current_page_shop'] = $_GET['p'];
@@ -22,7 +22,7 @@ if (isset($_GET['act']))
     }
     else if ($_GET['act'] == 'right')
     {
-        if ($_SESSION['current_page_shop'] < $GLOBALS['maxPageNumber'] - 1)
+        if ($_SESSION['current_page_shop'] < $_SESSION['maxPageNumber'] - 1)
             $_SESSION['current_page_shop']++;
         header("Location: ./index.php?page=doctors&p=". $_SESSION['current_page_shop']);
     }
@@ -132,22 +132,16 @@ if (isset($_GET['act']))
                 </div>
                 <nav class="icare-pagination">
                     <ul class="icare-page-numbers justify-content-center">
-                        <li>
                             <?php
-                            if (!isset($_GET['search']) && !isset($_GET['tag']) && $_SESSION['current_page_shop']>1)
-                                echo '<a href="doctors.php?act=left">'.($_SESSION['current_page_shop']-1).'</i></a>';
-                            ?>
-                        </li>
-                        <li>
-                            <?php
-                            if (!isset($_GET['search']) && !isset($_GET['tag']))
+                            if ($_SESSION['maxPageNumber'] > 0) {
+                                if ($_SESSION['current_page_shop']>1) {
+                                    echo '<li><a href="./index.php?page=doctors&act=left">'.($_SESSION['current_page_shop']-1).'</a></li>';
+                                }
                                 generatePageNumber();
-                            ?>
-                        </li>
-                        <li>
-                            <?php
-                            if (!isset($_GET['search']) && !isset($_GET['tag']) && $_SESSION['current_page_shop'] < $GLOBALS['maxPageNumber']-1)
-                                echo '<a href="doctors.php?act=right">'.($_SESSION['current_page_shop']+1).'</a>';
+                                if ($_SESSION['current_page_shop'] < $_SESSION['maxPageNumber']-1) {
+                                    echo '<li><a href="./index.php?page=doctors&act=right">'.($_SESSION['current_page_shop']+1).'</a></li>';
+                                }
+                            }
                             ?>
                         </li>
                     </ul>

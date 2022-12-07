@@ -55,10 +55,11 @@ class UserModel {
         $con->close();
     }
 
-    public function checkLogin($email, $password){
+    public function checkLogin($email, $password): int
+    {
         $con = $this->InitConnect();
 
-        $res = $con->query("SELECT Password FROM user_table WHERE Email = '$email'");
+        $res = $con->query("SELECT Password FROM user WHERE Email = '$email'");
         if (mysqli_num_rows($res) == 0){
             return 0;
         }
@@ -79,7 +80,8 @@ class UserModel {
     // username a-z A-Z 0-9 _ . 5 to 20 chars
 
 
-    public function checkSignUp($email, $password, $phone){
+    public function checkSignUp($email, $password, $phone): int
+    {
         $con = $this->InitConnect();
 
         $res = $con->query("SELECT * FROM user_table WHERE Email = '$email'");
@@ -97,7 +99,7 @@ class UserModel {
                 return 3;       // 3 is password
             }
 
-            $sql = "INSERT INTO user_table (Email, Password, Email, PhoneNumber, PermissionComment) VALUES ('".$username."', '".$password."', '".$email."','".$phone."', 1)";
+            $sql = "";
             if ($con->query($sql) == TRUE) {
                 $con->close();
                 return 1;       // 1 is ok

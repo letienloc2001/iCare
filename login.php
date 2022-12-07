@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,15 +23,16 @@
 <body>
 <script>
     function checkLogin(){
-        let un = document.getElementsByClassName("form__input")[0].value;
-        let pass = document.getElementsByClassName("form__input")[1].value;
+        let username = document.getElementsByClassName("form__input")[0].value;
+        let password = document.getElementsByClassName("form__input")[1].value;
+        console.log(username);
         $.ajax({
             type: "POST",
-            url: "services/login.php",
+            url: "./services/login.php",
             data: {
                 act: "login",
-                username: un,
-                password: pass
+                username: username,
+                password: password
             },
             success: function(data) {
                 if (data == ""){
@@ -112,6 +112,7 @@
 <div class="main">
     <div class="grid wide-m">
         <div class="row container-fluid ">
+            <div class="col-lg-3 "></div>
             <div class="col-sm-12 col-md-12 col-lg-6 login_form ">
                 <div class="container-fluid">
                     <div class="row">

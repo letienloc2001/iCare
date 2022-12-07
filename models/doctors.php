@@ -138,7 +138,9 @@ class DoctorModel {
         $con = $this->InitConnect();
         $res = $con->query('SELECT * FROM doctor WHERE doc_name LIKE \'' . $name . '%\'');
         $doctors = array();
+        $_SESSION['maxPageNumber'] = 0;
         if (mysqli_num_rows($res) > 0){
+            $_SESSION['maxPageNumber'] = mysqli_num_rows($res)/ 12 + 1;
             while ($doctor = mysqli_fetch_assoc($res)){
                 $doctors[] = $doctor;
             }
@@ -160,19 +162,19 @@ class DoctorModel {
 //        }
 //        return $products;
 //    }
-    public function tag($key){
+    public function tag($key): array
+    {
         $con = $this->InitConnect();
-        $res = $con->query('SELECT * FROM product_table');
-        $products = array();
+        $res = $con->query('call getDoctorsBySpec('.$key.')');
+        $doctors = array();
+        $_SESSION['maxPageNumber'] = 0;
         if (mysqli_num_rows($res) > 0){
-            while ($product = mysqli_fetch_assoc($res)){
-                $tagDB = $product['Tag'];
-                if (strpos($tagDB, $key) !== false){
-                    $products[] = $product;
-                }
+            $_SESSION['maxPageNumber'] = mysqli_num_rows($res)/ 12 + 1;
+            while ($doctor = mysqli_fetch_assoc($res)){
+                $doctors[] = $doctor;
             }
         }
-        return $products;
+        return $doctors;
     }
 //
     public function getAllTag(): array {
@@ -181,15 +183,15 @@ class DoctorModel {
         $tags = array();
         if (mysqli_num_rows($res) > 0){
             while ($tag = mysqli_fetch_assoc($res)){
-                $tagtmp = $tag['spec_name'];
-                $tagtmp = explode(",", $tagtmp);
-                foreach ($tagtmp as $tag):
+//                $tagtmp = $tag['spec_name'];
+//                $tagtmp = explode(",", $tagtmp);
+//                foreach ($tagtmp as $tag):
                     $tags[] = $tag;
-                endforeach;
+//                endforeach;
             }
         }
-        $tags = array_unique($tags);
-        unset($tags[sizeof($tags)]);
+//        $tags = array_unique($tags);
+//        unset($tags[sizeof($tags)]);
         return $tags;
     }
 }

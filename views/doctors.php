@@ -59,7 +59,7 @@ class DoctorView{
                         <h3 class="p-cpn-item-3rd-back__price ">
                             '. $doctor['doc_id'] .'
                         </h3>
-                        <a class="add-to-cart-btn " href="doctors.php?search='. $doctor['doc_name'] .'">Make an appointment!</a>
+                        <a class="add-to-cart-btn " href="./index.php?page=doctors&search='. $doctor['doc_name'] .'">Make an appointment!</a>
                     </div>
                 </div>             
               </div>';
@@ -123,7 +123,7 @@ class DoctorView{
 
     public function showAllTag($tags){
       foreach ($tags as $tag):
-        echo '<a class="tag-cloud" href="doctors.php?tag='. $tag .'">'. $tag .'</a>';
+        echo '<a class="tag-cloud" href="./index.php?page=doctors&tag='. $tag['spec_id'] .'">'. $tag['spec_name'] .'</a>';
       endforeach;
     }
 //

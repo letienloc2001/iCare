@@ -112,6 +112,7 @@
 <div class="main">
     <div class="grid wide-m">
         <div class="row modal__container">
+            <div class="col-lg-3 "> </div>
             <div class="col-sm-12 col-md-12 col-lg-6 login_form ">
                 <div class="container-fluid">
                     <div class="row">

@@ -1,12 +1,12 @@
 <?php
 class LoginController{
-    public function checkLogin($username, $password){
-        require_once('../models/user.php');
+    public function checkLogin($email, $password){
+        require_once('./models/user.php');
 
         $userModel = new UserModel();
-        $res = $userModel->checkLogin($username, $password);
+        $res = $userModel->checkLogin($email, $password);
         if ($res == 1) {
-            $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
             return true;
         }
         else {
@@ -15,7 +15,7 @@ class LoginController{
     }
 
     public function checkSignUp($email, $password, $phone){
-        require_once('../models/user.php');
+        require_once('./models/user.php');
 
         $userModel = new UserModel();
 
@@ -26,11 +26,11 @@ class LoginController{
         else return $res;
     }
 
-    public function checkForget($username){
+    public function checkForget($email){
         require_once('../models/user.php');
 
         $userModel = new UserModel();
-        return $userModel->checkForget($username);
+        return $userModel->checkForget($email);
     }
 }
 ?>

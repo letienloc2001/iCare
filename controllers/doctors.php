@@ -100,20 +100,20 @@ class DoctorController {
     public function showTag(){
         $this->InitDoctorController();
         $DoctorModel = new DoctorModel();
-        $DoctorView = new DoctorView();
         $tags = $DoctorModel->getAllTag();
-        
+
+        $DoctorView = new DoctorView();
         $DoctorView->showAllTag($tags);
     }
 
-    public function showTagFooter(){
-        $this->InitDoctorController();
-        $DoctorModel = new DoctorModel();
-        $DoctorView = new DoctorView();
-        $tags = $DoctorModel->getAllTag();
-
-        $DoctorView->showTagFooter($tags);
-    }
+//    public function showTagFooter(){
+//        $this->InitDoctorController();
+//        $DoctorModel = new DoctorModel();
+//        $DoctorView = new DoctorView();
+//        $tags = $DoctorModel->getAllTag();
+//
+//        $DoctorView->showTagFooter($tags);
+//    }
 }
 
 ?>
