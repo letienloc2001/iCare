@@ -1,3 +1,16 @@
+<?php
+    include "../services/connection.php";
+    $_SESSION['doc_id'] = 1;
+    $id = $_SESSION['doc_id'];
+?>
+<?php
+    $total = 0;
+    $sql = "SELECT COUNT(request_status) FROM patient2doctor WHERE doc_id = $id;";
+    $result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_assoc($result)){
+        $total = $row['COUNT(request_status)'];
+    }
+?>
 <div class="summary">
     <div class="total-appointment">
         <div class="total-detail">
@@ -9,7 +22,7 @@
                         <path d="M10 7a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1Z" />
                     </svg>
                 </span>
-                10000tr
+                <?php echo $total ?>
             </div>
             Total appointments
         </div>
@@ -24,7 +37,7 @@
                         <path d="M8.5 6.5a.5.5 0 0 0-1 0V8H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V9H10a.5.5 0 0 0 0-1H8.5V6.5Z" />
                     </svg>
                 </span>
-                50%
+                30%
             </div>
             Doctors
         </div>
