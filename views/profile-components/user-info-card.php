@@ -1,7 +1,5 @@
 <?php
 include "./services/connection.php";
-$_SESSION['id'] = 1;
-$_SESSION['user_type'] = 'p';
 ?>
 <?php
     $username = "";
@@ -42,7 +40,7 @@ $_SESSION['user_type'] = 'p';
 <div class="user-card">
     <?php if($user_type === 'd'){ ?>
     <div class="user-image-card">
-        <img class="user-image" src="./assets/img/expert_doctor/<?php echo $image_url ?>" alt="">
+        <img class="user-image" src="./assets/img/user/<?php echo $image_url ?>" alt="">
     </div>
     <?php } else if($user_type === 'p'){ ?>
     <div class="user-image-card">
