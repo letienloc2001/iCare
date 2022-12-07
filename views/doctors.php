@@ -38,9 +38,10 @@ class DoctorView{
     public function show3TopDoctors($doctors){
       $item = 1;
       foreach ($doctors as $doctor):
+        $path = "./assets/img/user/".$doctor['image_url'];
         echo '<div class="col m-3 p-cpn-item-3rd ">
                 <div class="p-cpn-item-3rd-front " style="padding-top: 30px;">
-                    <img class="p-cpn-item-3rd-front__img " src="'. $doctor['image_url'] .'" alt="doctor img"  style="border-radius: 10%;" />
+                    <img class="p-cpn-item-3rd-front__img " src="'. $path .'" alt="doctor_img"  style="border-radius: 10%;" />
                     <span class="p-cpn-item__break ">
                         <span></span>
                     </span>
