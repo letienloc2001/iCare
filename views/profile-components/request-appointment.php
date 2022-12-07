@@ -1,7 +1,5 @@
 <?php
 include "./services/connection.php";
-$_SESSION['doc_id'] = 1;
-$id = $_SESSION['doc_id'];
 ?>
 <div class="request">
     <div class="title-table">
@@ -9,6 +7,8 @@ $id = $_SESSION['doc_id'];
     </div>
     <div class="profile-table request-table">
         <?php
+        if(isset($_SESSION['id']))
+            $id = $_SESSION['id'];
         $sql = "call getWaitingAppointments($id)";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) {

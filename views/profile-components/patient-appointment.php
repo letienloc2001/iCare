@@ -1,8 +1,8 @@
 <?php
 include "./services/connection.php";
 
-$_SESSION['doc_id'] = 1;
-$id = $_SESSION['doc_id'];
+if(isset($_SESSION['doc_id']))
+    $id = $_SESSION['doc_id'];
 ?>
 <table class="patient-app-table">
     <thead>
