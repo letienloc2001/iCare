@@ -13,7 +13,7 @@
             </p>
         </div>
 
-        <img class="calendar-icon" src="../assets/img//calendar.svg" alt="">
+        <img class="calendar-icon" src="./assets/img//calendar.svg" alt="">
 
     </div>
 </div>

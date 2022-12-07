@@ -1,7 +1,7 @@
 <?php
-    include "../services/connection.php";
-    $_SESSION['doc_id'] = 1;
-    $id = $_SESSION['doc_id'];
+include "./services/connection.php";
+$_SESSION['doc_id'] = 1;
+$id = $_SESSION['doc_id'];
 ?>
 <div class="review">
     <h4>Review <span class="review-rating">(3/5)</span></h4>
@@ -14,12 +14,12 @@
     </div>
     <div class="review-part">
         <?php
-            $sql = "call getRecentReviews($id)";
-            $result = mysqli_query($conn, $sql);
-            while($row = mysqli_fetch_assoc($result)){
+        $sql = "call getRecentReviews($id)";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
         ?>
             <div class="reviewer">
-                <img class="reviewer-img" src="<?php echo $row['image_url'] ?>" alt="">
+                <img class="reviewer-img" src="./assets/img/user/<?php echo $row['image_url'] ?>" alt="">
                 <div>
                     <div class="reviewer-name"><?php echo $row['patient_name'] ?></div>
                     <div class="reviewer-comment"><?php echo $row['patient_review'] ?></div>

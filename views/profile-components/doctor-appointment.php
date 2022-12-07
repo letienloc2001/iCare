@@ -1,7 +1,6 @@
 <table class="patient-app-table">
     <thead>
-        <th>Patient's Name</th>
-        <th>Major</th>
+        <th>Doctor's Name</th>
         <th>Session Date & Time</th>
         <th>Appointment Date</th>
         <th>Events</th>
@@ -11,7 +10,6 @@
             <td>
                 Khuong Duy Nguyen
             </td>
-            <td>202</td>
             <td>22/10/2022</td>
             <td>24/10/2022</td>
             <td>
