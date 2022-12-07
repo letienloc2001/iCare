@@ -1,29 +1,29 @@
 <?php
-    include "../services/connection.php";
-    $_SESSION['username'] = 'doc1@gmail.com';
+include "./services/connection.php";
+$_SESSION['username'] = 'doc1@gmail.com';
 ?>
 <?php
-    $username = "";
-    $id = 0;
-    $doc_name = "";
-    $image_url = "";
-    $address = "";
-    if (isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
-    }
-    $sql = "SELECT * FROM user WHERE email='$username'";
-    $result = mysqli_query($conn, $sql);
-    while ($row = mysqli_fetch_assoc($result)) {
-        $id = (int)$row['doc_id'];
-    }
+$username = "";
+$id = 0;
+$doc_name = "";
+$image_url = "";
+$address = "";
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+}
+$sql = "SELECT * FROM user WHERE email='$username'";
+$result = mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_assoc($result)) {
+    $id = (int)$row['doc_id'];
+}
 
-    $sql1 = "CALL getDoctorDetails($id);";
-    $record = mysqli_query($conn, $sql1);
-    while ($user_info = mysqli_fetch_assoc($record)) {
-        $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
-        $doc_name = $user_info['doc_name'];
-        $image_url = $user_info['image_url'];
-    }
+$sql1 = "CALL getDoctorDetails($id);";
+$record = mysqli_query($conn, $sql1);
+while ($user_info = mysqli_fetch_assoc($record)) {
+    $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
+    $doc_name = $user_info['doc_name'];
+    $image_url = $user_info['image_url'];
+}
 ?>
 <div class="user-card">
     <div class="user-image-card">

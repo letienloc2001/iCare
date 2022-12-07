@@ -1,7 +1,7 @@
 <?php
-    include "../services/connection.php";
-    $_SESSION['doc_id'] = 1;
-    $id = $_SESSION['doc_id'];
+include "./services/connection.php";
+$_SESSION['doc_id'] = 1;
+$id = $_SESSION['doc_id'];
 ?>
 <div class="noti-appointment">
     <div class=" title-table">
@@ -10,14 +10,14 @@
     <div class="profile-table today-table">
         <div class="tody-appointment">
             <div>
-                <img class="today-img" src="../assets/img/expert_doctor/LTL.jpg" alt="">
+                <img class="today-img" src="./assets/img/expert_doctor/LTL.jpg" alt="">
             </div>
             <div class="today-name">Nguyen KHuong Duy</div>
             <div class="today-time">13:30</div>
         </div>
         <div class="tody-appointment">
             <div>
-                <img class="today-img" src="../assets/img/expert_doctor/LTL.jpg" alt="">
+                <img class="today-img" src="./assets/img/expert_doctor/LTL.jpg" alt="">
             </div>
             <div class="today-name">Nguyen KHuong Duy</div>
             <div class="today-time">Today</div>

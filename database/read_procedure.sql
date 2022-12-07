@@ -45,7 +45,7 @@ DELIMITER ;
 -- return all approve appointments of a patient, given doctor_id
 DROP PROCEDURE IF EXISTS getApprovedAppointments;
 DELIMITER $$
-create procedure getWaitingAppointments(IN DOCTOR_ID int)
+create procedure getApprovedAppointments(IN DOCTOR_ID int)
 begin
     select meeting_id, patient_name, p.patient_id, age, initial_condition, date_registered, meeting_date, p.image_url
     from patient2doctor as p2d, patient as p

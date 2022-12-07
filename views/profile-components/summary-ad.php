@@ -1,15 +1,15 @@
 <?php
-    include "../services/connection.php";
-    $_SESSION['doc_id'] = 1;
-    $id = $_SESSION['doc_id'];
+include "./services/connection.php";
+$_SESSION['doc_id'] = 1;
+$id = $_SESSION['doc_id'];
 ?>
 <?php
-    $total = 0;
-    $sql = "SELECT COUNT(request_status) FROM patient2doctor WHERE doc_id = $id;";
-    $result = mysqli_query($conn, $sql);
-    while($row = mysqli_fetch_assoc($result)){
-        $total = $row['COUNT(request_status)'];
-    }
+$total = 0;
+$sql = "SELECT COUNT(request_status) FROM patient2doctor WHERE doc_id = $id;";
+$result = mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_assoc($result)) {
+    $total = $row['COUNT(request_status)'];
+}
 ?>
 <div class="summary">
     <div class="total-appointment">
