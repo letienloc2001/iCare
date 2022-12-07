@@ -23,7 +23,7 @@ $id = $_SESSION['doc_id'];
                 </div>
                 <div>
                     <button class="accept-button" onclick=""><a href=""><img class="accept-img" src="./assets/img/accept.png" alt=""></a></button>
-                    <button class="decline-button"><img class="decline-img" src="./assets/img/decline.png" alt=""></button>
+                    <button class="decline-button" onclick=""><img class="decline-img" src="./assets/img/decline.png" alt=""></button>
                 </div>
             </div>
         <?php } ?>
