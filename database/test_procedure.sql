@@ -6,6 +6,7 @@ call getRecentReviews(1);
 call getWaitingAppointments(1);
 call getApprovedAppointments_Patient(16);
 call getTop3Doctors();
+call getDoctorsBySpec(5);
 
 -- test update
 call approveMeeting(42);

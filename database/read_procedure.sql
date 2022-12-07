@@ -112,3 +112,14 @@ begin
     where email = GIVEN_EMAIL and password = GIVEN_PASSWORD;
 end $$
 DELIMITER ;
+
+-- return all doctors given a specialization
+DROP PROCEDURE IF EXISTS getDoctorsBySpec;
+DELIMITER $$
+create procedure getDoctorsBySpec(IN GIVEN_SPEC_ID int)
+begin
+    select d.doc_id, doc_name, clinic_number, street, ward, district, city, image_url, description, star_reviews, phone_number
+    from doctor as d, doctor_specification as ds
+    where ds.spec_id = GIVEN_SPEC_ID and ds.doc_id = d.doc_id;
+end $$
+DELIMITER ;
