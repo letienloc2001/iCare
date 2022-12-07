@@ -23,22 +23,21 @@ switch ($page) {
             break;
         }
     case "logout": {
-        include('logout.php');
-        break;
-    }
+            include('logout.php');
+            break;
+        }
     case "register": {
             include('register.php');
             break;
         }
     case "profile": {
             if ($_SESSION["user_type"] == "d") {
-                include('./views/doctor-profile-overview.php');
+                include('./doctor-profile-overview.php');
             } else if ($_SESSION["user_type"] == "p") {
-                include('./views/patient-profile.php');
+                include('./patient-profile.php');
             } else {
-                include('./views/admin-profile-overview');
+                include('./admin-profile-overview.php');
             }
             break;
         }
 }
-?>
