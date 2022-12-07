@@ -160,20 +160,20 @@ class DoctorModel {
 //        }
 //        return $products;
 //    }
-//    public function tag($key){
-//        $con = $this->InitConnect();
-//        $res = $con->query('SELECT * FROM product_table');
-//        $products = array();
-//        if (mysqli_num_rows($res) > 0){
-//            while ($product = mysqli_fetch_assoc($res)){
-//                $tagDB = $product['Tag'];
-//                if (strpos($tagDB, $key) !== false){
-//                    $products[] = $product;
-//                }
-//            }
-//        }
-//        return $products;
-//    }
+    public function tag($key){
+        $con = $this->InitConnect();
+        $res = $con->query('SELECT * FROM product_table');
+        $products = array();
+        if (mysqli_num_rows($res) > 0){
+            while ($product = mysqli_fetch_assoc($res)){
+                $tagDB = $product['Tag'];
+                if (strpos($tagDB, $key) !== false){
+                    $products[] = $product;
+                }
+            }
+        }
+        return $products;
+    }
 //
     public function getAllTag(): array {
         $con = $this->InitConnect();

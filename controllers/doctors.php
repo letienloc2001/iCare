@@ -40,7 +40,7 @@ class DoctorController {
             $Doctors = $DoctorModel->search($_GET['search']);
         }
         else if (isset($_GET['tag'])){
-            $Doctors = $DoctorModel->specification($_GET['tag']);
+            $Doctors = $DoctorModel->tag($_GET['tag']);
         }
         else $Doctors = $DoctorModel->getAllDoctor_pagination($numPage);
         
