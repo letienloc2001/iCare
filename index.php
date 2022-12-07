@@ -32,11 +32,11 @@ switch ($page) {
         }
     case "profile": {
             if ($_SESSION["user_type"] == "d") {
-                include('view/doctor-profile-overview.php');
+                include('./views/doctor-profile-overview.php');
             } else if ($_SESSION["user_type"] == "p") {
-                include('view/patient-profile.php');
+                include('./views/patient-profile.php');
             } else {
-                include('view/admin-profile-overview');
+                include('./views/admin-profile-overview');
             }
             break;
         }
