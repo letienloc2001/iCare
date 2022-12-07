@@ -43,7 +43,7 @@
                 </div>
                 <ul class="icare-footer-list_quick">
                     <li>
-                        <a href="./#1">About Us</a>
+                        <a href="./index.php?page=about">About Us</a>
                     </li>
                     <li>
                         <a href="./index.php?page=doctors">Our Doctors</a>
@@ -54,7 +54,7 @@
         <div class="col-xl-3 col-md-3 col-6">
             <div class="icare-footer-col">
                 <div class="icare-footer-heading">
-                    <h3 class="icare-footer-heading_text">Join with us</h3>
+                    <h3 class="icare-footer-heading_text">Join us</h3>
                     <span class="icare-footer-heading_icon">
                             <span></span>
                         </span>
