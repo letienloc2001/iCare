@@ -1,7 +1,7 @@
 <?php
 class LoginController{
     public function checkLogin($email, $password){
-        require_once('./models/user.php');
+        require_once('../models/user.php');
 
         $userModel = new UserModel();
         $res = $userModel->checkLogin($email, $password);
@@ -15,7 +15,7 @@ class LoginController{
     }
 
     public function checkSignUp($email, $password, $phone){
-        require_once('./models/user.php');
+        require_once('../models/user.php');
 
         $userModel = new UserModel();
 
@@ -26,11 +26,11 @@ class LoginController{
         else return $res;
     }
 
-    public function checkForget($email){
-        require_once('../models/user.php');
-
-        $userModel = new UserModel();
-        return $userModel->checkForget($email);
-    }
+//    public function checkForget($email){
+//        require_once('../models/user.php');
+//
+//        $userModel = new UserModel();
+//        return $userModel->checkForget($email);
+//    }
 }
 ?>

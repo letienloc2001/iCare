@@ -23,15 +23,14 @@
 <body>
 <script>
     function checkLogin(){
-        let username = document.getElementsByClassName("form__input")[0].value;
+        let email = document.getElementsByClassName("form__input")[0].value;
         let password = document.getElementsByClassName("form__input")[1].value;
-        console.log(username);
         $.ajax({
             type: "POST",
             url: "./services/login.php",
             data: {
                 act: "login",
-                username: username,
+                email: email,
                 password: password
             },
             success: function(data) {
@@ -43,68 +42,6 @@
         });
     }
 
-    function checkSignUp(){
-        var un = document.getElementsByClassName("form__input")[2].value;
-        var em = document.getElementsByClassName("form__input")[3].value;
-        var pn = document.getElementsByClassName("form__input")[4].value;
-        var pass = document.getElementsByClassName("form__input")[5].value;
-        $.ajax({
-            type: "POST",
-            url: "services/login-service.php",
-            data: {
-                act: "reg",
-                username: un,
-                email: em,
-                phone: pn,
-                password: pass
-            },
-            success: function(data) {
-                document.getElementsByClassName("msg")[1].innerHTML = "";
-                document.getElementsByClassName("msg")[2].innerHTML = "";
-                document.getElementsByClassName("msg")[3].innerHTML = "";
-                document.getElementsByClassName("msg")[4].innerHTML = "";
-                if (data == "1"){
-                    alert("Register successfully!");
-                    window.location.href="login.php";
-                }
-
-                if (data == "-1"){
-                    document.getElementsByClassName("msg")[4].innerHTML = "Something unexpected happend.";
-                } else if (data == "0"){
-                    document.getElementsByClassName("msg")[1].innerHTML = "Username already existed.";
-                } else if (data == "2"){
-                    document.getElementsByClassName("msg")[1].innerHTML = "Invalid username. Username must be 5 - 20 characters, contains [a-z A-Z 0-9 _ .].";
-                } else if (data == "3"){
-                    document.getElementsByClassName("msg")[4].innerHTML = "Invalid password. Password must be 8 - 20 characters, contains at least 1 number, 1 upper, 1 lower, 1 special character.";
-                } else if (data == "4"){
-                    document.getElementsByClassName("msg")[2].innerHTML = "Invalid email. Check your email again.";
-                } else if (data == "5"){
-                    document.getElementsByClassName("msg")[3].innerHTML = "Invalid phone number. Phone number must have 9 - 13 numbers.";
-                }
-            }
-        });
-    }
-
-    function checkRedeemPass(){
-        var un = document.getElementsByClassName("form__input")[].value;
-        $.ajax({
-            type: "POST",
-            url: "services/login-service.php",
-            data: {
-                act: "forget",
-                username: un
-            },
-            success: function(data) {
-                document.getElementsByClassName("msg")[].innerHTML = "";
-                if (data == 0){
-                    document.getElementsByClassName("msg")[].innerHTML = "Username not existed.";
-                }
-                else {
-                    document.getElementsByClassName("msg")[].innerHTML = "Your password is:  " + data;
-                }
-            }
-        });
-    }
 </script>
 <!--#######HEADER##########-->
 <?php require_once("./views/header-login.php") ?>
@@ -118,30 +55,31 @@
                     <div class="row">
                         <h2 class="login_form__name">Sign in</h2>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="row">
-                            <input type="email" name="Email" id="username" class="form__input" placeholder="Email" value="">
-                        </div>
-                        <div class="row">
-                            <input type="password" name="password" id="password" class="form__input" placeholder="Password" value="">
-                        </div>
-                        <div class="row">
-                            <!-- display msg when failed!! -->
-                            <span class="msg"></span>
-                        </div>
-                        <div class="row remember-group">
-                            <input type="checkbox" name="remember_me" id="remember_me" class="">
-                            <label for="remember_me">Remember Me</label>
-                        </div>
-                        <div class="row">
-                            <button class="btn btn-primary login-btn" onclick="checkLogin();">
-                                Sign in
-                            </button>
-                        </div>
+                        <form action="./index.php?page=home" method="post">
+                            <div class="row">
+                                <label for="email">Email</label><input type="email" name="email" id="email" class="form__input" placeholder="Email" value="">
+                            </div>
+                            <div class="row">
+                                <label for="password">Password</label><input type="password" name="password" id="password" class="form__input" placeholder="Password" value="">
+                            </div>
+                            <div class="row">
+                                <!-- display msg when failed!! -->
+                                <span class="msg"></span>
+                            </div>
+                            <div class="row remember-group">
+                                <input type="checkbox" name="remember_me" id="remember_me" class="">
+                                <label for="remember_me">Remember Me</label>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-primary login-btn" onclick="checkLogin();">
+                                    Sign in
+                                </button>
+                            </div>
+                            <div class="row">
+                                <p class="query">Don't have an account? <a href="./index.php?page=register">Register Here</a></p>
+                            </div>
+                        </form>
                     </div>
-                    <div class="row">
-                        <p class="query">Don't have an account? <a href="./register.php">Register Here</a></p>
                     </div>
                 </div>
             </div>
@@ -153,9 +91,6 @@
 <script>
     document.getElementById('register-btn').addEventListener("click", function() {
         document.getElementById('modal').style.display = "flex";
-    })
-    document.getElementById('back-btn').addEventListener("click", function() {
-        document.getElementById('modal').style.display = "none";
     })
 </script>
 </body>
