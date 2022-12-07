@@ -703,8 +703,9 @@ a {
 /*---------------1-----------------*/
 
 .p-cpn-item-1st {
+    align-items: center;
     position: relative;
-    height: 29.5rem;
+    height: 28rem;
     width: 38rem;
     padding: 2rem;
     background-color: var(--white-color);
@@ -1300,7 +1301,7 @@ a {
 .page-break-item-1__content-paragraph {
     color: #a0a0a0;
     line-height: 28px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     margin: 0;
 }

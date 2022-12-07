@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <?php
 $PAGE_TITLE = "Home";
@@ -48,13 +48,13 @@ include "utils/html_head.php"
                 <div class="row">
                     <div class="col about-description">
                         <h4 class="about-description__subheading">
-                            Welcome to iCare Company
+                            Welcome to iCare
                         </h4>
                         <h1 class="about-description__heading">
-                            iCare give premium quality healthcare services
+                            iCare provide you with access to the best professionals in your area.
                         </h1>
                         <p class="about-description__paragraph">
-                            some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text
+                            With just a few clicks, you will be able to secure an appointment with our top medical practitioners.
                         </p>
                     </div>
                 </div>
@@ -67,10 +67,14 @@ include "utils/html_head.php"
                     <div class="about-item__content">
                         <h1 class="about-item__title">Our Mission</h1>
                         <p class="about-item__paragraph">
-                            some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text
+                            At iCare, we believe that <span style="color: var(--primary-text-color)"><b>everyone</b></span> should have access to the best medical care. Searching for a doctor or making an appointment should not be a hassle in the 21st century.
+                            <br><br>
+                            Therefore, we have committed ourselves to provide you with our <span style="color: var(--primary-text-color)"><b>iCare digital platform</b></span> - a portal to your digital helthcare that is easy to use and accessible to everyone.
+
                         </p>
                     </div>
                 </div>
+                <br>
                 <div class="about-item">
                     <div class="about-item__icon-wrapper">
                         <div class="overlay">
@@ -80,7 +84,10 @@ include "utils/html_head.php"
                     <div class="about-item__content">
                         <h1 class="about-item__title">Our Vision</h1>
                         <p class="about-item__paragraph">
-                            some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text
+                            We envision a world where healthcare access is democratized. Where everyone has access to the best doctors and medical care. Where everyone can make an appointment with their doctor at their own convenience.
+                            <br><br>
+                            We will work tirelessly to achieve this vision. We will not stop until everyone has access to the best medical care.
+                            We want to make sure that <span style="color: var(--primary-text-color)"><b>you can get the help you need, when you need it</b></span>.
                         </p>
                     </div>
                 </div>
@@ -99,10 +106,10 @@ include "utils/html_head.php"
                 </div>
                 <div class="page-break-item-1__content ">
                     <h1 class="page-break-item-1__content-heading ">
-                        Feature 1
+                        Fast
                     </h1>
                     <p class="page-break-item-1__content-paragraph ">
-                        some text, some text, some text, some text, some text, some text, some text, some text,
+                        With just a few clicks, you will be able to secure an appointment with our top doctors.
                     </p>
                 </div>
             </div>
@@ -115,10 +122,10 @@ include "utils/html_head.php"
                 </div>
                 <div class="page-break-item-1__content ">
                     <h1 class="page-break-item-1__content-heading ">
-                        Feature 2
+                        Up-to-date
                     </h1>
                     <p class="page-break-item-1__content-paragraph ">
-                        some text, some text, some text, some text, some text, some text, some text, some text,
+                        Our database is updated regularly to ensure that you are connected to the best doctors.
                     </p>
                 </div>
             </div>
@@ -131,10 +138,11 @@ include "utils/html_head.php"
                 </div>
                 <div class="page-break-item-1__content ">
                     <h1 class="page-break-item-1__content-heading ">
-                        Feature 3
+                        Reliable
                     </h1>
                     <p class="page-break-item-1__content-paragraph ">
-                        some text, some text, some text, some text, some text, some text, some text, some text,
+                        Our insurance partners are reliable and trustworthy. You can be assured that your medical bills will be
+                        covered.
                     </p>
                 </div>
             </div>
@@ -147,10 +155,10 @@ include "utils/html_head.php"
                 </div>
                 <div class="page-break-item-1__content ">
                     <h1 class="page-break-item-1__content-heading ">
-                        Feature 4
+                        Safe
                     </h1>
                     <p class="page-break-item-1__content-paragraph ">
-                        some text, some text, some text, some text, some text, some text, some text, some text,
+                        Your data is safe with us. We do not share any of your information with any third parties.
                     </p>
                 </div>
             </div>
@@ -194,7 +202,7 @@ include "utils/html_head.php"
                 <div class="p-cpn-subheading">
                     <div class="p-cpn-heading">
                         <h1 style="text-align: center; margin: 1rem 3rem">
-                            Reviews
+                            Customer Reviews
                         </h1>
                     </div>
                 </div>
@@ -208,6 +216,36 @@ include "utils/html_head.php"
                 </div>
             </div>
 
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
             <div class="col">
                 <div class="p-cpn-item-1st">
                     <img class="review_img" src="./assets/img/review2.png" alt=""/>

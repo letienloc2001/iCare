@@ -7,6 +7,8 @@ class LoginController{
         $res = $userModel->checkLogin($email, $password);
         if ($res == 1) {
             $_SESSION['email'] = $email;
+//            $_SESSION['user_type'] =
+//            $_SESSION['id'] =
             return true;
         }
         else {
@@ -25,12 +27,5 @@ class LoginController{
         }
         else return $res;
     }
-
-//    public function checkForget($email){
-//        require_once('../models/user.php');
-//
-//        $userModel = new UserModel();
-//        return $userModel->checkForget($email);
-//    }
 }
 ?>
