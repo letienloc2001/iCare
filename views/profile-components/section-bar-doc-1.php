@@ -1,9 +1,9 @@
 <div class="section-bar">
     <button class="active section">
-        <a href="doctor-profile-overview.php">Overview</a>
+        <a href="./userProfile.php?profilePage=overview">Overview</a>
     </button>
     <button class="section">
-        <a href="doctor-profile-appointment.php">Appointment</a>
+        <a href="./userProfile.php?profilePage=appointment">Appointment</a>
     </button>
     <div class="today-date-time">
         <div>

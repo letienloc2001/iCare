@@ -1,6 +1,6 @@
 <div class="section-bar">
     <button class="active section">
-        <a href="doctor-profile-overview.php">Overview</a>
+        <a href="doctor-profile-overview.php">Appointment</a>
     </button>
     <div class="today-date-time">
         <div>

@@ -30,21 +30,21 @@
                                         <a class="nav-link" href="./index.php?page=contact">Contacts</a>
                                     </li>
                                     <?php
-                                            if (!isset($_SESSION['email'])) {
-                                                echo '<li class="nav-item col-4" style="margin:0.5rem;">
+                                    if (!isset($_SESSION['email'])) {
+                                        echo '<li class="nav-item col-4" style="margin:0.5rem;">
                                                           <a href="./index.php?page=login" class="nav-link" style="display:inline;"> Login </a>
                                                           <span style="font-size: 1.7rem"> / </span>
                                                           <a href="./index.php?page=register" class="nav-link" style="display:inline;"> Register </a>
                                                       </li>';
-                                            } else {
-                                                require_once("./controllers/profile.php");
-                                                $profileController = new ProfileController();
-                                                $name = $profileController->getOneUserName($_SESSION['id']);
-                                                echo '<li class="nav-item col-1"></li>
+                                    } else {
+                                        require_once("./controllers/profile.php");
+                                        $profileController = new ProfileController();
+                                        $name = $profileController->getOneUserName($_SESSION['id']);
+                                        echo '<li class="nav-item col-1"></li>
                                                      <li class="nav-item col-3">
-                                                        <a class="nav-link" href="./index.php?page=profile">'. $name .'</a>
+                                                        <a class="nav-link" href="./index.php?page=profile">' . $name . '</a>
                                                      </li>';
-                                            }
+                                    }
                                     ?>
                                 </ul>
                             </div>
@@ -58,7 +58,7 @@
                             $pic = $profileController->getPictureOneUser($_SESSION['id']);
 
                             echo '<div id="rightnav__user" class="rightnav__user">
-                                            <img class="rightnav__user-ava" src="./assets/img/user/'. $pic .'" alt="">
+                                            <img class="rightnav__user-ava" src="./assets/img/user/' . $pic . '" alt="">
                                             <ul id="rightnav__user-menu" class="rightnav__user-menu">
                                                 <li class="rightnav__user-item"><a href="./index.php?page=profile">See your profile</a></li>
                                                 <li class="rightnav__user-item rightnav__user-item--separate"><a href="./index.php?page=logout">Log out</a></li>
@@ -101,4 +101,5 @@
 //                                                       </li>';
 //    }
 //}
-//?>
+//
+?>
