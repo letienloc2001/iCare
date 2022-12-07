@@ -15,17 +15,17 @@ include "utils/html_head.php"
         <div class="grid wide-m">
             <div class="container-fluid row gx-5">
                 <div class="col-ssm-12 col-sm-10 col-md-10 col-lg-10 col-xl-6 page-slogan__content">
-                    <h1 class="page-slogan__heading">Complete Health Care Solution</h1>
-                    <h1 class="page-slogan__heading">
-                        for
+                    <h1 class="page-slogan__heading">A health care solution for
                         <span style="color: var(--primary-text-color)">Everyone</span>
                     </h1>
-                    <br>
+                    <br><br><br>
                     <p class="page-slogan__paragraph">
-                        We’re always available for our Patients with emergent problems.
-                        You can easily reach us 24/7. We focused on the highest quality.
+                        Don't know where to go for your medical emergency? We got you covered. With our
+                        <span style="color: var(--primary-text-color)"> <b>extensive networks of professionals</b></span>,
+                        searching for help has never been easier.
+
                     </p>
-                    <br>
+                    <br><br><br>
                     <div class="page-slogan__btn">
                         <!--                                todo: if already sign in then redirect doctor.php else redirect login.php -->
                         <a class="page-slogan__btn-link" href="./login.php">Make appointment

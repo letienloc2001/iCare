@@ -82,7 +82,7 @@
 }
 
 .page-slogan__paragraph {
-    font-size: 1.5rem;
+    font-size: 2.1rem;
     font-weight: 400;
     color: var(--text-color);
 }
@@ -126,7 +126,7 @@
 
 .about-description__paragraph {
     margin-top: 50px;
-    font-size: 1.4rem;
+    font-size: 2.1rem;
     color: var(--text-color);
     font-weight: 300;
 }
@@ -208,7 +208,7 @@
 }
 
 .about-item__title {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 500;
 }
 

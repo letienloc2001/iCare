@@ -76,9 +76,11 @@ if (isset($_GET['act']))
                         </div>
                     </div>
                     <div class="icare-filter-search col-xl-4 col-lg-4 col-sm-4 col-4">
-                        <form class="icare-filter-search_form d-flex" method="get">
-                            <input class="icare-filter-search_input" type="text" placeholder="Search Here" name="search"/>
-                            <button class="icare-filter-search_btn" type="submit">
+                        <form class="icare-filter-search_form d-flex" method="post"
+                              action="index.php?page=doctors&search="
+                              onsubmit="changeTarget(this)">
+                            <input class="icare-filter-search_input" type="text" placeholder="Search Here" name="search_value"/>
+                            <button class="icare-filter-search_btn" type="submit" onsubmit="">
                                 <i class="fas fa-search"></i>
                             </button>
                         </form>
@@ -87,6 +89,13 @@ if (isset($_GET['act']))
             </div>
         </div>
     </div>
+
+    <script>
+        // change target of form to get search value
+        function changeTarget(form) {
+            form.action = "index.php?page=doctors&search=" + form.search_value.value;
+        }
+    </script>
 
     <div class="container content-container">
         <div class="row content-row icare">
