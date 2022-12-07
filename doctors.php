@@ -68,7 +68,7 @@ if (isset($_GET['act']))
         <div class="grid wide-m">
             <div class="container-fluid">
                 <div class="row content-row icare">
-                    <div class="page-title-inner col-xl-8 col-lg-8 col-sm-12 col-12">
+                    <div class="page-title-inner col-xl-8 col-lg-8 col-sm-8 col-8">
                         <h1 class="page-title__name">Doctors</h1>
                         <div class="page-title__dir">
                             <ul class="page-title__dir-list">
@@ -82,7 +82,7 @@ if (isset($_GET['act']))
                             </ul>
                         </div>
                     </div>
-                    <div class="icare-filter-search col-xl-4 col-lg-4 col-sm-12 col-12">
+                    <div class="icare-filter-search col-xl-4 col-lg-4 col-sm-4 col-4">
                         <form class="icare-filter-search_form d-flex" method="get">
                             <input class="icare-filter-search_input" type="text" placeholder="Search Here" name="search"/>
                             <button class="icare-filter-search_btn" type="submit">
@@ -91,46 +91,34 @@ if (isset($_GET['act']))
                         </form>
                     </div>
                 </div>
-                <div class="row content-row icare">
-                    <div class="icare-filter-panel col-xl-8 col-lg-8 col-sm-12 col-12">
-
-                    </div>
-                    <div class="icare-filter-panel col-xl-4 col-lg-4 col-sm-12 col-12">
-                        <div class="icare-filter-group">
-                            <div class="icare-filter-group_wrapper">
-                                todo: field-group selection button
-                            </div>
-                        </div>
-                </div>
-                </div>
             </div>
         </div>
     </div>
 
     <div class="container content-container">
         <div class="row content-row icare">
-            <div class="icare-primary col-xl-12 col-lg-12 col-sm-12 col-12">
+            <div class="icare-primary col-xl-8 col-lg-8 col-sm-12 col-12">
                 <div class="icare-sort-bar d-flex">
                     <div class="icare-sort-bar_note">
                         <p class="icare-sort-bar_note">
-<!--                            --><?php
-//                            echo "Showing ";
-//                            if (!isset($_GET['search']) && !isset($_GET['tag'])){
-//                                echo 9*$_SESSION['current_page_shop']-8;
-//                                echo " - ";
-//                                if ($_SESSION['current_page_shop']*9 <= $productController->countProductNumber())
-//                                    echo 9*$_SESSION['current_page_shop'];
-//                                else echo $productController->countProductNumber();
-//                                echo " of ";
-//                            }
-//                            ?>
-<!--                            --><?php
-//                            if (!isset($_GET['search']) && !isset($_GET['tag'])){
-//                                echo $productController->countProductNumber();
-//                            }
-//                            else echo $productController->getAllProduct_userpage($_SESSION['current_page_shop'], 0);
-//                            ?>
-<!--                            results</p>-->
+                            <?php
+                            echo "Showing ";
+                            if (!isset($_GET['search']) && !isset($_GET['tag'])){
+                                echo 12*$_SESSION['current_page_shop']-11;
+                                echo " - ";
+                                if ($_SESSION['current_page_shop']*12 <= $doctorController->countDoctorNumber())
+                                    echo 12*$_SESSION['current_page_shop'];
+                                else echo $doctorController->countDoctorNumber();
+                                echo " of ";
+                            }
+                            ?>
+                            <?php
+                            if (!isset($_GET['search']) && !isset($_GET['tag'])){
+                                echo $doctorController->countDoctorNumber();
+                            }
+                            else echo $doctorController->getAllDoctor_pagination($_SESSION['current_page_shop'], 0);
+                            ?>
+                            results
                         </p>
                     </div>
 
@@ -160,6 +148,17 @@ if (isset($_GET['act']))
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div class="icare-filter-panel col-xl-4 col-lg-4 col-sm-12 col-12">
+                <div class="icare-filter-group">
+                    <h2 class="organic-filter-group_heading text-left" style="padding-bottom: 15px; text-align: center;">Specification</h2>
+                    <div class="icare-filter-group_wrapper">
+                        <?php
+                        $doctorController->showTag();
+                        ?>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>

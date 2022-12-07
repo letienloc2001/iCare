@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-$PAGE_TITLE = "Contact";
+$PAGE_TITLE = "Contacts";
 include "utils/html_head.php"
 ?>
 

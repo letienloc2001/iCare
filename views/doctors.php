@@ -4,11 +4,11 @@ class DoctorView{
   public function showAllDoctor($doctors){
     $item = 1;
     foreach ($doctors as $doctor):
-    echo '<div class=" col-xl-3 col-sm-6 col-12 icare-item-col">
+    echo '<div class=" col-xl-4 col-sm-6 col-12 icare-item-col">
                     <div class="icare-card">
                         <div class="icare-item">
                             <div class="icare-item-front">
-                                <img class="icare-item-front_img" src="'. $doctor['image_url'] .'" alt="Doctor image_url" style="width: 100%" />
+                                <img class="icare-item-front_img" src="'. $doctor['image_url'] .'" alt="Doctor image_url" style="width: 100%; border-radius: 30px;" />
                                 <div class="icare-item-front_text">
                                     <p class="icare-item-front_name">'. $doctor['doc_name'] .'</p>
                                 </div>
@@ -121,11 +121,11 @@ class DoctorView{
 //        endforeach;
 //    }
 
-//    public function showAllTag($tags){
-//      foreach ($tags as $tag):
-//        echo '<a class="tag-cloud" href="shop.php?tag='. $tag .'">'. $tag .'</a>';
-//      endforeach;
-//    }
+    public function showAllTag($tags){
+      foreach ($tags as $tag):
+        echo '<a class="tag-cloud" href="doctors.php?tag='. $tag .'">'. $tag .'</a>';
+      endforeach;
+    }
 //
 //    public function showTagFooter($tags){
 //      foreach ($tags as $tag):
