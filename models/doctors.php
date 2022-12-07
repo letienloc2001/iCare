@@ -2,7 +2,7 @@
 
 class DoctorModel {
     public function InitConnect(){
-        $con = mysqli_connect('localhost', 'root', 'root', 'iCare');
+        $con = mysqli_connect('localhost', 'root', '', 'iCare');
         if (mysqli_connect_errno()){
             die('Connection failed: '. mysqli_connect_error());
         }
@@ -195,5 +195,3 @@ class DoctorModel {
         return $tags;
     }
 }
-
-?>

@@ -21,6 +21,16 @@ end $$
 DELIMITER ;
 
 -- show a doctor's details, given doctor_id
+DROP PROCEDURE IF EXISTS getPatientDetails;
+DELIMITER $$
+create procedure getPatientDetails(IN PATIENT_ID int)
+begin
+    select patient_id, patient_name, nic_number, age, house_number, street, ward, district, city, image_url
+    from patient where patient_id = PATIENT_ID;
+end $$
+DELIMITER ;
+
+-- show a doctor's details, given doctor_id
 DROP PROCEDURE IF EXISTS getDoctorDetails;
 DELIMITER $$
 create procedure getDoctorDetails(IN DOCTOR_ID int)
