@@ -19,15 +19,16 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/profile/user-info-card.css">
+    <!-- <link rel="stylesheet" href="./assets/css/profile/user-info-card.css">
     <link rel="stylesheet" href="./assets/css/profile/section.css">
     <link rel="stylesheet" href="./assets/css/profile/profile-page.css">
     <link rel="stylesheet" href="./assets/css/profile/request-appointment.css">
     <link rel="stylesheet" href="./assets/css/profile/today-appointment.css">
     <link rel="stylesheet" href="./assets/css/profile/summary.css">
     <link rel="stylesheet" href="./assets/css/profile/review.css">
-    <link rel="stylesheet" href="./assets/css/profile/patient-appointment.css">
+    <link rel="stylesheet" href="./assets/css/profile/patient-appointment.css"> -->
     <link rel="stylesheet" href="./assets/css/profile/edit-profile.css">
+    <link rel="stylesheet" href="./assets/css/login.css" />
 
 
 </head>
@@ -36,46 +37,48 @@
     <header>
         <?php require_once("./views/header.php") ?>
     </header>
+    <div class="main">
+        <div class="grid wide-m">
+            <div class="row container-fluid ">
+                <div class="col-lg-3 "></div>
+                <div class="col-sm-12 col-md-12 col-lg-6 login_form ">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <h2 class="login_form__name">Edit Profile</h2>
+                        </div>
+                        <br>
+                        <form action="./index.php?page=home" method="post">
+                            <div class="row">
+                                <label for="email">Your name: </label><input type="text" name="name" id="email" class="form__input" value="">
+                            </div>
+                            <div class="row">
+                                <label for="email">Your address's number</label><input type="text" name="address-number" id="email" class="form__input" value="">
+                            </div>
+                            <div class="row">
+                                <label for="email">Street: </label><input type="text" name="street" id="email" class="form__input" value="">
+                            </div>
+                            <div class="row">
+                                <label for="email">Ward: </label><input type="text" name="ward" id="email" class="form__input" value="">
+                            </div>
+                            <div class="row">
+                                <label for="email">District: </label><input type="text" name="district" id="email" class="form__input" value="">
+                            </div>
+                            <div class="row">
+                                <label for="email">City: </label><input type="text" name="city" id="email" class="form__input" value="">
+                            </div>
 
-    <div class="edit">
-        <!-- <form action="">
-            <h3>Edit your profile</h3>
-            <label for="name">Your name: </label>
-            <input type="text" id="name" value="">
-            <label for="address-number">Your address's number: </label>
-            <input type="text" id="address-number" value="">
-            <label for="street">Street: </label>
-            <input type="text" id="street" value="">
-            <label for="ward">Ward: </label>
-            <input type=" text" id="ward" value="">
-            <label for="city">City: </label>
-            <input type="text" id="city" value="">
-            <button>Submit</button>
-
-        </form> -->
-        <form class="edit-form">
-            <div class=" mb-3">
-                <label for="exampleInputEmail1" class="form-label">Your name: </label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
+                            <div class="row">
+                                <button class="btn btn-primary login-btn" onclick="checkLogin();">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Your address's number: </label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Street: </label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Ward: </label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">City: </label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
+    </div>
+    </div>
     </div>
 </body>
 
