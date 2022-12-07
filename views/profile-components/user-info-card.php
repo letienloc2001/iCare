@@ -18,7 +18,7 @@ if ($user_type === 'd') {
         $name = $user_info['doc_name'];
         $image_url = $user_info['image_url'];
     }
-} else if ($user_type === 'p') {
+else if ($user_type === 'p') {
     $sql1 = "CALL getPatientDetails($id);";
     $record = mysqli_query($conn, $sql1);
     while ($user_info = mysqli_fetch_assoc($record)) {
