@@ -23,34 +23,18 @@
 
 <body>
 <script>
-    function checkLogin(){
-        let un = document.getElementsByClassName("form__input")[0].value;
-        let pass = document.getElementsByClassName("form__input")[1].value;
+
+    function checkSignUp(){
+        let em = document.getElementsByClassName("form__input")[0].value;
+        let pn = document.getElementsByClassName("form__input")[1].value;
+        let pass = document.getElementsByClassName("form__input")[2].value;
+        let em = document.getElementsByClassName("form__input")[3].value;
+        let em = document.getElementsByClassName("form__input")[4].value;
+        let em = document.getElementsByClassName("form__input")[5].value;
+        let em = document.getElementsByClassName("form__input")[6].value;
         $.ajax({
             type: "POST",
             url: "services/login.php",
-            data: {
-                act: "login",
-                username: un,
-                password: pass
-            },
-            success: function(data) {
-                if (data == ""){
-                    window.location.href = "index.php";
-                }
-                document.getElementsByClassName("msg")[0].innerHTML = data;
-            }
-        });
-    }
-
-    function checkSignUp(){
-        var un = document.getElementsByClassName("form__input")[2].value;
-        var em = document.getElementsByClassName("form__input")[3].value;
-        var pn = document.getElementsByClassName("form__input")[4].value;
-        var pass = document.getElementsByClassName("form__input")[5].value;
-        $.ajax({
-            type: "POST",
-            url: "services/login-service.php",
             data: {
                 act: "reg",
                 username: un,
@@ -59,10 +43,10 @@
                 password: pass
             },
             success: function(data) {
+                document.getElementsByClassName("msg")[0].innerHTML = "";
                 document.getElementsByClassName("msg")[1].innerHTML = "";
                 document.getElementsByClassName("msg")[2].innerHTML = "";
                 document.getElementsByClassName("msg")[3].innerHTML = "";
-                document.getElementsByClassName("msg")[4].innerHTML = "";
                 if (data == "1"){
                     alert("Register successfully!");
                     window.location.href="login.php";
@@ -84,27 +68,6 @@
             }
         });
     }
-
-    function checkRedeemPass(){
-        var un = document.getElementsByClassName("form__input")[].value;
-        $.ajax({
-            type: "POST",
-            url: "services/login-service.php",
-            data: {
-                act: "forget",
-                username: un
-            },
-            success: function(data) {
-                document.getElementsByClassName("msg")[].innerHTML = "";
-                if (data == 0){
-                    document.getElementsByClassName("msg")[].innerHTML = "Username not existed.";
-                }
-                else {
-                    document.getElementsByClassName("msg")[].innerHTML = "Your password is:  " + data;
-                }
-            }
-        });
-    }
 </script>
 <!--#######HEADER##########-->
 <?php require_once("./views/header-login.php") ?>
@@ -118,17 +81,35 @@
                     <div class="row">
                         <h2 class="login_form__name">Sign Up</h2>
                     </div>
-                    <div class="row">
+                    <br>
+                    <form class="register" action="./index.php?page=home" method="post">
+                        <div class="row">
+                        <div class="row">
+                            <input type="text" name="name" id="name" class="form__input" placeholder="Full Name" required>
+                            <span class="msg"></span>
+                        </div>
+                        <div class="row">
+                            <input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
+                            <span class="msg"></span>
+                        </div>
+                        <div class="row">
+                            <input type="number" name="nic" id="nic" class="form__input" placeholder="National Identity Card No." required>
+                            <span class="msg"></span>
+                        </div>
+                        <div class="row">
+                            <input type="number" name="age" id="nic" class="form__input" placeholder="Age" required>
+                            <span class="msg"></span>
+                        </div>
                         <div class="row">
                             <input type="email" name="email" id="email" class="form__input" placeholder="Email" required>
                             <span class="msg"></span>
                         </div>
                         <div class="row">
-                            <input type="tel" name="phone" id="phone" class="form__input" placeholder="Phone number" required>
+                            <input type="" name="city" id="city" class="form__input" placeholder="City" required>
                             <span class="msg"></span>
                         </div>
                         <div class="row">
-                            <input type="password" name="password" id="password" class="form__input" placeholder="Password" required>
+                            <input type="" name="district" id="district" class="form__input" placeholder="District" required>
                             <span class="msg"></span>
                         </div>
                         <div class="row">
@@ -139,8 +120,8 @@
                         <div class="row">
                             <p class="query">Already have an account? <a class="col-md-3" href="./login.php">Log in</a></p>
                         </div>
-
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

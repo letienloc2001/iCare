@@ -2,29 +2,22 @@
 include "./services/connection.php";
 ?>
 <?php
-$username = "";
-$name = "";
-$image_url = "";
-$address = "";
-if (isset($_SESSION['id']))
-    $id = $_SESSION['id'];
-if (isset($_SESSION['user_type']))
-    $user_type = $_SESSION['user_type'];
-// if (isset($_SESSION['username'])) {
-//     $username = $_SESSION['username'];
-// }
-// $sql = "SELECT * FROM user WHERE email='$username'";
-// $result = mysqli_query($conn, $sql);
-// while ($row = mysqli_fetch_assoc($result)) {
-//     $id = (int)$row['id'];
-// }
-if ($user_type === 'd') {
-    $sql1 = "CALL getDoctorDetails($id);";
-    $record = mysqli_query($conn, $sql1);
-    while ($user_info = mysqli_fetch_assoc($record)) {
-        $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
-        $name = $user_info['doc_name'];
-        $image_url = $user_info['image_url'];
+    $username = "";
+    $name = "";
+    $image_url = "";
+    $address = "";
+    if(isset($_SESSION['id']))
+        $id = $_SESSION['id'];
+    if(isset($_SESSION['user_type'])) 
+        $user_type = $_SESSION['user_type'];
+    if($user_type === 'd'){
+        $sql1 = "CALL getDoctorDetails($id);";
+        $record = mysqli_query($conn, $sql1);
+        while ($user_info = mysqli_fetch_assoc($record)) {
+            $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
+            $name = $user_info['doc_name'];
+            $image_url = $user_info['image_url'];
+        }
     }
 } else if ($user_type === 'p') {
     $sql1 = "CALL getPatientDetails($id);";
