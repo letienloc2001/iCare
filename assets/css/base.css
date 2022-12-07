@@ -703,8 +703,9 @@ a {
 /*---------------1-----------------*/
 
 .p-cpn-item-1st {
+    align-items: center;
     position: relative;
-    height: 29.5rem;
+    height: 28rem;
     width: 38rem;
     padding: 2rem;
     background-color: var(--white-color);

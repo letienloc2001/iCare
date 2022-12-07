@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 $page = $_GET['page'] ?? "home";
 switch ($page) {
     case "home": {

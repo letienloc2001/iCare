@@ -223,6 +223,36 @@ include "utils/html_head.php"
                     <img class="review_img" src="./assets/img/review2.png" alt=""/>
                 </div>
             </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-cpn-item-1st">
+                    <img class="review_img" src="./assets/img/review2.png" alt=""/>
+                </div>
+            </div>
         </div>
     </div>
     <!-- #############FOOTER######### -->

@@ -1,3 +1,8 @@
+<?php
+if (isset($_SESSION['email']) && !empty($_SESSION['email'])){
+    header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,12 +60,13 @@
                     <div class="row">
                         <h2 class="login_form__name">Sign in</h2>
                     </div>
-                        <form action="./index.php?page=home" method="post">
+                    <br>
+                        <form  method="post">
                             <div class="row">
-                                <label for="email">Email</label><input type="email" name="email" id="email" class="form__input" placeholder="Email" value="">
+                                <label for="email"></label><input type="email" name="email" id="email" class="form__input" placeholder="Email" value="">
                             </div>
                             <div class="row">
-                                <label for="password">Password</label><input type="password" name="password" id="password" class="form__input" placeholder="Password" value="">
+                                <label for="password"></label><input type="password" name="password" id="password" class="form__input" placeholder="Password" value="">
                             </div>
                             <div class="row">
                                 <!-- display msg when failed!! -->
