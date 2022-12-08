@@ -3,7 +3,7 @@ INSERT INTO `doctor` (`doc_name`,  `phone_number`,`clinic_number`, `doc_id`, `st
 ('Hung Cuong', '123456789', '119', 1, 'K', 'Di An', 'Di An', 'Dĩ An', '2.jpeg', 'Very handsome', 5),
 ('Victor Reyes', '888888888', '225', 2, 'Ly Thuong Kiet', '18', '1', 'Ho Chi Minh', '3.jpeg', 'Enthusiastic', 4),
 ('Desiree Ashley', '777777777', '5', 3, 'Pasteur', '5', '1', 'Ho Chi Minh', '4.jpeg', 'Enthusiastic', 5),
-('Michael Ferrell', '666666666', '17', 4, 'Nguyen Trai','10','','Ho Chi Minh', '5.jpeg', 'Enthusiastic', 5),
+('Michael Ferrell', '666666666', '17', 4, 'Copse Square', '5', 'Brooklyn', 'New York', '5.jpeg', 'Enthusiastic', 5),
 ('Belle Stafford', '3234234242', '10', 5, 'Copse Square', '5', 'Brooklyn', 'New York', '2.jpeg', 'Enthusiastic', 4),
 ('Chase Serrano', '0987654321', '25', 6, 'Queens Croft', '10', 'Manhattan', 'New York', '3.jpeg', 'Enthusiastic', 3),
 ('Rae Morris', '0987654321', '100', 7, 'Cressington Avenue', '2', 'Queens', 'New York', '4.jpeg', 'Enthusiastic', 4),

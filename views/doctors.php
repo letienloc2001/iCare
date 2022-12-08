@@ -40,35 +40,17 @@ class DoctorView{
       $item = 1;
       $path = "";
       foreach ($doctors as $doctor):
-<<<<<<< Updated upstream
         echo '<div class="col m-3 p-cpn-item-3rd ">
                 <div class="p-cpn-item-3rd-front " style="padding-top: 30px;">
                     <img class="p-cpn-item-3rd-front__img " src="'. $doctor['image_url'] .'" alt="doctor_img"  style="border-radius: 10%;" />
-=======
-        $path = "./assets/img/user/".$doctor['image_url'];
-        // add address from street_number, street, ward, district, city for googlemaps api
-        $address = "http://maps.google.com/maps?q=" . $doctor['clinic_number'] . " " . $doctor['street'] . ", " . $doctor['ward'] . ", " .
-            $doctor['district'] . ", " . $doctor['city'] . "&output=embed";
-        echo '<div class="col m-3 p-cpn-item-3rd ">
-                <div class="p-cpn-item-3rd-front " style="padding-top: 30px;">
-                    <img class="p-cpn-item-3rd-front__img " src="'. $path .'" alt="doctor_img"  style="border-radius: 10%;" />
-                    <iframe src="'. $address .'"
-                    width="367" height="150" style="border:0;" allowfullscreen="" loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
->>>>>>> Stashed changes
                     <span class="p-cpn-item__break ">
                         <span></span>
                     </span>
                     <h1 class="p-cpn-item-3rd-front__name ">
                     '. $doctor['doc_name'] .'
                     </h1>
-<<<<<<< Updated upstream
                     <h3 class="p-cpn-item-3rd-front__price ">District:
                         '. $doctor['district'] .'
-=======
-                    <h3 class="p-cpn-item-3rd-front__price ">
-                        '. $doctor['star_reviews'] .' ⭐
->>>>>>> Stashed changes
                     </h3>
                 </div>
                 <div class="p-cpn-item-3rd-back ">
