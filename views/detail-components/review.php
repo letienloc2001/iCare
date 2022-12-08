@@ -30,7 +30,7 @@ $id = $_GET['id'];
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
             <div class="reviewer">
-                <img class="reviewer-img" src="<?php echo $pic ?>" alt="">
+                <img class="reviewer-img" src="<?php echo $row['image_url'] ?>" alt="">
                 <div>
                     <div class="reviewer-name"><?php echo $row['patient_name'] ?></div>
                     <div class="reviewer-comment"><?php echo $row['patient_review'] ?></div>
