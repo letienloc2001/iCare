@@ -19,10 +19,11 @@ include "./services/connection.php";
     $sql1 = "CALL getDoctorDetails($id);";
     $record = mysqli_query($conn, $sql1);
     while ($user_info = mysqli_fetch_assoc($record)) {
-        $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
+        $address = $user_info['clinic_number'] . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
         $name = $user_info['doc_name'];
         $image_url = $pic;
         $contact = $user_info['phone_number'];
+        $maps_query= "http://maps.google.com/maps?q=" . $address . "&output=embed";
     }
     include "./services/connection.php";
     // set $speciality to list of speciality. Init to empty array
@@ -59,5 +60,11 @@ include "./services/connection.php";
         ?>
         <div class="user-info">Address: <span class="info"><?php echo $address ?></span></div>
         <div class="user-info">Contact: <span class="info"><?php echo $contact ?></span></div>
+        <div class="user-info">Maps:
+            <?php
+            // display maps iframe
+            echo "<iframe src='$maps_query' width='100%' height='300' style='border:0;' allowfullscreen='' loading='lazy'></iframe>";
+            ?>
+        </div>
     </div>
 </div>
