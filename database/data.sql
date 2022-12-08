@@ -1,6 +1,6 @@
 -- drop schema if exists icare;
--- create database icare;
--- use icare;
+-- create database iCare;
+-- use iCare;
 -- show tables;
 
 CREATE TABLE doctor

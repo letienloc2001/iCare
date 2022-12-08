@@ -19,6 +19,7 @@ class DoctorView{
                                         <div class="icare-item-back_text">
                                             <a class="icare-item-back_name" href="#">'. $doctor['doc_name'] .'</a>
                                             <p class="icare-item-back_price">District: '. $doctor['district'] .'</p>
+                                            <p class="icare-item-back_price">'. $doctor['star_reviews'] .' ⭐</p>
                                         </div>
                                     <div class="icare-item-buttons d-flex justify-content-center " >
                                         <div class="icare-item-button">
@@ -42,9 +43,9 @@ class DoctorView{
       foreach ($doctors as $doctor):
           $address = "http://maps.google.com/maps?q=" . $doctor['clinic_number'] . " " . $doctor['street'] . ", " . $doctor['ward'] . ", " .
               $doctor['district'] . ", " . $doctor['city'] . "&output=embed";
-        echo '<div class="col m-3 p-cpn-item-3rd ">
+        echo '<div class="col m-3 p-cpn-item-3rd" style="height: 700px">
                 <div class="p-cpn-item-3rd-front " style="padding-top: 30px;">
-                    <img class="p-cpn-item-3rd-front__img " src="'. $doctor['image_url'] .'" alt="doctor_img"  style="border-radius: 10%;" />
+                    <img class="p-cpn-item-3rd-front__img " src="'. $doctor['image_url'] .'" alt="doctor_img"  style="border-radius: 10%; height: 200px" />
                     <span class="p-cpn-item__break ">
                         <span></span>
                     </span>
@@ -69,9 +70,6 @@ class DoctorView{
                         <h1 class="p-cpn-item-3rd-back__name ">
                         '. $doctor['doc_name'] .'
                         </h1>
-                        <h3 class="p-cpn-item-3rd-back__price ">District:
-                            '. $doctor['district'] .'
-                        </h3>
                         <a class="add-to-cart-btn " href="./index.php?page=detail&id='. $doctor['doc_id'] .'">Make an appointment!</a>
                     </div>
                 </div>             
