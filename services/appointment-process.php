@@ -1,5 +1,4 @@
 <?php
-echo "123";
 include("./connection.php");
 if (isset($_GET['state']))
     $state = $_GET['state'];
@@ -13,4 +12,4 @@ if ($state == 'accept') {
     $sql = "call denyMeeting($id)";
     $result = mysqli_query($conn, $sql);
 }
-header('Location:../index.php?page=profile');
+header("Location:../index.php?page=profile");
