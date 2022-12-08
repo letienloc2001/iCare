@@ -1,27 +1,27 @@
 <?php
 include "./services/connection.php";
-$_SESSION['doc_id'] = 1;
-$id = $_SESSION['doc_id'];
+$id = $_SESSION['id'];
 ?>
 <div class="noti-appointment">
     <div class=" title-table">
         Today Appointment
     </div>
     <div class="profile-table today-table">
-        <div class="tody-appointment">
-            <div>
-                <img class="today-img" src="./assets/img/expert_doctor/LTL.jpg" alt="">
+        <?php
+        $cur_date = date("Y-m-d");
+        $sql = "call getTodayAppointments($id, '$cur_date')";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)) { ?>
+
+            <div class="tody-appointment">
+                <div>
+                    <img class="today-img" src="./assets/img/user/<?php echo $row['image_url'] ?>" alt="">
+                </div>
+                <div class="today-name"><?php echo $row['patient_name'] ?></div>
+                <div class="today-time">Today</div>
             </div>
-            <div class="today-name">Nguyen KHuong Duy</div>
-            <div class="today-time">13:30</div>
-        </div>
-        <div class="tody-appointment">
-            <div>
-                <img class="today-img" src="./assets/img/expert_doctor/LTL.jpg" alt="">
-            </div>
-            <div class="today-name">Nguyen KHuong Duy</div>
-            <div class="today-time">Today</div>
-        </div>
+        <?php }
+        ?>
     </div>
 
 </div>

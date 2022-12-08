@@ -63,6 +63,16 @@ begin
 end $$
 DELIMITER ;
 
+DROP PROCEDURE IF EXISTS getTodayAppointments;
+DELIMITER $$
+create procedure getTodayAppointments(IN DOCTOR_ID int, IN today date)
+begin
+    select meeting_id, patient_name, p.patient_id, age, initial_condition, date_registered, meeting_date, p.image_url
+    from patient2doctor as p2d, patient as p
+    where p2d.doc_id = DOCTOR_ID and p2d.patient_id = p.patient_id and p2d.request_status = 'a' and p2d.meeting_date = today;
+end $$
+DELIMITER ;
+
 -- return all waiting appointments of a doctor, given doctor_id
 DROP PROCEDURE IF EXISTS getWaitingAppointments;
 DELIMITER $$
