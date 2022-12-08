@@ -11,28 +11,22 @@ include "utils/html_head.php"
 <!--    <div id="App"> </div>-->
 <div class="main">
     <!--slogan-->
-    <div id="0" class="page-slogan">
+    <div class="page-title" style="background-image: url('./assets/img/home/home-background.jpg'); padding: 30px 0;">
         <div class="grid wide-m">
-            <div class="container-fluid row gx-5">
-                <div class="col-ssm-12 col-sm-10 col-md-10 col-lg-10 col-xl-6 page-slogan__content">
-                    <h1 class="page-slogan__heading">About page</h1>
-                    <h1 class="page-slogan__heading">
-                        update content
-                        <span style="color: var(--primary-text-color)">later</span>
-                    </h1>
-                    <br>
-                    <p class="page-slogan__paragraph">
-                        We’re always available for our Patients with emergent problems.
-                        You can easily reach us 24/7. We focused on the highest quality.
-                    </p>
-                    <br>
-                    <div class="page-slogan__btn">
-                        <a class="page-slogan__btn-link" href="./contact.php">Make appointment
-                            <i class="fas fa-angle-double-right page-slogan__btn-link-icon"></i></a>
+            <div class="container-fluid">
+                <div class="page-title-inner">
+                    <h1 class="page-title__name">About</h1>
+                    <div class="page-title__dir">
+                        <ul class="page-title__dir-list">
+                            <li class="page-title__dir-item">
+                                <a href="./index.php?page=home" class="page-title__dir-link">Home</a>
+                            </li>
+                            <span> > </span>
+                            <li class="page-title__dir-item">
+                                <a href="./index.php?page=about" class="page-title__dir-link">About</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-ssm-6 col-sm-6 col-md-8 col-lg-8 col-xl-6 page-slogan__img">
-                    <img src="./assets/img/home/doctor-call-helper.png" alt="doctor banner image" class="fruit-image__img" />
                 </div>
             </div>
         </div>
