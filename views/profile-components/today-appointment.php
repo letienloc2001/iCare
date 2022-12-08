@@ -15,7 +15,7 @@ $id = $_SESSION['id'];
 
             <div class="tody-appointment">
                 <div>
-                    <img class="today-img" src="./assets/img/user/<?php echo $row['image_url'] ?>" alt="">
+                    <img class="today-img" src="<?php echo $row['image_url'] ?>" alt="">
                 </div>
                 <div class="today-name"><?php echo $row['patient_name'] ?></div>
                 <div class="today-time">Today</div>
