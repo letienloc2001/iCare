@@ -41,7 +41,7 @@
         <div class="grid wide-m">
             <div class="row container-fluid ">
                 <div class="col-lg-3 "></div>
-                <div class="col-sm-12 col-md-12 col-lg-6 login_form ">
+                <div class="col-sm-12 col-md-12 col-lg-9 login_form ">
                     <div class="container-fluid">
                         <div class="row">
                             <h2 class="login_form__name">Edit Profile</h2>
@@ -77,8 +77,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
     </div>
 </body>
 

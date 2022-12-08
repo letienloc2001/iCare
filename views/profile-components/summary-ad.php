@@ -5,10 +5,22 @@ $id = $_SESSION['doc_id'];
 ?>
 <?php
 $total = 0;
-$sql = "SELECT COUNT(request_status) FROM patient2doctor WHERE doc_id = $id;";
+$sql = "SELECT COUNT(request_status) FROM patient2doctor";
 $result = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_assoc($result)) {
-    $total = $row['COUNT(request_status)'];
+    $total_appointment = $row['COUNT(request_status)'];
+}
+
+$sql1 = "SELECT COUNT(doc_id) FROM doctor";
+$result1 = mysqli_query($conn, $sql1);
+while ($row = mysqli_fetch_assoc($result1)) {
+    $total_doc = $row['COUNT(doc_id)'];
+}
+
+$sql2 = "SELECT COUNT(patient_name) FROM patient";
+$result2 = mysqli_query($conn, $sql2);
+while ($row = mysqli_fetch_assoc($result2)) {
+    $total_pat = $row['COUNT(patient_name)'];
 }
 ?>
 <div class="summary">
@@ -22,7 +34,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <path d="M10 7a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 0-1 1v3a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1Z" />
                     </svg>
                 </span>
-                <?php echo $total ?>
+                <?php echo $total_appointment ?>
             </div>
             Total appointments
         </div>
@@ -37,7 +49,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <path d="M8.5 6.5a.5.5 0 0 0-1 0V8H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V9H10a.5.5 0 0 0 0-1H8.5V6.5Z" />
                     </svg>
                 </span>
-                30%
+                <?php echo $total_doc ?>
             </div>
             Doctors
         </div>
@@ -52,7 +64,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <path d="M6 8a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1H6Z" />
                     </svg>
                 </span>
-                50%
+                <?php echo $total_pat ?>
             </div>
             Patients
         </div>

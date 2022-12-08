@@ -7,7 +7,7 @@ include "./services/connection.php";
     </div>
     <div class="profile-table request-table">
         <?php
-        if(isset($_SESSION['id']))
+        if (isset($_SESSION['id']))
             $id = $_SESSION['id'];
         $sql = "call getWaitingAppointments($id)";
         $result = mysqli_query($conn, $sql);
@@ -22,8 +22,8 @@ include "./services/connection.php";
                     <div class="request-time"><?php echo $row['date_registered'] ?></div>
                 </div>
                 <div>
-                    <button class="accept-button" onclick=""><a href=""><img class="accept-img" src="./assets/img/accept.png" alt=""></a></button>
-                    <button class="decline-button" onclick=""><img class="decline-img" src="./assets/img/decline.png" alt=""></button>
+                    <button class="accept-button" onclick=""><a href="./services/appointment-process.php?state=accept&id=<?php echo $row['meeting_id'] ?>"><img class="accept-img" src="./assets/img/accept.png" alt=""></a></button>
+                    <button class="decline-button" onclick=""><a href="./services/appointment-process.php?state=deny&id=<?php echo $row['meeting_id'] ?>"><img class="decline-img" src="./assets/img/decline.png" alt=""></a></button>
                 </div>
             </div>
         <?php } ?>

@@ -6,6 +6,6 @@
         <a href="./userProfile.php?profilePage=doctors">Doctors</a>
     </button>
     <button class="active section">
-        <a href="./userProfile.php?profilePage=register">Register</a>
+        <a href="./userProfile.php?profilePage=register">Patients</a>
     </button>
 </div>
