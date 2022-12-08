@@ -136,6 +136,29 @@ include "utils/html_head.php"
             </div>
         </div>
     </div>
+<div id="5" class="container-fluid p-cpn" style="background-color: var(--background-color); padding: 10rem 0;">
+    <div class="grid wide-m row gx-5 ">
+        <div class="col ">
+            <div class="p-cpn-subheading ">
+                <div class="p-cpn-heading">
+                    <h1 style="text-align: center; margin: 1rem 3rem">
+                        Office Location
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid row gx-5 " style="padding: 0; margin: 0;">
+        <div class="col">
+            <div class="p-cpn-image ">
+                <img src="./assets/img/img-ud-hd.png" alt=" ">
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4797.687414134959!2d106.65655926422502!3d10.772363092057285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec3c161a3fb%3A0xef77cd47a1cc691e!2sHo%20Chi%20Minh%20City%20University%20of%20Technology%20(HCMUT)!5e0!3m2!1sen!2s!4v1670462645741!5m2!1sen!2s" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </p>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js "></script>
