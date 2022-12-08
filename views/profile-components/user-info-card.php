@@ -2,36 +2,35 @@
 include "./services/connection.php";
 ?>
 <?php
-    $name = "";
-    $image_url = "";
-    $address = "";
-    if(isset($_SESSION['id']))
-        $id = $_SESSION['id'];
-    if(isset($_SESSION['user_type'])) 
-        $user_type = $_SESSION['user_type'];
-    if($user_type === 'd'){
-        require_once("./controllers/profile.php");
-        $profileController = new ProfileController();
-        $pic = $profileController->getPictureOneUser($id);
-        $sql1 = "CALL getDoctorDetails($id);";
-        $record = mysqli_query($conn, $sql1);
-        while ($user_info = mysqli_fetch_assoc($record)) {
-            $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
-            $name = $user_info['doc_name'];
-            $image_url = $pic;
-            $phone_number = $user_info['phone_number'];
-        }
+$name = "";
+$image_url = "";
+$address = "";
+if (isset($_SESSION['id']))
+    $id = $_SESSION['id'];
+if (isset($_SESSION['user_type']))
+    $user_type = $_SESSION['user_type'];
+if ($user_type === 'd') {
+    require_once("./controllers/profile.php");
+    $profileController = new ProfileController();
+    $pic = $profileController->getPictureOneUser($id);
+    $sql1 = "CALL getDoctorDetails($id);";
+    $record = mysqli_query($conn, $sql1);
+    while ($user_info = mysqli_fetch_assoc($record)) {
+        $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
+        $name = $user_info['doc_name'];
+        $image_url = $pic;
+        $phone_number = $user_info['phone_number'];
     }
-    else if ($user_type === 'p') {
-        $sql1 = "select * from patient where patient_id =$id";
-        $record = mysqli_query($conn, $sql1);
-        while ($user_info = mysqli_fetch_assoc($record)) {
-            $address = $user_info['house_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
-            $name = $user_info['patient_name'];
-            $image_url = $user_info['image_url'];
-            $nic = $user_info['nic_number'];
-        }
+} else if ($user_type === 'p') {
+    $sql1 = "select * from patient where patient_id =$id";
+    $record = mysqli_query($conn, $sql1);
+    while ($user_info = mysqli_fetch_assoc($record)) {
+        $address = $user_info['house_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
+        $name = $user_info['patient_name'];
+        $image_url = $user_info['image_url'];
+        $nic = $user_info['nic_number'];
     }
+}
 ?>
 <div class="user-card">
     <?php if ($user_type === 'd') { ?>
@@ -51,7 +50,7 @@ include "./services/connection.php";
         <div class="user-info">Address: <span class="info"><?php echo $address ?></span></div>
         <?php if ($user_type === 'p') { ?>
             <div class="user-info">Identity number: <span class="info"><?php echo $nic ?></span></div>
-        <?php } else if($user_type==='d') {?>
+        <?php } else if ($user_type === 'd') { ?>
             <div class="user-info">Contact: <span class="info"><?php echo $phone_number ?></span></div>
         <?php } ?>
     </div>
