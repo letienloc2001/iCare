@@ -6,7 +6,9 @@
         <div>
             <p class="date-title">Today's Date</p>
             <p class="today-date">
-                23/11/2022
+                <?php
+                echo date("Y-m-d");
+                ?>
             </p>
         </div>
 

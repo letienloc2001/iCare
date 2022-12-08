@@ -25,22 +25,19 @@
 <script>
 
     function checkSignUp(){
-        let em = document.getElementsByClassName("form__input")[0].value;
-        let pn = document.getElementsByClassName("form__input")[1].value;
-        let pass = document.getElementsByClassName("form__input")[2].value;
-        let em = document.getElementsByClassName("form__input")[3].value;
-        let em = document.getElementsByClassName("form__input")[4].value;
-        let em = document.getElementsByClassName("form__input")[5].value;
-        let em = document.getElementsByClassName("form__input")[6].value;
+        let name = document.getElementsByClassName("form__input")[0].value;
+        let pass = document.getElementsByClassName("form__input")[1].value;
+        let nic = document.getElementsByClassName("form__input")[2].value;
+        let email = document.getElementsByClassName("form__input")[3].value;
         $.ajax({
             type: "POST",
             url: "services/login.php",
             data: {
                 act: "reg",
-                username: un,
-                email: em,
-                phone: pn,
-                password: pass
+                username: name,
+                password: pass,
+                nic: nic,
+                email: email
             },
             success: function(data) {
                 document.getElementsByClassName("msg")[0].innerHTML = "";
@@ -97,32 +94,7 @@
                             <span class="msg"></span>
                         </div>
                         <div class="row">
-                            <input type="number" name="age" id="nic" class="form__input" placeholder="Age" required>
-                            <span class="msg"></span>
-                        </div>
-                        <div class="row">
                             <input type="email" name="email" id="email" class="form__input" placeholder="Email" required>
-                            <span class="msg"></span>
-                        </div>
-                        <div class="row">
-                            <input type="text" name="city" id="city" class="form__input" placeholder="City" list="cityname" required>
-                            <datalist id="cityname">
-                                <option value="TPHCM">
-                                <option value="Hà Nội">
-                                <option value="Tiền Giang">
-                                <option value="An Giang">
-                                <option value="Kiên Giang">
-                                <option value="Long An">
-                                <option value="Sóc Trăng">
-                                <option value="Cà Mau">
-                            </datalist>
-                        </div>
-                        <div class="row">
-                            <input type="text" name="district" id="district" class="form__input" placeholder="District" list="districtname" required>
-                            <datalist id="districtname">
-                                <option value="Boston">
-                                <option value="Cambridge">
-                            </datalist>
                             <span class="msg"></span>
                         </div>
                         <div class="row">

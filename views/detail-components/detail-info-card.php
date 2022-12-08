@@ -10,13 +10,15 @@ include "./services/connection.php";
     $address = "";
     if(isset($_GET['id']))
         $id = $_GET['id'];
-    
+    require_once("./controllers/profile.php");
+    $profileController = new ProfileController();
+    $pic = $profileController->getPictureOneUser($id);
     $sql1 = "CALL getDoctorDetails($id);";
     $record = mysqli_query($conn, $sql1);
     while ($user_info = mysqli_fetch_assoc($record)) {
         $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
         $name = $user_info['doc_name'];
-        $image_url = $user_info['image_url'];
+        $image_url = $pic;
         $contact = $user_info['phone_number'];
     }
     include "./services/connection.php";
@@ -31,7 +33,7 @@ include "./services/connection.php";
 ?>
 <div class="user-card">
     <div class="user-image-card">
-        <img class="user-image" src="./assets/img/user/<?php echo $image_url ?>" alt="">
+        <img class="user-image" src="<?php echo $image_url ?>" alt="">
     </div>
     <div>
         <div class="user-name"><?php echo $name ?></div>

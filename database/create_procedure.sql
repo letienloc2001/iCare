@@ -5,11 +5,11 @@ create procedure register_patient(
     in given_name varchar(50),
     in given_password varchar(50),
     in given_nic_number varchar(50),
-    in given_email varchar(50),
+    in given_email varchar(50)
 )
 begin
     insert into patient(patient_name, nic_number)
-    values(given_name, given_nic_number);
+    values(given_name, given_nic_numbe);
 
     insert into user(email, password, user_type, patient_id)
     values(given_email, given_password, 'p', (select patient_id from patient where nic_number = given_nic_number));

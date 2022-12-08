@@ -23,12 +23,15 @@ if(isset($_SESSION['id']))
     </div>
     <div class="review-part">
         <?php
+        require_once("./controllers/profile.php");
+        $profileController = new ProfileController();
+        $pic = $profileController->getPictureOneUser($id);
         $sql = "call getRecentReviews($id)";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
             <div class="reviewer">
-                <img class="reviewer-img" src="./assets/img/user/<?php echo $row['image_url'] ?>" alt="">
+                <img class="reviewer-img" src="<?php echo $pic ?>" alt="">
                 <div>
                     <div class="reviewer-name"><?php echo $row['patient_name'] ?></div>
                     <div class="reviewer-comment"><?php echo $row['patient_review'] ?></div>
