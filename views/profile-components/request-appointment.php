@@ -7,7 +7,7 @@ include "./services/connection.php";
     </div>
     <div class="profile-table request-table">
         <?php
-        if(isset($_SESSION['id']))
+        if (isset($_SESSION['id']))
             $id = $_SESSION['id'];
         $sql = "call getWaitingAppointments($id)";
         $result = mysqli_query($conn, $sql);

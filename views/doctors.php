@@ -40,6 +40,8 @@ class DoctorView{
       $item = 1;
       $path = "";
       foreach ($doctors as $doctor):
+          $address = "http://maps.google.com/maps?q=" . $doctor['clinic_number'] . " " . $doctor['street'] . ", " . $doctor['ward'] . ", " .
+              $doctor['district'] . ", " . $doctor['city'] . "&output=embed";
         echo '<div class="col m-3 p-cpn-item-3rd ">
                 <div class="p-cpn-item-3rd-front " style="padding-top: 30px;">
                     <img class="p-cpn-item-3rd-front__img " src="'. $doctor['image_url'] .'" alt="doctor_img"  style="border-radius: 10%;" />
@@ -52,7 +54,16 @@ class DoctorView{
                     <h3 class="p-cpn-item-3rd-front__price ">District:
                         '. $doctor['district'] .'
                     </h3>
+                    <br><br><br>
+                    <iframe src="'. $address .'"
+                    width="367" height="150" style="border:0;" allowfullscreen="" loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <br><br><br>
+                    <h3 class="p-cpn-item-3rd-front__price ">
+                        '. $doctor['star_reviews'] .' ⭐
+                    </h3>
                 </div>
+                
                 <div class="p-cpn-item-3rd-back ">
                      <div class="p-cpn-item-3rd-back__overlay">
                         <h1 class="p-cpn-item-3rd-back__name ">
@@ -138,5 +149,3 @@ class DoctorView{
 //    }
 
 }
-
-?>

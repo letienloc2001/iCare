@@ -56,7 +56,7 @@ include "./services/connection.php";
         <div class="user-info">Address: <span class="info"><?php echo $address ?></span></div>
         <?php if ($user_type === 'p') { ?>
             <div class="user-info">Identity number: <span class="info"><?php echo $nic ?></span></div>
-        <?php } else if($user_type==='d') {?>
+        <?php } else if ($user_type === 'd') { ?>
             <div class="user-info">Contact: <span class="info"><?php echo $phone_number ?></span></div>
         <?php } ?>
     </div>
