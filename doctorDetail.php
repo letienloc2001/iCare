@@ -35,7 +35,9 @@
     </header>
 
     <main>
-        <?php require_once("./views/detail-components/detail-info-card.php") ?>
+        <?php
+            require_once("./views/detail-components/detail-info-card.php")
+        ?>
         <div>
             <?php require_once("./views/detail-components/review.php") ?>
         </div>

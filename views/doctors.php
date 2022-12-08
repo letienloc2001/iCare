@@ -72,7 +72,7 @@ class DoctorView{
                         <h3 class="p-cpn-item-3rd-back__price ">District:
                             '. $doctor['district'] .'
                         </h3>
-                        <a class="add-to-cart-btn " href="./index.php?page=doctors&search='. $doctor['doc_name'] .'">Make an appointment!</a>
+                        <a class="add-to-cart-btn " href="./index.php?page=detail&id='. $doctor['doc_id'] .'">Make an appointment!</a>
                     </div>
                 </div>             
               </div>';

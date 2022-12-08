@@ -35,7 +35,9 @@
     </header>
 
     <main>
-        <?php require_once("./views/profile-components/user-info-card.php") ?>
+        <?php
+        require_once("./views/profile-components/user-info-card.php")
+        ?>
         <div>
             <?php require_once("./views/profile-components/section-bar-doc-1.php") ?>
             <?php require_once("./views/profile-components/summary-doc.php") ?>
