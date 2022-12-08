@@ -20,11 +20,14 @@ include "./services/connection.php";
         $contact = $user_info['phone_number'];
     }
     include "./services/connection.php";
-    $sql2 = "select * from list_of_doctors where doc_id = $id;";
+    $speciality = "";
+    $sql2 = "call getSpecializations($id);";
     $record2 = mysqli_query($conn, $sql2);
     while ($doc_info = mysqli_fetch_assoc($record2)) {
-        $speciality = $doc_info['spec_name'];
+        $speciality .= $doc_info['spec_name'] . ", ";
     }
+    if ($speciality != "")
+        $speciality = substr($speciality, 0, -2);
 ?>
 <div class="user-card">
     <div class="user-image-card">
