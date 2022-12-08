@@ -13,5 +13,5 @@
         $sql = "call denyMeeting($id)";
         $result = mysqli_query($conn, $sql);
     }
-    header("Location:./index.php?page=profile");
+    header("Location:../index.php?page=profile");
 ?>
