@@ -3,13 +3,22 @@ include "./services/connection.php";
 $id = $_GET['id'];
 ?>
 <div class="review">
-    <h4>Review <span class="review-rating">(3/5)</span></h4>
+    <?php
+        $sql = "SELECT star_reviews FROM doctor WHERE doc_id = $id";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_assoc($result)){
+            $stars = round($row['star_reviews']);
+        }
+    ?>
+    <h4>Review <span class="review-rating"><?php echo $stars ?></span></h4>
     <div class="review-star">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
+        <?php for ($x = 0; $x < 5; $x++) { 
+            if($stars > 0){
+        ?>
+                <span class="fa fa-star checked"></span>
+            <?php } else { ?>
+                <span class="fa fa-star"></span>
+        <?php } $stars = $stars - 1; } ?>
     </div>
     <div class="review-part">
         <?php
