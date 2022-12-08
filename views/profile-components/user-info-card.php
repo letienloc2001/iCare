@@ -9,6 +9,8 @@ include "./services/connection.php";
         $id = $_SESSION['id'];
     if(isset($_SESSION['user_type'])) 
         $user_type = $_SESSION['user_type'];
+
+
     if($user_type === 'd'){
         require_once("./controllers/profile.php");
         $profileController = new ProfileController();
@@ -23,12 +25,15 @@ include "./services/connection.php";
         }
     }
     else if ($user_type === 'p') {
+        require_once("./controllers/profile.php");
+        $profileController = new ProfileController();
+        $pic = $profileController->getPictureOneUser($id);
         $sql1 = "select * from patient where patient_id =$id";
         $record = mysqli_query($conn, $sql1);
         while ($user_info = mysqli_fetch_assoc($record)) {
             $address = $user_info['house_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
             $name = $user_info['patient_name'];
-            $image_url = $user_info['image_url'];
+            $image_url = $pic;
             $nic = $user_info['nic_number'];
         }
     }
@@ -36,11 +41,11 @@ include "./services/connection.php";
 <div class="user-card">
     <?php if ($user_type === 'd') { ?>
         <div class="user-image-card">
-            <img class="user-image" src="./assets/img/user/<?php echo $image_url ?>" alt="">
+            <img class="user-image" src="<?php echo $image_url ?>" alt="">
         </div>
     <?php } else if ($user_type === 'p') { ?>
         <div class="user-image-card">
-            <img class="user-image" src="./assets/img/user/<?php echo $image_url ?>" alt="">
+            <img class="user-image" src="<?php echo $image_url ?>" alt="">
         </div>
     <?php } ?>
     <div>

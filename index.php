@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['user_type'])) {
+    $_SESSION['user_type'] = 'p';
+}
 $page = $_GET['page'] ?? "home";
 switch ($page) {
     case "home": {
