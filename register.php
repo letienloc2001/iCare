@@ -25,9 +25,9 @@
 <script>
 
     function checkSignUp(){
-        let name = document.getElementsByClassName("form__input")[0].value;
-        let pass = document.getElementsByClassName("form__input")[1].value;
-        let nic = document.getElementsByClassName("form__input")[2].value;
+        let name  = document.getElementsByClassName("form__input")[0].value;
+        let pass  = document.getElementsByClassName("form__input")[1].value;
+        let nic   = document.getElementsByClassName("form__input")[2].value;
         let email = document.getElementsByClassName("form__input")[3].value;
         $.ajax({
             type: "POST",
@@ -44,24 +44,26 @@
                 document.getElementsByClassName("msg")[1].innerHTML = "";
                 document.getElementsByClassName("msg")[2].innerHTML = "";
                 document.getElementsByClassName("msg")[3].innerHTML = "";
-                if (data == "1"){
+                if (data == "10"){
                     alert("Register successfully!");
                     window.location.href="login.php";
                 }
-
-                if (data == "-1"){
-                    document.getElementsByClassName("msg")[4].innerHTML = "Something unexpected happend.";
-                } else if (data == "0"){
-                    document.getElementsByClassName("msg")[1].innerHTML = "Username already existed.";
-                } else if (data == "2"){
-                    document.getElementsByClassName("msg")[1].innerHTML = "Invalid username. Username must be 5 - 20 characters, contains [a-z A-Z 0-9 _ .].";
-                } else if (data == "3"){
-                    document.getElementsByClassName("msg")[4].innerHTML = "Invalid password. Password must be 8 - 20 characters, contains at least 1 number, 1 upper, 1 lower, 1 special character.";
-                } else if (data == "4"){
-                    document.getElementsByClassName("msg")[2].innerHTML = "Invalid email. Check your email again.";
-                } else if (data == "5"){
-                    document.getElementsByClassName("msg")[3].innerHTML = "Invalid phone number. Phone number must have 9 - 13 numbers.";
+                else {
+                    if (data == "-1"){
+                        document.getElementsByClassName("msg")[3].innerHTML = "Something unexpected happend.";
+                    } else if (data == "0"){
+                        document.getElementsByClassName("msg")[3].innerHTML = "Email already existed.";
+                    } else if (data == "1"){
+                        document.getElementsByClassName("msg")[2].innerHTML = "NIC already existed.";
+                    } else if (data == "2"){
+                        document.getElementsByClassName("msg")[3].innerHTML = "Wrong email format.";
+                    } else if (data == "3"){
+                        document.getElementsByClassName("msg")[1].innerHTML = "Invalid password. Password must be 8 - 20 characters, contains at least 1 number, 1 upper, 1 lower, 1 special character.";
+                    }
+                    alert("Register Failed!");
                 }
+
+
             }
         });
     }
@@ -79,7 +81,7 @@
                         <h2 class="login_form__name">Sign Up</h2>
                     </div>
                     <br>
-                    <form class="register" action="./index.php?page=home" method="post">
+                    <form class="register" method="post">
                         <div class="row">
                         <div class="row">
                             <input type="text" name="name" id="name" class="form__input" placeholder="Full Name" required>
@@ -90,7 +92,7 @@
                             <span class="msg"></span>
                         </div>
                         <div class="row">
-                            <input type="number" name="nic" id="nic" class="form__input" placeholder="National Identity Card No." required>
+                            <input type="text" name="nic" id="nic" class="form__input" placeholder="National Identity Card No." required>
                             <span class="msg"></span>
                         </div>
                         <div class="row">
@@ -103,7 +105,7 @@
                             </button>
                         </div>
                         <div class="row">
-                            <p class="query">Already have an account? <a class="col-md-3" href="./login.php">Log in</a></p>
+                            <p class="query">Already have an account? <a class="col-md-3" href="./index.php=page=login">Log in</a></p>
                         </div>
                         </div>
                     </form>
