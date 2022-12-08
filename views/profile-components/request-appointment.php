@@ -15,7 +15,7 @@ include "./services/connection.php";
         ?>
             <div class="request-appointment">
                 <div>
-                    <img class="request-img" src="./assets/img/user/<?php echo $row['image_url'] ?>" alt="">
+                    <img class="request-img" src="<?php echo $row['image_url'];?>" alt="">
                 </div>
                 <div>
                     <div class="request-name"><?php echo $row['patient_name'] ?></div>

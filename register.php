@@ -105,11 +105,24 @@
                             <span class="msg"></span>
                         </div>
                         <div class="row">
-                            <input type="" name="city" id="city" class="form__input" placeholder="City" required>
-                            <span class="msg"></span>
+                            <input type="text" name="city" id="city" class="form__input" placeholder="City" list="cityname" required>
+                            <datalist id="cityname">
+                                <option value="TPHCM">
+                                <option value="Hà Nội">
+                                <option value="Tiền Giang">
+                                <option value="An Giang">
+                                <option value="Kiên Giang">
+                                <option value="Long An">
+                                <option value="Sóc Trăng">
+                                <option value="Cà Mau">
+                            </datalist>
                         </div>
                         <div class="row">
-                            <input type="" name="district" id="district" class="form__input" placeholder="District" required>
+                            <input type="text" name="district" id="district" class="form__input" placeholder="District" list="districtname" required>
+                            <datalist id="districtname">
+                                <option value="Boston">
+                                <option value="Cambridge">
+                            </datalist>
                             <span class="msg"></span>
                         </div>
                         <div class="row">

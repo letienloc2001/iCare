@@ -20,7 +20,7 @@
                 </td>
                 <td><?php echo $row['meeting_date'] ?></td>
                 <td>
-                    <button class="cancel-button"><a class="cancel-link" href="#"><i class="fa fa-trash-o" style="font-size:20px"></i></a></button>
+                    <button class="cancel-button"><a class="cancel-link" href="./services/cancel-process.php?state=cancel&id=<?php echo $row['meeting_id'] ?>"><i class="fa fa-trash-o" style="font-size:20px"></i></a></button>
                 </td>
             </tr>
         <?php } ?>

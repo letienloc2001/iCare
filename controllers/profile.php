@@ -31,7 +31,7 @@ class ProfileController {
         $userModel = new UserModel();
         $pic = $userModel->getPictureOneUser($id);
         if ($pic == "")
-            return "assets/img/avt.png";
+            return "./assets/img/avt.png";
         return $pic;
     }
 
