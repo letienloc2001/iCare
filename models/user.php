@@ -98,35 +98,34 @@ class UserModel
     // username a-z A-Z 0-9 _ . 5 to 20 chars
 
 
-    public function checkSignUp($email, $password, $phone): int
+    public function checkSignUp($username, $password, $nic, $email): int
     {
         $con = $this->InitConnect();
 
-        $res = $con->query("SELECT * FROM user_table WHERE Email = '$email'");
-        if (mysqli_num_rows($res) == 0) {
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $con->close();
-                return 4;       // 4 is email
-            }
-            if (strlen($phone) > 13 || strlen($phone) < 9) {
-                $con->close();
-                return 5;       // 5 is phone
-            }
-            if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $password)) {
-                $con->close();
-                return 3;       // 3 is password
-            }
+        $check1 = $con->query("SELECT * FROM user WHERE Email = '".$email."'");
+        $check2 = $con->query("SELECT * FROM patient WHERE nic_number = '".$nic."'");
+        if (mysqli_num_rows($check1) > 0) {
+            return 0; // 0: email exists
+        }
+        if (mysqli_num_rows($check2) > 0) {
+            return 1; //1: nic exists
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $con->close();
+            return 2; //2: is wrong email
+        }
+        if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $password)) {
+            $con->close();
+            return 3; // 3 is password
+        }
 
-            $sql = "";
-            if ($con->query($sql) == TRUE) {
-                $con->close();
-                return 1;       // 1 is ok
-            } else {
-                $con->close();
-                return -1;      // query
-            }
+        $sql = "call register_patient('".$username."','".$password."','".$nic."','".$email."');";
+        if ($con->query($sql)) {
+            $con->close();
+            return 10;       // 10 is ok
         } else {
-            return 0;           // 0 is duplicate
+            $con->close();
+            return -1;      // query
         }
     }
 

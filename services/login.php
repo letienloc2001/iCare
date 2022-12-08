@@ -9,7 +9,10 @@ if ($_POST['act'] == "login") {
     else
         echo "Log in successfully!";
 } else if ($_POST['act'] == "reg") {
-    $res = $loginController->checkSignUp($_POST['email'], $_POST['password'], $_POST['phone']);
+    $res = $loginController->checkSignUp($_POST['username'], $_POST['password'], $_POST['nic'], $_POST['email']);
     echo $res;
+//    $con = mysqli_connect('localhost', 'root', 'root', 'iCare');
+//    $sql = "call register_patient('".$_POST['username']."','".$_POST['password']."','".$_POST['nic']."','".$_POST['email']."');";
+//    $con->query($sql);
 }
 ?>

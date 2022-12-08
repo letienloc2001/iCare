@@ -13,7 +13,7 @@ $id = $_SESSION['id'];
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) { ?>
 
-            <div class="tody-appointment">
+            <div class="today-appointment">
                 <div>
                     <img class="today-img" src="<?php echo $row['image_url'] ?>" alt="">
                 </div>

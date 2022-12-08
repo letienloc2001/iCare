@@ -9,7 +9,7 @@ create procedure register_patient(
 )
 begin
     insert into patient(patient_name, nic_number)
-    values(given_name, given_nic_numbe);
+    values(given_name, given_nic_number);
 
     insert into user(email, password, user_type, patient_id)
     values(given_email, given_password, 'p', (select patient_id from patient where nic_number = given_nic_number));

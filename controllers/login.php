@@ -23,16 +23,13 @@ class LoginController{
         }
     }
 
-    public function checkSignUp($email, $password, $phone){
-        require_once('../models/user.php');
+    public function checkSignUp($username, $password, $nic, $email): int
+    {
+        include('../models/user.php');
 
         $userModel = new UserModel();
 
-        $res = $userModel->checkSignUp($email, $password, $phone);
-        if ($res == 1) {
-            return 1;
-        }
-        else return $res;
+        return $userModel->checkSignUp($username, $password, $nic, $email);
     }
 }
 ?>
