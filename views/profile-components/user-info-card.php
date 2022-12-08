@@ -10,12 +10,15 @@ include "./services/connection.php";
     if(isset($_SESSION['user_type'])) 
         $user_type = $_SESSION['user_type'];
     if($user_type === 'd'){
+        require_once("./controllers/profile.php");
+        $profileController = new ProfileController();
+        $pic = $profileController->getPictureOneUser($id);
         $sql1 = "CALL getDoctorDetails($id);";
         $record = mysqli_query($conn, $sql1);
         while ($user_info = mysqli_fetch_assoc($record)) {
             $address = $user_info['clinic_number'] . " street " . $user_info['street'] . ", " . $user_info['ward'] . ", " . $user_info['district'] . ", " . $user_info['city'];
             $name = $user_info['doc_name'];
-            $image_url = $user_info['image_url'];
+            $image_url = $pic;
             $phone_number = $user_info['phone_number'];
         }
     }

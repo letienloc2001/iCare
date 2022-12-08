@@ -58,7 +58,7 @@
                             $pic = $profileController->getPictureOneUser($_SESSION['id']);
 
                             echo '<div id="rightnav__user" class="rightnav__user">
-                                            <img class="rightnav__user-ava" src="./assets/img/user/' . $pic . '" alt="">
+                                            <img class="rightnav__user-ava" src="' . $pic . '" alt="">
                                             <ul id="rightnav__user-menu" class="rightnav__user-menu">
                                                 <li class="rightnav__user-item"><a href="./index.php?page=profile">See your profile</a></li>
                                                 <li class="rightnav__user-item rightnav__user-item--separate"><a href="./index.php?page=logout">Log out</a></li>

@@ -11,28 +11,22 @@ include "utils/html_head.php"
 <!--    <div id="App"> </div>-->
 <div class="main">
     <!--slogan-->
-    <div id="0" class="page-slogan">
+    <div class="page-title" style="background-image: url('./assets/img/home/home-background.jpg'); padding: 30px 0;">
         <div class="grid wide-m">
-            <div class="container-fluid row gx-5">
-                <div class="col-ssm-12 col-sm-10 col-md-10 col-lg-10 col-xl-6 page-slogan__content">
-                    <h1 class="page-slogan__heading">About page</h1>
-                    <h1 class="page-slogan__heading">
-                        update content
-                        <span style="color: var(--primary-text-color)">later</span>
-                    </h1>
-                    <br>
-                    <p class="page-slogan__paragraph">
-                        We’re always available for our Patients with emergent problems.
-                        You can easily reach us 24/7. We focused on the highest quality.
-                    </p>
-                    <br>
-                    <div class="page-slogan__btn">
-                        <a class="page-slogan__btn-link" href="./contact.php">Make appointment
-                            <i class="fas fa-angle-double-right page-slogan__btn-link-icon"></i></a>
+            <div class="container-fluid">
+                <div class="page-title-inner">
+                    <h1 class="page-title__name">About</h1>
+                    <div class="page-title__dir">
+                        <ul class="page-title__dir-list">
+                            <li class="page-title__dir-item">
+                                <a href="./index.php?page=home" class="page-title__dir-link">Home</a>
+                            </li>
+                            <span> > </span>
+                            <li class="page-title__dir-item">
+                                <a href="./index.php?page=about" class="page-title__dir-link">About</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-ssm-6 col-sm-6 col-md-8 col-lg-8 col-xl-6 page-slogan__img">
-                    <img src="./assets/img/home/doctor-call-helper.png" alt="doctor banner image" class="fruit-image__img" />
                 </div>
             </div>
         </div>
@@ -50,10 +44,10 @@ include "utils/html_head.php"
                             Welcome to iCare Company
                         </h4>
                         <h1 class="about-description__heading">
-                            iCare give premium quality healthcare services
+                            iCare provide you with access to the best professionals in your area.
                         </h1>
                         <p class="about-description__paragraph">
-                            some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text
+                            With just a few clicks, you will be able to secure an appointment with our top medical practitioners.
                         </p>
                     </div>
                 </div>
@@ -66,7 +60,10 @@ include "utils/html_head.php"
                     <div class="about-item__content">
                         <h1 class="about-item__title">Our Mission</h1>
                         <p class="about-item__paragraph">
-                            some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text
+                            At iCare, we believe that <span style="color: var(--primary-text-color)"><b>everyone</b></span> should have access to the best medical care. Searching for a doctor or making an appointment should not be a hassle in the 21st century.
+                            <br><br>
+                            Therefore, we have committed ourselves to provide you with our <span style="color: var(--primary-text-color)"><b>iCare digital platform</b></span> - a portal to your digital helthcare that is easy to use and accessible to everyone.
+
                         </p>
                     </div>
                 </div>
@@ -79,7 +76,10 @@ include "utils/html_head.php"
                     <div class="about-item__content">
                         <h1 class="about-item__title">Our Vision</h1>
                         <p class="about-item__paragraph">
-                            some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text
+                            We envision a world where healthcare access is democratized. Where everyone has access to the best doctors and medical care. Where everyone can make an appointment with their doctor at their own convenience.
+                            <br><br>
+                            We will work tirelessly to achieve this vision. We will not stop until everyone has access to the best medical care.
+                            We want to make sure that <span style="color: var(--primary-text-color)"><b>you can get the help you need, when you need it</b></span>.
                         </p>
                     </div>
                 </div>
