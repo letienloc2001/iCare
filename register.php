@@ -46,7 +46,7 @@
                 document.getElementsByClassName("msg")[3].innerHTML = "";
                 if (data == "10"){
                     alert("Register successfully!");
-                    window.location.href="login.php";
+                    window.location.href="/index.php?page=login";
                 }
                 else {
                     if (data == "-1"){
@@ -105,7 +105,7 @@
                             </button>
                         </div>
                         <div class="row">
-                            <p class="query">Already have an account? <a class="col-md-3" href="./index.php=page=login">Log in</a></p>
+                            <p class="query">Already have an account? <a class="col-md-3" href="./index.php?page=login">Log in</a></p>
                         </div>
                         </div>
                     </form>

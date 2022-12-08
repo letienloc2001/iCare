@@ -48,6 +48,9 @@
                     <li>
                         <a href="./index.php?page=doctors">Our Doctors</a>
                     </li>
+                    <li>
+                        <a href="./index.php?page=contact">Contacts</a>
+                    </li>
                 </ul>
             </div>
         </div>

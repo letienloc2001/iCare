@@ -9,13 +9,16 @@ include "./services/connection.php";
         <?php
         if (isset($_SESSION['id']))
             $id = $_SESSION['id'];
+        require_once("./controllers/profile.php");
+        $profileController = new ProfileController();
+        $pic = $profileController->getPictureOneUser($id);
         $sql = "call getWaitingAppointments($id)";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
             <div class="request-appointment">
                 <div>
-                    <img class="request-img" src="<?php echo $row['image_url'];?>" alt="">
+                    <img class="request-img" src="<?php echo $pic;?>" alt="">
                 </div>
                 <div>
                     <div class="request-name"><?php echo $row['patient_name'] ?></div>

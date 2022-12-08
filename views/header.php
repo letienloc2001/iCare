@@ -31,7 +31,7 @@
                                     </li>
                                     <?php
                                     if (!isset($_SESSION['email'])) {
-                                        echo '<li class="nav-item col-4" style="margin:0.5rem;">
+                                        echo '<li class="nav-item col-4" style="margin:0.5rem; text-align: center">
                                                           <a href="./index.php?page=login" class="nav-link" style="display:inline;"> Login </a>
                                                           <span style="font-size: 1.7rem"> / </span>
                                                           <a href="./index.php?page=register" class="nav-link" style="display:inline;"> Register </a>

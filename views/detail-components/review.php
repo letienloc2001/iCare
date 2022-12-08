@@ -24,11 +24,13 @@ $id = $_GET['id'];
         <?php
         require_once("./controllers/profile.php");
         $profileController = new ProfileController();
-        $pic = $profileController->getPictureOneUser($id);
+//        $pic = $profileController->getPictureOneUser($id);
         $sql = "call getRecentReviews($id)";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) {
+            $pic = $profileController->getPictureOneUser($row['patient_id']);
         ?>
+
             <div class="reviewer">
                 <img class="reviewer-img" src="<?php echo $pic ?>" alt="">
                 <div>
